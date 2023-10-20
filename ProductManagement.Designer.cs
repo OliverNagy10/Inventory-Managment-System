@@ -121,7 +121,6 @@ namespace Inventory_Managment_System
             this.nameLabel.Size = new System.Drawing.Size(45, 17);
             this.nameLabel.TabIndex = 7;
             this.nameLabel.Text = "Name";
-            this.nameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // descriptionLabel
             // 
@@ -220,7 +219,7 @@ namespace Inventory_Managment_System
             this.addButton.TabIndex = 19;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.button3_Click);
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // ProductManagement
             // 
@@ -249,6 +248,7 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.ProductsLabel);
             this.Name = "ProductManagement";
             this.Text = "ProductManagement";
+            this.Load += new System.EventHandler(this.ProductManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

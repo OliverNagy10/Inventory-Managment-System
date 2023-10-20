@@ -36,6 +36,8 @@ namespace Inventory_Managment_System
             this.companyEmailBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.createButton = new System.Windows.Forms.Button();
+            this.alreadyHaveLabel = new System.Windows.Forms.Label();
+            this.logInButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // companyNameLabel
@@ -88,7 +90,7 @@ namespace Inventory_Managment_System
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(322, 290);
+            this.createButton.Location = new System.Drawing.Point(326, 267);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(140, 23);
             this.createButton.TabIndex = 6;
@@ -96,11 +98,32 @@ namespace Inventory_Managment_System
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.SignUp_Load);
             // 
+            // alreadyHaveLabel
+            // 
+            this.alreadyHaveLabel.AutoSize = true;
+            this.alreadyHaveLabel.Location = new System.Drawing.Point(136, 329);
+            this.alreadyHaveLabel.Name = "alreadyHaveLabel";
+            this.alreadyHaveLabel.Size = new System.Drawing.Size(184, 17);
+            this.alreadyHaveLabel.TabIndex = 7;
+            this.alreadyHaveLabel.Text = "Already Have an Account ? ";
+            // 
+            // logInButton
+            // 
+            this.logInButton.Location = new System.Drawing.Point(354, 323);
+            this.logInButton.Name = "logInButton";
+            this.logInButton.Size = new System.Drawing.Size(75, 28);
+            this.logInButton.TabIndex = 8;
+            this.logInButton.Text = "Log In";
+            this.logInButton.UseVisualStyleBackColor = true;
+            this.logInButton.Click += new System.EventHandler(this.LogInClick);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logInButton);
+            this.Controls.Add(this.alreadyHaveLabel);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.companyEmailBox);
@@ -110,7 +133,7 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.companyNameLabel);
             this.Name = "SignUp";
             this.Text = "SignUp";
-            this.Load += new System.EventHandler(this.SignUp_Load);
+            this.Load += new System.EventHandler(this.SignUp_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +148,7 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.TextBox companyEmailBox;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Label alreadyHaveLabel;
+        private System.Windows.Forms.Button logInButton;
     }
 }

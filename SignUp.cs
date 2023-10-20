@@ -1,29 +1,24 @@
 ﻿using Google.Cloud.Firestore;
+using Inventory_Management_System;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace Inventory_Managment_System
 {
     public partial class SignUp : Form
     {
+        FirestoreDb db = FirestoreDb.Create("inventory-management-sys-df9e8");
+        private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0"; // Replace with your Firebase project's API key
+        private const string FirebaseSignUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FirebaseApiKey;
+
         public SignUp()
         {
             InitializeComponent();
             InitializeFirebase();
-
         }
-
-        FirestoreDb db = FirestoreDb.Create("inventory-management-sys-df9e8");
-        private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";
-        private const string FirebaseSignUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FirebaseApiKey;
 
         private void InitializeFirebase()
         {
@@ -61,15 +56,18 @@ namespace Inventory_Managment_System
                     if (response.IsSuccessStatusCode)
                     {
                         var responseContent = await response.Content.ReadAsStringAsync();
-                        
+                        var signUpResponse = JsonConvert.DeserializeObject<SignInResponse>(responseContent);
+
                         CollectionReference companiesCollection = db.Collection("companies");
 
-                        // Create a new document with an automatically generated ID
-                        DocumentReference newCompanyRef = companiesCollection.AddAsync(new
+                        // Set the document ID to the user's ID token
+                        DocumentReference newCompanyRef = companiesCollection.Document(signUpResponse.localId);
+
+                        newCompanyRef.SetAsync(new
                         {
                             name = companyName,
                             email = email
-                        }).Result;
+                        });
 
                         // Add "users" and "products" collections to the new document
                         newCompanyRef.Collection("users").Document("initialUser").CreateAsync(new
@@ -84,7 +82,7 @@ namespace Inventory_Managment_System
 
                         MessageBox.Show("Sign-up successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Optionally, you can proceed with additional actions, e.g., opening the dashboard form or performing other actions.
+                        // Optionally, you can proceed with additional actions, e.g., opening the login form or performing other actions.
 
                         // Note: You may want to add the user to your Firestore database at this point.
                     }
@@ -104,12 +102,19 @@ namespace Inventory_Managment_System
             }
         }
 
-
         private void companyEmailBox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
-       
+        private void LogInClick(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide(); // In the LoginForm
+        }
+
+        private void SignUp_Load_1(object sender, EventArgs e)
+        {
+        }
     }
 }

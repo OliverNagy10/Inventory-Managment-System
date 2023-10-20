@@ -74,7 +74,6 @@ namespace Inventory_Managment_System
             this.inventoryValueLabel.Size = new System.Drawing.Size(130, 17);
             this.inventoryValueLabel.TabIndex = 1;
             this.inventoryValueLabel.Text = "Value of Inventory: ";
-            this.inventoryValueLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // runningLowLabel
             // 
@@ -188,6 +187,7 @@ namespace Inventory_Managment_System
             this.productMangementButton.TabIndex = 12;
             this.productMangementButton.Text = "Product Management ";
             this.productMangementButton.UseVisualStyleBackColor = true;
+            this.productMangementButton.Click += new System.EventHandler(this.productMangementButton_Click);
             // 
             // userManagementButton
             // 

@@ -1,21 +1,18 @@
-﻿using Inventory_Managment_System;
-using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Text;
-using System.Windows.Forms;
-using System;
-using System.Windows.Forms;
-using Google.Apis.Auth.OAuth2;
-using FirebaseAdmin;
+﻿using Firebase.Auth.Providers;
 using FirebaseAdmin.Auth;
+using Inventory_Managment_System;
 using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace Inventory_Management_System
 {
     public partial class LoginForm : Form
     {
+        string IDToken;
         public LoginForm()
         {
             InitializeComponent();
@@ -61,11 +58,14 @@ namespace Inventory_Management_System
                     {
                         var responseContent = await response.Content.ReadAsStringAsync();
                         // Parse the response JSON for user data
+                     
+                         var signInResponse = JsonConvert.DeserializeObject<SignInResponse>(responseContent);
                         // Handle the successful sign-in here
 
                         MessageBox.Show("Login successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        Dashboard dashboard = new Dashboard();
+                        string idtoken = signInResponse.idToken;
+                        IDToken = idtoken;
+                        Dashboard dashboard = new Dashboard(idtoken);
                         dashboard.Show();
                         this.Hide(); // In the LoginForm
 
@@ -88,14 +88,19 @@ namespace Inventory_Management_System
 
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void SignUpClick(object sender, EventArgs e)
         {
-            // You can implement real-time input validation or feedback here.
+
+            SignUp signup = new SignUp();
+            signup.Show();
+            this.Hide(); // In the LoginForm
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

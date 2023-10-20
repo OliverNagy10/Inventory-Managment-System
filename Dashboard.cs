@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Cloud.Firestore;
+using Inventory_Management_System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,8 +13,10 @@ namespace Inventory_Managment_System
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        string IDToken;
+        public Dashboard(string idtoken)
         {
+            IDToken = idtoken;
             InitializeComponent();
         }
 
@@ -21,11 +25,7 @@ namespace Inventory_Managment_System
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -39,6 +39,15 @@ namespace Inventory_Managment_System
         private void stockTrackingButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void productMangementButton_Click(object sender, EventArgs e)
+        {
+            // Pass the FirestoreDb object to the ProductManagement form
+            FirestoreDb firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
+            ProductManagement pm = new ProductManagement(firestoreDb, IDToken);
+            pm.Show();
+            this.Hide(); 
         }
     }
 }
