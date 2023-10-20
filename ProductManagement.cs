@@ -44,23 +44,33 @@ namespace Inventory_Managment_System
                 // Get a reference to the "products" collection within the company's document
                 CollectionReference productsCollection = companyRef.Collection("products");
 
-                // Create a new product document with the provided data
-                var newProduct = new
+                // Query to check if a product with the same name already exists
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Name", productName).GetSnapshotAsync();
+
+                if (querySnapshot.Count > 0)
                 {
-                    Name = productName,
-                    Description = description,
-                    Supplier = supplier,
-                    Price = price,
-                    Quantity = quantity
-                };
+                    MessageBox.Show("Product with the same name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // Create a new product document with the provided data
+                    var newProduct = new
+                    {
+                        Name = productName,
+                        Description = description,
+                        Supplier = supplier,
+                        Price = price,
+                        Quantity = quantity
+                    };
 
-                // Add the new product document to the "products" collection
-                await productsCollection.AddAsync(newProduct);
+                    // Add the new product document to the "products" collection
+                    await productsCollection.AddAsync(newProduct);
 
-                // Optionally, you can refresh the product list or show a success message.
-                // RefreshProductList(); // Implement this function to update the product list
+                    // Optionally, you can refresh the product list or show a success message.
+                    // RefreshProductList(); // Implement this function to update the product list
 
-                MessageBox.Show("Product added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Product added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -68,6 +78,7 @@ namespace Inventory_Managment_System
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private string GetUserIdFromFirebaseAuthentication()
         {
