@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Inventory_Managment_System
 {
     public partial class Dashboard : Form
@@ -33,6 +32,11 @@ namespace Inventory_Managment_System
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stockTrackingButton_Click(object sender, EventArgs e)
         {
 
         }
