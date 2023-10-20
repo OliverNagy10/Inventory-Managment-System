@@ -99,7 +99,9 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.ValueTuple.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Dashboard.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Management_System.LoginForm.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.ProductManagement.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Properties.Resources.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.SignUp.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.GenerateResource.cache
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CoreCompileInputs.cache
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CopyComplete

@@ -92,5 +92,10 @@ namespace Inventory_Management_System
         {
             // You can implement real-time input validation or feedback here.
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
