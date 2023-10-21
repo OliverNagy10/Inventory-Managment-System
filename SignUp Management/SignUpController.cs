@@ -1,4 +1,5 @@
 ﻿using Inventory_Managment_System;
+using Inventory_Managment_System.SignUp_Management;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,11 +49,7 @@ namespace Inventory_Management_System
         private void LogInButtonClicked(object sender, EventArgs e)
         {
             // Show the Login form
-            view.Hide(); // Hide the SignUp form
-            LoginFormView loginForm = new LoginFormView();
-            LoginModel loginModel = new LoginModel();
-            LoginController loginController = new LoginController(loginForm, loginModel);
-            loginForm.Show();
+            
         }
     }
 }

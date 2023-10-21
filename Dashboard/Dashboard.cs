@@ -43,11 +43,8 @@ namespace Inventory_Managment_System
 
         private void productMangementButton_Click(object sender, EventArgs e)
         {
-            FirestoreDb firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
-            ProductManagementView pm = new ProductManagementView();
-            ProductController controller = new ProductController(firestoreDb, IDToken, pm);
-            pm.Show();
-            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.InitiateProductManager(IDToken);
         }
     }
 }

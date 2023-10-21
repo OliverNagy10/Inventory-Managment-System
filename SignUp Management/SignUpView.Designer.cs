@@ -1,14 +1,14 @@
 ﻿
-namespace Inventory_Managment_System
+namespace Inventory_Managment_System.SignUp_Management
 {
     partial class SignUpView
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -121,7 +121,7 @@ namespace Inventory_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(842, 553);
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.alreadyHaveLabel);
             this.Controls.Add(this.createButton);
@@ -133,7 +133,7 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.companyNameLabel);
             this.Name = "SignUpView";
             this.Text = "SignUp";
-            this.Load += new System.EventHandler(this.SignUpView_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,4 +151,6 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.Label alreadyHaveLabel;
         private System.Windows.Forms.Button logInButton;
     }
+
+   
 }

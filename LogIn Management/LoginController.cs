@@ -2,19 +2,22 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inventory_Managment_System;
+using Inventory_Managment_System.LogIn_Management;
 
 namespace Inventory_Management_System
 {
     public class LoginController
     {
-        private LoginFormView view;
+        private LoginView view;
         private LoginModel model;
+        private MainForm mainForm; // Add a field to store the MainForm instance
 
-       
-        public LoginController(LoginFormView view, LoginModel model)
+
+        public LoginController(LoginView view, LoginModel model,MainForm mainForm)
         {
             this.view = view;
             this.model = model;
+            this.mainForm = mainForm; // Store the MainForm instance
 
             // Attach event handlers in the view
             view.LoginButtonClicked += async (sender, e) => await LoginButtonClickedAsync();
@@ -47,12 +50,8 @@ namespace Inventory_Management_System
 
         private void SignUpButtonClicked(object sender, EventArgs e)
         {
-            // Show the Login form
-            view.Hide(); // Hide the SignUp form
-            SignUpView signUpForm = new SignUpView();
-            SignUpModel signUpModel = new SignUpModel();
-            SignUpController signUpController = new SignUpController(signUpForm, signUpModel);
-            signUpForm.Show();
+           
+            mainForm.InitiateSignUp();
         }
     }
 }

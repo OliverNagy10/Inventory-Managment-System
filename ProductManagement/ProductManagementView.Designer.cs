@@ -255,7 +255,7 @@ namespace Inventory_Managment_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(882, 790);
+            this.ClientSize = new System.Drawing.Size(1182, 1055);
             this.Controls.Add(this.productScrollBar);
             this.Controls.Add(this.productListView);
             this.Controls.Add(this.addButton);
