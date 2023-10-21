@@ -1,6 +1,7 @@
 ﻿using Google.Cloud.Firestore;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,73 @@ namespace Inventory_Managment_System
                 return "An error occurred: " + ex.Message;
             }
         }
+
+        public async Task<string> UpdateProductAsync(string originalName, string newName, string description, string supplier, double price, int quantity)
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return "User is not authenticated.";
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve the product document with the original name
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Name", originalName).GetSnapshotAsync();
+
+                if (querySnapshot.Count == 1)
+                {
+                    // Retrieve the original product document reference
+                    DocumentReference productDocumentRef = querySnapshot.Documents[0].Reference;
+
+                    // Create a new dictionary with the updated values, including the new name
+                    var updates = new Dictionary<string, object>
+            {
+                { "Name", newName },
+                { "Description", description },
+                { "Supplier", supplier },
+                { "Price", price },
+                { "Quantity", quantity }
+            };
+
+                    // Update the fields of the product document using the dictionary
+                    await productDocumentRef.UpdateAsync(updates);
+
+                    // Create a new product document with the new name
+                    DocumentReference newProductRef = productsCollection.Document(newName);
+
+                    // Copy the contents of the original document to the new one
+                    DocumentSnapshot originalProductSnapshot = await productDocumentRef.GetSnapshotAsync();
+                    if (originalProductSnapshot.Exists)
+                    {
+                        await newProductRef.SetAsync(originalProductSnapshot.ToDictionary());
+                    }
+
+                    // Delete the original product document
+                    await productDocumentRef.DeleteAsync();
+
+                    return "Product updated successfully.";
+                }
+                else
+                {
+                    return "Product not found.";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "An error occurred: " + ex.Message;
+            }
+        }
+
+
 
         public async Task<(string name, string description, string supplier, double price, int quantity)> SearchProductAsync(string productName)
         {

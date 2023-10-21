@@ -8,6 +8,7 @@ namespace Inventory_Managment_System
         // Event for the Add button click
         public event EventHandler AddButtonClicked;
         public event EventHandler SearchButtonClicked; // Add event for the Search button
+        public event EventHandler SaveButtonClicked;
 
         public ProductManagementView()
         {
@@ -18,6 +19,7 @@ namespace Inventory_Managment_System
 
             // Attach event handler for the Search button click
             searchButton.Click += (sender, e) => SearchButtonClicked?.Invoke(this, EventArgs.Empty);
+            saveButton.Click += (sender, e) => SaveButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
         // Methods to get input from the user
@@ -109,6 +111,11 @@ namespace Inventory_Managment_System
         private void searchButton_Click(object sender, EventArgs e)
         {
             SearchButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

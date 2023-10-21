@@ -22,6 +22,7 @@ namespace Inventory_Managment_System
             productView.SearchButtonClicked += async (sender, args) => await SearchProductAsync();
             // Attach event handler for the Add button click event in the view
             productView.AddButtonClicked += async (sender, args) => await AddProductAsync();
+            productView.SaveButtonClicked += async (sender, args) => await SaveProductAsync();
         }
 
         public async Task AddProductAsync()
@@ -33,6 +34,27 @@ namespace Inventory_Managment_System
             int quantity = productView.GetQuantity();
 
             string resultMessage = await productModel.AddProductAsync(productName, description, supplier, price, quantity);
+
+            if (resultMessage.Contains("Error"))
+            {
+                productView.ShowError(resultMessage);
+            }
+            else
+            {
+                productView.ShowSuccess(resultMessage);
+            }
+        }
+
+        public async Task SaveProductAsync()
+        {
+            string productName = productView.GetSearchQuery();
+            string name = productView.GetName();
+            string description = productView.GetDescription();
+            string supplier = productView.GetSupplier();
+            double price = productView.GetPrice();
+            int quantity = productView.GetQuantity();
+
+            string resultMessage = await productModel.UpdateProductAsync(productName, name, description, supplier, price, quantity);
 
             if (resultMessage.Contains("Error"))
             {
