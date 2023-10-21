@@ -33,7 +33,7 @@ namespace Inventory_Managment_System
             this.ProductGridView = new System.Windows.Forms.DataGridView();
             this.ProductScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.searchLabel = new System.Windows.Forms.Label();
-            this.productSearchBox = new System.Windows.Forms.TextBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -88,12 +88,12 @@ namespace Inventory_Managment_System
             this.searchLabel.TabIndex = 3;
             this.searchLabel.Text = "search";
             // 
-            // productSearchBox
+            // SearchBox
             // 
-            this.productSearchBox.Location = new System.Drawing.Point(487, 79);
-            this.productSearchBox.Name = "productSearchBox";
-            this.productSearchBox.Size = new System.Drawing.Size(180, 22);
-            this.productSearchBox.TabIndex = 4;
+            this.SearchBox.Location = new System.Drawing.Point(487, 79);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(180, 22);
+            this.SearchBox.TabIndex = 4;
             // 
             // searchButton
             // 
@@ -103,6 +103,7 @@ namespace Inventory_Managment_System
             this.searchButton.TabIndex = 5;
             this.searchButton.Text = "search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // backButton
             // 
@@ -241,7 +242,7 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.productSearchBox);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.ProductScrollBar1);
             this.Controls.Add(this.ProductGridView);
@@ -261,7 +262,7 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.DataGridView ProductGridView;
         private System.Windows.Forms.VScrollBar ProductScrollBar1;
         private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox productSearchBox;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label nameLabel;

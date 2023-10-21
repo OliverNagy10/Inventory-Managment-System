@@ -69,6 +69,54 @@ namespace Inventory_Managment_System
             }
         }
 
+        public async Task<(string name, string description, string supplier, double price, int quantity)> SearchProductAsync(string productName)
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return (null, null, null, 0, 0); // User is not authenticated
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve the product document with the specified name
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Name", productName).GetSnapshotAsync();
+
+                if (querySnapshot.Count == 1)
+                {
+                    // Retrieve the product document data
+                    var productDocument = querySnapshot.Documents[0];
+                    return (
+                        productDocument.GetValue<string>("Name"),
+                        productDocument.GetValue<string>("Description"),
+                        productDocument.GetValue<string>("Supplier"),
+                        productDocument.GetValue<double>("Price"),
+                        productDocument.GetValue<int>("Quantity")
+                    );
+                }
+                else
+                {
+                    // Product not found or multiple products with the same name exist
+                    return (null, null, null, 0, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return (null, null, null, 0, 0);
+            }
+        }
+
+
 
         private async Task<string> GetUserIdFromFirebaseAuthenticationAsync()
         {
