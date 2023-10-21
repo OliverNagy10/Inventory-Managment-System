@@ -25,6 +25,9 @@ namespace Inventory_Managment_System
             productView.SaveButtonClicked += async (sender, args) => await SaveProductAsync();
             productView.DeleteButtonClicked += async (sender, args) => await SaveProductAsync();
 
+            // Start loading product names as soon as the controller is created
+            GetProductNamesAsync();
+
         }
 
         public async Task AddProductAsync()
@@ -43,6 +46,7 @@ namespace Inventory_Managment_System
             }
             else
             {
+                GetProductNamesAsync();
                 productView.ShowSuccess(resultMessage);
             }
         }
@@ -83,17 +87,28 @@ namespace Inventory_Managment_System
                 else
                 {
                     productView.ShowSuccess(resultMessage);
-                    // Clear the text fields or take any other necessary actions after deletion
-                    productView.SetName(string.Empty);
-                    productView.SetDescription(string.Empty);
-                    productView.SetSupplier(string.Empty);
-                    productView.SetPrice(0);
-                    productView.SetQuantity(0);
+                    GetProductNamesAsync();
+                    // Clear the text fields after deletion
+                    productView.ClearTextFields();
                 }
             }
             else
             {
                 productView.ShowError("Please enter a product name to delete.");
+            }
+        }
+
+        public async Task GetProductNamesAsync()
+        {
+            var productNames = await productModel.GetAllProductNamesAsync();
+
+            if (productNames.Count > 0)
+            {
+                productView.PopulateProductListView(productNames);
+            }
+            else
+            {
+                productView.ShowError("No products found.");
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory_Management_System
 {
-    partial class LoginForm
+    partial class LoginFormView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,22 @@ namespace Inventory_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.logInButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dontHaveLabel = new System.Windows.Forms.Label();
-            this.SignUpButton = new System.Windows.Forms.Button();
+            this.signUpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // logInButton
             // 
-            this.button1.Location = new System.Drawing.Point(319, 316);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.logInButton.Location = new System.Drawing.Point(319, 316);
+            this.logInButton.Margin = new System.Windows.Forms.Padding(4);
+            this.logInButton.Name = "logInButton";
+            this.logInButton.Size = new System.Drawing.Size(249, 41);
+            this.logInButton.TabIndex = 0;
+            this.logInButton.Text = "Login";
+            this.logInButton.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -74,32 +73,30 @@ namespace Inventory_Management_System
             this.dontHaveLabel.TabIndex = 3;
             this.dontHaveLabel.Text = "Dont Have An Account ? ";
             // 
-            // SignUpButton
+            // signUpButton
             // 
-            this.SignUpButton.Location = new System.Drawing.Point(492, 412);
-            this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(76, 25);
-            this.SignUpButton.TabIndex = 4;
-            this.SignUpButton.Text = "Sign Up ";
-            this.SignUpButton.UseVisualStyleBackColor = true;
-            this.SignUpButton.Click += new System.EventHandler(this.SignUpClick);
+            this.signUpButton.Location = new System.Drawing.Point(492, 412);
+            this.signUpButton.Name = "signUpButton";
+            this.signUpButton.Size = new System.Drawing.Size(76, 25);
+            this.signUpButton.TabIndex = 4;
+            this.signUpButton.Text = "Sign Up ";
+            this.signUpButton.UseVisualStyleBackColor = true;
             // 
-            // LoginForm
+            // LoginFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 558);
-            this.Controls.Add(this.SignUpButton);
+            this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.dontHaveLabel);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.logInButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "LoginForm";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
-            this.Click += new System.EventHandler(this.SignUpClick);
+            this.Name = "LoginFormView";
+            this.Text = "Log In";
+            this.Load += new System.EventHandler(this.LoginFormView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,11 +104,11 @@ namespace Inventory_Management_System
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logInButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label dontHaveLabel;
-        private System.Windows.Forms.Button SignUpButton;
+        private System.Windows.Forms.Button signUpButton;
     }
 }
 

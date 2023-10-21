@@ -30,8 +30,6 @@ namespace Inventory_Managment_System
         private void InitializeComponent()
         {
             this.ProductsLabel = new System.Windows.Forms.Label();
-            this.ProductGridView = new System.Windows.Forms.DataGridView();
-            this.ProductScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.searchLabel = new System.Windows.Forms.Label();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -49,186 +47,217 @@ namespace Inventory_Managment_System
             this.deleteButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).BeginInit();
+            this.productListView = new System.Windows.Forms.ListView();
+            this.productScrollBar = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // ProductsLabel
             // 
             this.ProductsLabel.AutoSize = true;
             this.ProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductsLabel.Location = new System.Drawing.Point(88, 45);
+            this.ProductsLabel.Location = new System.Drawing.Point(96, 53);
             this.ProductsLabel.Name = "ProductsLabel";
             this.ProductsLabel.Size = new System.Drawing.Size(97, 25);
             this.ProductsLabel.TabIndex = 0;
             this.ProductsLabel.Text = "Products";
             // 
-            // ProductGridView
-            // 
-            this.ProductGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductGridView.Location = new System.Drawing.Point(23, 84);
-            this.ProductGridView.Name = "ProductGridView";
-            this.ProductGridView.RowHeadersWidth = 51;
-            this.ProductGridView.RowTemplate.Height = 24;
-            this.ProductGridView.Size = new System.Drawing.Size(240, 457);
-            this.ProductGridView.TabIndex = 1;
-            // 
-            // ProductScrollBar1
-            // 
-            this.ProductScrollBar1.Location = new System.Drawing.Point(270, 84);
-            this.ProductScrollBar1.Name = "ProductScrollBar1";
-            this.ProductScrollBar1.Size = new System.Drawing.Size(21, 457);
-            this.ProductScrollBar1.TabIndex = 2;
-            // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(414, 84);
+            this.searchLabel.Location = new System.Drawing.Point(414, 100);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(51, 17);
+            this.searchLabel.Size = new System.Drawing.Size(54, 19);
             this.searchLabel.TabIndex = 3;
             this.searchLabel.Text = "search";
             // 
             // SearchBox
             // 
-            this.SearchBox.Location = new System.Drawing.Point(487, 79);
+            this.SearchBox.BackColor = System.Drawing.Color.Gray;
+            this.SearchBox.Location = new System.Drawing.Point(487, 94);
+            this.SearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(180, 22);
+            this.SearchBox.Size = new System.Drawing.Size(180, 25);
             this.SearchBox.TabIndex = 4;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(702, 78);
+            this.searchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.searchButton.ForeColor = System.Drawing.Color.White;
+            this.searchButton.Location = new System.Drawing.Point(702, 93);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.Size = new System.Drawing.Size(75, 27);
             this.searchButton.TabIndex = 5;
             this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(763, 617);
+            this.backButton.BackColor = System.Drawing.Color.Gray;
+            this.backButton.Location = new System.Drawing.Point(763, 733);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.Size = new System.Drawing.Size(75, 27);
             this.backButton.TabIndex = 6;
             this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.UseVisualStyleBackColor = false;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(374, 167);
+            this.nameLabel.Location = new System.Drawing.Point(374, 198);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(45, 17);
+            this.nameLabel.Size = new System.Drawing.Size(51, 19);
             this.nameLabel.TabIndex = 7;
             this.nameLabel.Text = "Name";
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(374, 223);
+            this.descriptionLabel.Location = new System.Drawing.Point(374, 265);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(79, 17);
+            this.descriptionLabel.Size = new System.Drawing.Size(89, 19);
             this.descriptionLabel.TabIndex = 8;
             this.descriptionLabel.Text = "Description";
             // 
             // supplierLabel
             // 
             this.supplierLabel.AutoSize = true;
-            this.supplierLabel.Location = new System.Drawing.Point(374, 275);
+            this.supplierLabel.Location = new System.Drawing.Point(374, 327);
             this.supplierLabel.Name = "supplierLabel";
-            this.supplierLabel.Size = new System.Drawing.Size(60, 17);
+            this.supplierLabel.Size = new System.Drawing.Size(66, 19);
             this.supplierLabel.TabIndex = 9;
             this.supplierLabel.Text = "Supplier";
             // 
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(377, 335);
+            this.priceLabel.Location = new System.Drawing.Point(377, 398);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(40, 17);
+            this.priceLabel.Size = new System.Drawing.Size(43, 19);
             this.priceLabel.TabIndex = 10;
             this.priceLabel.Text = "Price";
             // 
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(380, 388);
+            this.quantityLabel.Location = new System.Drawing.Point(380, 461);
             this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(61, 17);
+            this.quantityLabel.Size = new System.Drawing.Size(70, 19);
             this.quantityLabel.TabIndex = 11;
             this.quantityLabel.Text = "Quantity";
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(504, 162);
+            this.nameBox.BackColor = System.Drawing.Color.Gray;
+            this.nameBox.Location = new System.Drawing.Point(504, 192);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(200, 22);
+            this.nameBox.Size = new System.Drawing.Size(200, 25);
             this.nameBox.TabIndex = 12;
             // 
             // descriptionBox
             // 
-            this.descriptionBox.Location = new System.Drawing.Point(504, 217);
+            this.descriptionBox.BackColor = System.Drawing.Color.Gray;
+            this.descriptionBox.Location = new System.Drawing.Point(504, 258);
+            this.descriptionBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(200, 22);
+            this.descriptionBox.Size = new System.Drawing.Size(200, 25);
             this.descriptionBox.TabIndex = 13;
             // 
             // supplierBox
             // 
-            this.supplierBox.Location = new System.Drawing.Point(504, 269);
+            this.supplierBox.BackColor = System.Drawing.Color.Gray;
+            this.supplierBox.Location = new System.Drawing.Point(504, 319);
+            this.supplierBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.supplierBox.Name = "supplierBox";
-            this.supplierBox.Size = new System.Drawing.Size(200, 22);
+            this.supplierBox.Size = new System.Drawing.Size(200, 25);
             this.supplierBox.TabIndex = 14;
             // 
             // priceBox
             // 
-            this.priceBox.Location = new System.Drawing.Point(504, 329);
+            this.priceBox.BackColor = System.Drawing.Color.Gray;
+            this.priceBox.Location = new System.Drawing.Point(504, 391);
+            this.priceBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(100, 22);
+            this.priceBox.Size = new System.Drawing.Size(100, 25);
             this.priceBox.TabIndex = 15;
             // 
             // quantityBox
             // 
-            this.quantityBox.Location = new System.Drawing.Point(504, 382);
+            this.quantityBox.BackColor = System.Drawing.Color.Gray;
+            this.quantityBox.Location = new System.Drawing.Point(504, 454);
+            this.quantityBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(100, 22);
+            this.quantityBox.Size = new System.Drawing.Size(100, 25);
             this.quantityBox.TabIndex = 16;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(380, 482);
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.deleteButton.Location = new System.Drawing.Point(380, 572);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(75, 27);
             this.deleteButton.TabIndex = 17;
             this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(504, 482);
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.saveButton.Location = new System.Drawing.Point(504, 572);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(75, 27);
             this.saveButton.TabIndex = 18;
             this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(629, 482);
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addButton.ForeColor = System.Drawing.Color.White;
+            this.addButton.Location = new System.Drawing.Point(629, 572);
+            this.addButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(75, 27);
             this.addButton.TabIndex = 19;
             this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // productListView
+            // 
+            this.productListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.productListView.GridLines = true;
+            this.productListView.HideSelection = false;
+            this.productListView.Location = new System.Drawing.Point(27, 103);
+            this.productListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.productListView.Name = "productListView";
+            this.productListView.Size = new System.Drawing.Size(226, 538);
+            this.productListView.TabIndex = 20;
+            this.productListView.UseCompatibleStateImageBehavior = false;
+            this.productListView.View = System.Windows.Forms.View.List;
+            // 
+            // productScrollBar
+            // 
+            this.productScrollBar.Location = new System.Drawing.Point(256, 103);
+            this.productScrollBar.Name = "productScrollBar";
+            this.productScrollBar.Size = new System.Drawing.Size(21, 539);
+            this.productScrollBar.TabIndex = 21;
             // 
             // ProductManagementView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 665);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(882, 790);
+            this.Controls.Add(this.productScrollBar);
+            this.Controls.Add(this.productListView);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
@@ -246,13 +275,13 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.searchLabel);
-            this.Controls.Add(this.ProductScrollBar1);
-            this.Controls.Add(this.ProductGridView);
             this.Controls.Add(this.ProductsLabel);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductManagementView";
             this.Text = "ProductManagement";
             this.Load += new System.EventHandler(this.ProductManagementView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,8 +290,6 @@ namespace Inventory_Managment_System
         #endregion
 
         private System.Windows.Forms.Label ProductsLabel;
-        private System.Windows.Forms.DataGridView ProductGridView;
-        private System.Windows.Forms.VScrollBar ProductScrollBar1;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button searchButton;
@@ -280,5 +307,7 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.ListView productListView;
+        private System.Windows.Forms.VScrollBar productScrollBar;
     }
 }

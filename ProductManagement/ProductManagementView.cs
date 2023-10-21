@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Inventory_Managment_System
@@ -7,7 +8,7 @@ namespace Inventory_Managment_System
     {
         // Event for the Add button click
         public event EventHandler AddButtonClicked;
-        public event EventHandler SearchButtonClicked; // Add event for the Search button
+        public event EventHandler SearchButtonClicked;
         public event EventHandler SaveButtonClicked;
         public event EventHandler DeleteButtonClicked;
 
@@ -17,7 +18,7 @@ namespace Inventory_Managment_System
 
             // Attach event handler for the Add button click
             addButton.Click += (sender, e) => AddButtonClicked?.Invoke(this, EventArgs.Empty);
-
+            productScrollBar.ValueChanged += ProductScrollBar_ValueChanged;
             // Attach event handler for the Search button click
             searchButton.Click += (sender, e) => SearchButtonClicked?.Invoke(this, EventArgs.Empty);
             saveButton.Click += (sender, e) => SaveButtonClicked?.Invoke(this, EventArgs.Empty);
@@ -124,5 +125,36 @@ namespace Inventory_Managment_System
         {
             DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
         }
+
+        public void ClearTextFields()
+        {
+            nameBox.Clear();
+            descriptionBox.Clear();
+            supplierBox.Clear();
+            priceBox.Clear();
+            quantityBox.Clear();
+        }
+
+        public void PopulateProductListView(List<string> productNames)
+        {
+            productListView.Items.Clear();
+
+            foreach (var productName in productNames)
+            {
+                ListViewItem item = new ListViewItem(productName);
+                productListView.Items.Add(item);
+            }
+        }
+
+        private void ProductScrollBar_ValueChanged(object sender, EventArgs e)
+        {
+            if (productScrollBar.Value >= 0 && productScrollBar.Value < productListView.Items.Count)
+            {
+                productListView.TopItem = productListView.Items[productScrollBar.Value];
+            }
+        }
+
+
+
     }
 }

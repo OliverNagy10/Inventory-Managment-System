@@ -179,21 +179,23 @@
     </Compile>
     <Compile Include="ErrorInfo.cs" />
     <Compile Include="FirebaseAuthLink.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="LoginController.cs" />
+    <Compile Include="LoginFormView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="LoginFormView.Designer.cs">
+      <DependentUpon>LoginFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductController.cs" />
-    <Compile Include="ProductManagementView.cs">
+    <Compile Include="LoginModel.cs" />
+    <Compile Include="ProductManagement\Product.cs" />
+    <Compile Include="ProductManagement\ProductController.cs" />
+    <Compile Include="ProductManagement\ProductManagementView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductManagementView.Designer.cs">
+    <Compile Include="ProductManagement\ProductManagementView.Designer.cs">
       <DependentUpon>ProductManagementView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductModel.cs" />
+    <Compile Include="ProductManagement\ProductModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignInResponse.cs" />
@@ -206,10 +208,10 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginFormView.resx">
+      <DependentUpon>LoginFormView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductManagementView.resx">
+    <EmbeddedResource Include="ProductManagement\ProductManagementView.resx">
       <DependentUpon>ProductManagementView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

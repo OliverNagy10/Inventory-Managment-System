@@ -108,13 +108,13 @@ namespace Inventory_Managment_System
 
         private void LogInClick(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.Show();
-            this.Hide(); // In the LoginForm
+            LoginFormView view = new LoginFormView();
+            LoginModel model = new LoginModel();
+            LoginController login = new LoginController(view, model);
+            view.Show();
+            this.Hide();
         }
 
-        private void SignUp_Load_1(object sender, EventArgs e)
-        {
-        }
+        
     }
 }

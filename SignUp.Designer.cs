@@ -96,7 +96,6 @@ namespace Inventory_Managment_System
             this.createButton.TabIndex = 6;
             this.createButton.Text = "Create An Account ";
             this.createButton.UseVisualStyleBackColor = true;
-            this.createButton.Click += new System.EventHandler(this.SignUp_Load);
             // 
             // alreadyHaveLabel
             // 
@@ -133,7 +132,7 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.companyNameLabel);
             this.Name = "SignUp";
             this.Text = "SignUp";
-            this.Load += new System.EventHandler(this.SignUp_Load_1);
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 

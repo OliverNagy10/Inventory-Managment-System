@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -224,6 +225,46 @@ namespace Inventory_Managment_System
                 // Handle any errors
                 Console.WriteLine("An error occurred: " + ex.Message);
                 return (null, null, null, 0, 0);
+            }
+        }
+
+        public async Task<List<string>> GetAllProductNamesAsync()
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return new List<string>(); // User is not authenticated
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve all product documents
+                QuerySnapshot querySnapshot = await productsCollection.GetSnapshotAsync();
+
+                if (querySnapshot.Count > 0)
+                {
+                    // Extract the names of all products
+                    var productNames = querySnapshot.Documents.Select(doc => doc.GetValue<string>("Name")).ToList();
+                    return productNames;
+                }
+                else
+                {
+                    return new List<string>(); // No products found
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return new List<string>();
             }
         }
 
