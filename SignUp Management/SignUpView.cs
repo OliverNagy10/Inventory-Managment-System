@@ -58,5 +58,10 @@ namespace Inventory_Managment_System
         {
             LogInButtonClicked?.Invoke(this, EventArgs.Empty);
         }
+
+        private void SignUpView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

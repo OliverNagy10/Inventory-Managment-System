@@ -133,6 +133,7 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.companyNameLabel);
             this.Name = "SignUpView";
             this.Text = "SignUp";
+            this.Load += new System.EventHandler(this.SignUpView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
