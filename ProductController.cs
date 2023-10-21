@@ -23,6 +23,8 @@ namespace Inventory_Managment_System
             // Attach event handler for the Add button click event in the view
             productView.AddButtonClicked += async (sender, args) => await AddProductAsync();
             productView.SaveButtonClicked += async (sender, args) => await SaveProductAsync();
+            productView.DeleteButtonClicked += async (sender, args) => await SaveProductAsync();
+
         }
 
         public async Task AddProductAsync()
@@ -63,6 +65,35 @@ namespace Inventory_Managment_System
             else
             {
                 productView.ShowSuccess(resultMessage);
+            }
+        }
+
+        public async Task DeleteProductAsync()
+        {
+            string productName = productView.GetSearchQuery();
+
+            if (!string.IsNullOrEmpty(productName))
+            {
+                var resultMessage = await productModel.DeleteProductAsync(productName);
+
+                if (resultMessage.Contains("Error"))
+                {
+                    productView.ShowError(resultMessage);
+                }
+                else
+                {
+                    productView.ShowSuccess(resultMessage);
+                    // Clear the text fields or take any other necessary actions after deletion
+                    productView.SetName(string.Empty);
+                    productView.SetDescription(string.Empty);
+                    productView.SetSupplier(string.Empty);
+                    productView.SetPrice(0);
+                    productView.SetQuantity(0);
+                }
+            }
+            else
+            {
+                productView.ShowError("Please enter a product name to delete.");
             }
         }
 

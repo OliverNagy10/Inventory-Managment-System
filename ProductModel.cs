@@ -70,6 +70,49 @@ namespace Inventory_Managment_System
             }
         }
 
+        public async Task<string> DeleteProductAsync(string productName)
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return "User is not authenticated.";
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve the product document with the specified name
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Name", productName).GetSnapshotAsync();
+
+                if (querySnapshot.Count == 1)
+                {
+                    // Retrieve the product document reference
+                    DocumentReference productDocumentRef = querySnapshot.Documents[0].Reference;
+
+                    // Delete the product document
+                    await productDocumentRef.DeleteAsync();
+
+                    return "Product deleted successfully.";
+                }
+                else
+                {
+                    return "Product not found.";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "An error occurred: " + ex.Message;
+            }
+        }
+
+
         public async Task<string> UpdateProductAsync(string originalName, string newName, string description, string supplier, double price, int quantity)
         {
             try
