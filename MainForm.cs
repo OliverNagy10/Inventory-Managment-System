@@ -25,25 +25,38 @@ namespace Inventory_Managment_System
 
 
 
+
             
             
         }
-
         public void InitiateLogin()
         {
             loginModel = new LoginModel();
             login = new LoginView();
-            loginController = new LoginController(login, loginModel,this);
+            loginController = new LoginController(login, loginModel, this);
             // Add the LoginView to the panel
             panel1.Controls.Add(login);
+            signUp.Visible = false;
             login.Visible = true;
+
+
+        }
+
+        public void ProgramStart()
+        {
+            loginModel = new LoginModel();
+            login = new LoginView();
+            loginController = new LoginController(login, loginModel,this);
+            panel1.Controls.Add(login);
+            login.Visible = true;
+            
         }
 
         public void InitiateSignUp()
         {
             signUpModel = new SignUpModel();
             signUp = new SignUpView();
-            signUpController = new SignUpController(signUp, signUpModel);
+            signUpController = new SignUpController(signUp, signUpModel ,this);
             panel1.Controls.Add(signUp);
             login.Visible = false;
             signUp.Visible = true;

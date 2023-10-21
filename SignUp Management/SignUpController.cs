@@ -10,11 +10,13 @@ namespace Inventory_Management_System
     {
         private SignUpView view;
         private SignUpModel model;
+        private MainForm mainForm;
 
-        public SignUpController(SignUpView view, SignUpModel model)
+        public SignUpController(SignUpView view, SignUpModel model, MainForm mainForm)
         {
             this.view = view;
             this.model = model;
+            this.mainForm = mainForm;
 
             // Attach event handlers in the view
             view.SignUpButtonClicked += async (sender, e) => await SignUpButtonClickedAsync();
@@ -48,7 +50,7 @@ namespace Inventory_Management_System
 
         private void LogInButtonClicked(object sender, EventArgs e)
         {
-            // Show the Login form
+            mainForm.InitiateLogin();
             
         }
     }

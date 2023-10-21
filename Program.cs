@@ -22,7 +22,7 @@ namespace Inventory_Managment_System
             mainForm = new MainForm();
 
             // Call the InitiateLogin method on the existing MainForm instance
-            mainForm.InitiateLogin();
+            mainForm.ProgramStart();
 
             Application.Run(mainForm);
 
