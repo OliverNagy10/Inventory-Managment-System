@@ -16,7 +16,10 @@ namespace Inventory_Managment_System
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\inventory-management-sys-df9e8-firebase-adminsdk-bjow6-42ab060a6b.json");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignUp());
+            LoginFormView loginForm = new LoginFormView();
+            LoginModel loginModel = new LoginModel();
+            LoginController loginController = new LoginController(loginForm, loginModel);
+            Application.Run(loginForm);
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", null);
         }
     }

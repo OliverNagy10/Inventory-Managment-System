@@ -1,3 +1,10 @@
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Dashboard.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Management_System.LoginFormView.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.ProductManagementView.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Properties.Resources.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.SignUpView.resources
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.GenerateResource.cache
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CoreCompileInputs.cache
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\grpc_csharp_ext.x86.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\grpc_csharp_ext.x64.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\libgrpc_csharp_ext.x64.so
@@ -97,13 +104,6 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.ValueTuple.xml
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Dashboard.resources
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Management_System.LoginFormView.resources
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.ProductManagementView.resources
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Properties.Resources.resources
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.SignUp.resources
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.GenerateResource.cache
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CoreCompileInputs.cache
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CopyComplete
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.exe
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.pdb

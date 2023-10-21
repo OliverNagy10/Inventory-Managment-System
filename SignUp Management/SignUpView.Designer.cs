@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory_Managment_System
 {
-    partial class SignUp
+    partial class SignUpView
     {
         /// <summary>
         /// Required designer variable.
@@ -96,6 +96,7 @@ namespace Inventory_Managment_System
             this.createButton.TabIndex = 6;
             this.createButton.Text = "Create An Account ";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // alreadyHaveLabel
             // 
@@ -114,9 +115,9 @@ namespace Inventory_Managment_System
             this.logInButton.TabIndex = 8;
             this.logInButton.Text = "Log In";
             this.logInButton.UseVisualStyleBackColor = true;
-            this.logInButton.Click += new System.EventHandler(this.LogInClick);
+            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
-            // SignUp
+            // SignUpView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,9 +131,8 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.companyEmailLabel);
             this.Controls.Add(this.companyNameLabel);
-            this.Name = "SignUp";
+            this.Name = "SignUpView";
             this.Text = "SignUp";
-          
             this.ResumeLayout(false);
             this.PerformLayout();
 

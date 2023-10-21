@@ -47,9 +47,11 @@ namespace Inventory_Management_System
 
         private void SignUpButtonClicked(object sender, EventArgs e)
         {
-            // Show the Sign-Up form
-            view.Hide(); // Hide the LoginForm
-            SignUp signUpForm = new SignUp();
+            // Show the Login form
+            view.Hide(); // Hide the SignUp form
+            SignUpView signUpForm = new SignUpView();
+            SignUpModel signUpModel = new SignUpModel();
+            SignUpController signUpController = new SignUpController(signUpForm, signUpModel);
             signUpForm.Show();
         }
     }

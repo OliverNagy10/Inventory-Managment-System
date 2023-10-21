@@ -1,42 +1,21 @@
-﻿using Google.Cloud.Firestore;
-using Inventory_Management_System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
-using System.Windows.Forms;
+using System.Threading.Tasks;
+using Google.Cloud.Firestore;
+using Inventory_Managment_System;
 
-namespace Inventory_Managment_System
+namespace Inventory_Management_System
 {
-    public partial class SignUp : Form
+    public class SignUpModel
     {
-        FirestoreDb db = FirestoreDb.Create("inventory-management-sys-df9e8");
         private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0"; // Replace with your Firebase project's API key
         private const string FirebaseSignUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FirebaseApiKey;
+        private FirestoreDb db = FirestoreDb.Create("inventory-management-sys-df9e8");
 
-        public SignUp()
+        public async Task<SignInResponse> SignUpAsync(string email, string password, string companyName)
         {
-            InitializeComponent();
-            InitializeFirebase();
-        }
-
-        private void InitializeFirebase()
-        {
-            // No FirebaseAdmin initialization needed for this approach
-        }
-
-        private async void SignUp_Load(object sender, EventArgs e)
-        {
-            string email = companyEmailBox.Text;
-            string password = passwordBox.Text;
-            string companyName = companyNameBox.Text;
-
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-            {
-                MessageBox.Show("Please enter both email and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             try
             {
                 var signUpData = new
@@ -80,41 +59,19 @@ namespace Inventory_Managment_System
                             // Add product details here if needed
                         });
 
-                        MessageBox.Show("Sign-up successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Optionally, you can proceed with additional actions, e.g., opening the login form or performing other actions.
-
-                        // Note: You may want to add the user to your Firestore database at this point.
+                        return signUpResponse;
                     }
                     else
                     {
                         var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(await response.Content.ReadAsStringAsync());
-                        MessageBox.Show("Sign-up failed: " + errorResponse.error.message, "Sign-up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        throw new Exception("Sign-up failed: " + errorResponse.error.message);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Log the error for debugging
-                Console.WriteLine("An error occurred: " + ex.ToString());
-                // Handle other exceptions
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception("An error occurred: " + ex.Message);
             }
         }
-
-        private void companyEmailBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void LogInClick(object sender, EventArgs e)
-        {
-            LoginFormView view = new LoginFormView();
-            LoginModel model = new LoginModel();
-            LoginController login = new LoginController(view, model);
-            view.Show();
-            this.Hide();
-        }
-
-        
     }
 }
