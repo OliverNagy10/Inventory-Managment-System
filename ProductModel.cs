@@ -1,40 +1,32 @@
-﻿using System;
-using System.Windows.Forms;
-using Google.Cloud.Firestore;
+﻿using Google.Cloud.Firestore;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Inventory_Managment_System
 {
-    public partial class ProductManagement : Form
+    public class ProductModel
     {
-        FirestoreDb db;
-        string IDToken;
+        private FirestoreDb db;
+        private string IDToken;
 
-        public ProductManagement(FirestoreDb firestoreDb , string idtoken)
+        public ProductModel(FirestoreDb firestoreDb, string idToken)
         {
-            IDToken = idtoken;
-            InitializeComponent();
             db = firestoreDb;
+            IDToken = idToken;
         }
 
-        private async void addButton_Click(object sender, EventArgs e)
+        public async Task<string> AddProductAsync(string productName, string description, string supplier, double price, int quantity)
         {
             // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = GetUserIdFromFirebaseAuthentication();
+            var userId = await GetUserIdFromFirebaseAuthenticationAsync();
 
             if (userId == null)
             {
-                MessageBox.Show("User is not authenticated.");
-                return;
+                return "User is not authenticated.";
             }
-
-            string productName = nameBox.Text;
-            string description = descriptionBox.Text;
-            string supplier = supplierBox.Text;
-            double price = double.Parse(priceBox.Text);
-            int quantity = int.Parse(quantityBox.Text);
 
             try
             {
@@ -44,16 +36,18 @@ namespace Inventory_Managment_System
                 // Get a reference to the "products" collection within the company's document
                 CollectionReference productsCollection = companyRef.Collection("products");
 
-                // Query to check if a product with the same name already exists
+                // Check if a product with the same name already exists
                 QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Name", productName).GetSnapshotAsync();
 
                 if (querySnapshot.Count > 0)
                 {
-                    MessageBox.Show("Product with the same name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return "Product with the same name already exists.";
                 }
                 else
                 {
-                    // Create a new product document with the provided data
+                    // Create a new product document with the product name as the document ID
+                    DocumentReference newProductRef = productsCollection.Document(productName);
+
                     var newProduct = new
                     {
                         Name = productName,
@@ -64,23 +58,19 @@ namespace Inventory_Managment_System
                     };
 
                     // Add the new product document to the "products" collection
-                    await productsCollection.AddAsync(newProduct);
+                    await newProductRef.SetAsync(newProduct);
 
-                    // Optionally, you can refresh the product list or show a success message.
-                    // RefreshProductList(); // Implement this function to update the product list
-
-                    MessageBox.Show("Product added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return "Product added successfully.";
                 }
             }
             catch (Exception ex)
             {
-                // Handle any exceptions, e.g., invalid input or database errors
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "An error occurred: " + ex.Message;
             }
         }
 
 
-        private string GetUserIdFromFirebaseAuthentication()
+        private async Task<string> GetUserIdFromFirebaseAuthenticationAsync()
         {
             // Replace with your Firebase project's API key
             string apiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";
@@ -98,11 +88,6 @@ namespace Inventory_Managment_System
 
             string userId = responseJson?.users?[0]?.localId;
             return userId;
-        }
-
-        private void ProductManagement_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

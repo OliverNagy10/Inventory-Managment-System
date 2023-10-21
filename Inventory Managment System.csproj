@@ -185,12 +185,14 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductManagement.cs">
+    <Compile Include="ProductController.cs" />
+    <Compile Include="ProductManagementView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductManagement.Designer.cs">
-      <DependentUpon>ProductManagement.cs</DependentUpon>
+    <Compile Include="ProductManagementView.Designer.cs">
+      <DependentUpon>ProductManagementView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignInResponse.cs" />
@@ -206,8 +208,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductManagement.resx">
-      <DependentUpon>ProductManagement.cs</DependentUpon>
+    <EmbeddedResource Include="ProductManagementView.resx">
+      <DependentUpon>ProductManagementView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

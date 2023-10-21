@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory_Managment_System
 {
-    partial class ProductManagement
+    partial class ProductManagementView
     {
         /// <summary>
         /// Required designer variable.
@@ -221,7 +221,7 @@ namespace Inventory_Managment_System
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // ProductManagement
+            // ProductManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,9 +246,9 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.ProductScrollBar1);
             this.Controls.Add(this.ProductGridView);
             this.Controls.Add(this.ProductsLabel);
-            this.Name = "ProductManagement";
+            this.Name = "ProductManagementView";
             this.Text = "ProductManagement";
-            this.Load += new System.EventHandler(this.ProductManagement_Load);
+            this.Load += new System.EventHandler(this.ProductManagementView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
