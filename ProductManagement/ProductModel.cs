@@ -271,6 +271,61 @@ namespace Inventory_Managment_System
             }
         }
 
+        public async Task<string> UpdateProductQuantityAsync(string productName, int quantityChange)
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return "User is not authenticated.";
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve the product document with the specified name
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Name", productName).GetSnapshotAsync();
+
+                if (querySnapshot.Count == 1)
+                {
+                    // Retrieve the product document reference
+                    DocumentReference productDocumentRef = querySnapshot.Documents[0].Reference;
+
+                    // Retrieve the current quantity
+                    int currentQuantity = querySnapshot.Documents[0].GetValue<int>("Quantity");
+
+                    // Calculate the new quantity
+                    int newQuantity = currentQuantity + quantityChange;
+
+                    if (newQuantity < 0)
+                    {
+                        return "Quantity cannot be negative.";
+                    }
+
+                    // Update the quantity in the product document
+                    await productDocumentRef.UpdateAsync(new Dictionary<string, object>
+            {
+                { "Quantity", newQuantity }
+            });
+
+                    return "Product quantity updated successfully.";
+                }
+                else
+                {
+                    return "Product not found.";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "An error occurred: " + ex.Message;
+            }
+        }
 
 
         private async Task<string> GetUserIdFromFirebaseAuthenticationAsync()

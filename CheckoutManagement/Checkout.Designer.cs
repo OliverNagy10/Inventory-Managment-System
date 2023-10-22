@@ -33,10 +33,10 @@ namespace Inventory_Managment_System
             this.payWithCashButton = new System.Windows.Forms.Button();
             this.payWithCardButton = new System.Windows.Forms.Button();
             this.AmountHolderLabel = new System.Windows.Forms.Label();
-            this.barcodeTexBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.barcodeLabel = new System.Windows.Forms.Label();
             this.addItemButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.basketListView = new System.Windows.Forms.ListView();
             this.removeFromBasketButtom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -76,12 +76,12 @@ namespace Inventory_Managment_System
             this.AmountHolderLabel.TabIndex = 4;
             this.AmountHolderLabel.Text = "£";
             // 
-            // barcodeTexBox
+            // nameTextBox
             // 
-            this.barcodeTexBox.Location = new System.Drawing.Point(583, 38);
-            this.barcodeTexBox.Name = "barcodeTexBox";
-            this.barcodeTexBox.Size = new System.Drawing.Size(180, 22);
-            this.barcodeTexBox.TabIndex = 5;
+            this.nameTextBox.Location = new System.Drawing.Point(583, 38);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(180, 22);
+            this.nameTextBox.TabIndex = 5;
             // 
             // barcodeLabel
             // 
@@ -100,15 +100,16 @@ namespace Inventory_Managment_System
             this.addItemButton.TabIndex = 7;
             this.addItemButton.Text = "Add to basket";
             this.addItemButton.UseVisualStyleBackColor = true;
+            this.addItemButton.Click += new System.EventHandler(this.addItemButton_Click);
             // 
-            // listView1
+            // basketListView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(107, 140);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(981, 274);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.basketListView.HideSelection = false;
+            this.basketListView.Location = new System.Drawing.Point(107, 140);
+            this.basketListView.Name = "basketListView";
+            this.basketListView.Size = new System.Drawing.Size(981, 274);
+            this.basketListView.TabIndex = 8;
+            this.basketListView.UseCompatibleStateImageBehavior = false;
             // 
             // removeFromBasketButtom
             // 
@@ -118,22 +119,24 @@ namespace Inventory_Managment_System
             this.removeFromBasketButtom.TabIndex = 9;
             this.removeFromBasketButtom.Text = "Remove from basket";
             this.removeFromBasketButtom.UseVisualStyleBackColor = true;
+            this.removeFromBasketButtom.Click += new System.EventHandler(this.removeFromBasketButton_Click);
             // 
             // Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.removeFromBasketButtom);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.basketListView);
             this.Controls.Add(this.addItemButton);
             this.Controls.Add(this.barcodeLabel);
-            this.Controls.Add(this.barcodeTexBox);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.AmountHolderLabel);
             this.Controls.Add(this.payWithCardButton);
             this.Controls.Add(this.payWithCashButton);
             this.Controls.Add(this.TotalLabel);
             this.Name = "Checkout";
             this.Size = new System.Drawing.Size(1193, 605);
+            this.Load += new System.EventHandler(this.Checkout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,10 +148,10 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.Button payWithCashButton;
         private System.Windows.Forms.Button payWithCardButton;
         private System.Windows.Forms.Label AmountHolderLabel;
-        private System.Windows.Forms.TextBox barcodeTexBox;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label barcodeLabel;
         private System.Windows.Forms.Button addItemButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView basketListView;
         private System.Windows.Forms.Button removeFromBasketButtom;
     }
 }

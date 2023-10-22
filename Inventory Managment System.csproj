@@ -211,6 +211,8 @@
     <Compile Include="ProductManagement\ProductModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales Manager\Basket.cs" />
+    <Compile Include="Sales Manager\SalesManager.cs" />
     <Compile Include="SignUp Management\SignInResponse.cs" />
     <Compile Include="SignUp Management\SignUpController.cs" />
     <Compile Include="SignUp Management\SignUpModel.cs" />

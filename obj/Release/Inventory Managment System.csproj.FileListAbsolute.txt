@@ -97,6 +97,7 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.ValueTuple.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Checkout.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Dashboard.DashboardView.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.LogIn_Management.LoginView.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.MainForm.resources
@@ -108,5 +109,3 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\ob
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CopyComplete
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.exe
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.pdb
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csprojAssemblyReference.cache
-C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Checkout.resources

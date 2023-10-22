@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Cloud.Firestore;
+using Inventory_Managment_System.Sales_Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +49,12 @@ namespace Inventory_Managment_System.Dashboard
         {
 
             mainForm.InitiateProductManager(IDToken);
+        }
+
+
+        private void Checkout_Click(object sender, EventArgs e)
+        {
+            mainForm.InitiateCheckout(IDToken);
         }
 
         private void DashboardView_Load(object sender, EventArgs e)

@@ -3,6 +3,7 @@ using Inventory_Management_System;
 using Inventory_Managment_System.Dashboard;
 using Inventory_Managment_System.LogIn_Management;
 using Inventory_Managment_System.ProductManagement;
+using Inventory_Managment_System.Sales_Manager;
 using Inventory_Managment_System.SignUp_Management;
 using System;
 using System.Windows.Forms;
@@ -92,6 +93,19 @@ namespace Inventory_Managment_System
 
 
 
+        }
+
+        public void InitiateCheckout(string IDToken)
+        {
+
+
+            FirestoreDb firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
+            ProductModel productModel = new ProductModel(firestoreDb, IDToken);
+            SalesManager salesManager = new SalesManager(productModel);
+            Checkout checkout = new Checkout(salesManager);
+            panel1.Controls.Add(checkout);
+            DashboardView.Visible = false;
+            checkout.Visible = true; 
         }
 
         public void InitiateProductManager(string IDToken)
