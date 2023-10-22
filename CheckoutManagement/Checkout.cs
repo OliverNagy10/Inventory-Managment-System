@@ -1,18 +1,12 @@
 ﻿using Inventory_Managment_System.Sales_Manager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory_Managment_System
 {
     public partial class Checkout : UserControl
     {
+       
         private SalesManager salesManager;
         public Checkout(SalesManager manager)
         {
@@ -112,14 +106,16 @@ namespace Inventory_Managment_System
         }
 
 
-
-
-
-
-
-        private void AmountHolderLabel_Click(object sender, EventArgs e)
+        private void PayPalLoginButton_Click(object sender, EventArgs e)
         {
-
+            // Navigate to the PayPal login page when the form loads
+            webBrowser1.Navigate(new Uri($"https://www.paypal.com/signin/authorize?response_type=code&client_id={ClientId}&redirect_uri={RedirectUri}&scope=openid"));
         }
+
+       
+        }
+        
     }
-}
+
+
+

@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Stripe;
+
 
 namespace Inventory_Managment_System.Sales_Manager
 {
@@ -130,8 +132,13 @@ namespace Inventory_Managment_System.Sales_Manager
         }
 
 
+      
 
-        public async Task UpdateProductQuantitiesAsync()
+
+
+
+
+    public async Task UpdateProductQuantitiesAsync()
         {
             foreach (var item in basket)
             {

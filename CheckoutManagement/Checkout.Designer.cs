@@ -39,6 +39,8 @@ namespace Inventory_Managment_System
             this.basketListView = new System.Windows.Forms.ListView();
             this.removeFromBasketButtom = new System.Windows.Forms.Button();
             this.DollarLabel = new System.Windows.Forms.Label();
+            this.StripeLoginButton = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // TotalLabel
@@ -52,7 +54,7 @@ namespace Inventory_Managment_System
             // 
             // payWithCashButton
             // 
-            this.payWithCashButton.Location = new System.Drawing.Point(106, 554);
+            this.payWithCashButton.Location = new System.Drawing.Point(31, 554);
             this.payWithCashButton.Name = "payWithCashButton";
             this.payWithCashButton.Size = new System.Drawing.Size(123, 23);
             this.payWithCashButton.TabIndex = 2;
@@ -62,12 +64,13 @@ namespace Inventory_Managment_System
             // 
             // payWithCardButton
             // 
-            this.payWithCardButton.Location = new System.Drawing.Point(267, 554);
+            this.payWithCardButton.Location = new System.Drawing.Point(495, 554);
             this.payWithCardButton.Name = "payWithCardButton";
             this.payWithCardButton.Size = new System.Drawing.Size(142, 23);
             this.payWithCardButton.TabIndex = 3;
             this.payWithCardButton.Text = "Pay with Card";
             this.payWithCardButton.UseVisualStyleBackColor = true;
+            this.payWithCardButton.Visible = false;
             // 
             // AmountHolderLabel
             // 
@@ -77,7 +80,6 @@ namespace Inventory_Managment_System
             this.AmountHolderLabel.Size = new System.Drawing.Size(28, 17);
             this.AmountHolderLabel.TabIndex = 4;
             this.AmountHolderLabel.Text = "0.0";
-            this.AmountHolderLabel.Click += new System.EventHandler(this.AmountHolderLabel_Click);
             // 
             // nameTextBox
             // 
@@ -134,10 +136,30 @@ namespace Inventory_Managment_System
             this.DollarLabel.TabIndex = 10;
             this.DollarLabel.Text = "$";
             // 
+            // StripeLoginButton
+            // 
+            this.StripeLoginButton.Location = new System.Drawing.Point(174, 550);
+            this.StripeLoginButton.Name = "StripeLoginButton";
+            this.StripeLoginButton.Size = new System.Drawing.Size(297, 30);
+            this.StripeLoginButton.TabIndex = 11;
+            this.StripeLoginButton.Text = "Login to Paypal to Enable Pay With Card";
+            this.StripeLoginButton.UseVisualStyleBackColor = true;
+            this.StripeLoginButton.Click += new System.EventHandler(this.PayPalLoginButton_Click);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(222, 61);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(250, 250);
+            this.webBrowser1.TabIndex = 12;
+            // 
             // Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.StripeLoginButton);
             this.Controls.Add(this.DollarLabel);
             this.Controls.Add(this.removeFromBasketButtom);
             this.Controls.Add(this.basketListView);
@@ -168,5 +190,7 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.ListView basketListView;
         private System.Windows.Forms.Button removeFromBasketButtom;
         private System.Windows.Forms.Label DollarLabel;
+        private System.Windows.Forms.Button StripeLoginButton;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

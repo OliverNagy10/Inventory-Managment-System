@@ -19,6 +19,7 @@ namespace Inventory_Managment_System
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\inventory-management-sys-df9e8-firebase-adminsdk-bjow6-42ab060a6b.json");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             mainForm = new MainForm();
 
             // Call the InitiateLogin method on the existing MainForm instance

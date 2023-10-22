@@ -5,6 +5,7 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Inventory Managment System.exe.config
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Inventory Managment System.exe
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Inventory Managment System.pdb
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\BraintreeHttp-Dotnet.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Firebase.Auth.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Firebase.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\FirebaseAdmin.dll
@@ -32,7 +33,10 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Nancy.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Newtonsoft.Json.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Source.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Stripe.net.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Buffers.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Collections.Immutable.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Diagnostics.DiagnosticSource.dll
@@ -86,7 +90,9 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Nancy.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Newtonsoft.Json.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Stripe.net.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Buffers.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Collections.Immutable.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Diagnostics.DiagnosticSource.xml
