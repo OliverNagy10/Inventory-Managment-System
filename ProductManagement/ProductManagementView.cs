@@ -41,6 +41,15 @@ namespace Inventory_Managment_System.ProductManagement
             return nameBox.Text;
         }
 
+        public int GetBarcode()
+        {
+            if (int.TryParse(barcodeBox.Text,out int barcode))
+            {
+                return barcode;
+            }
+            return 0; // Default value if parsing fails
+        }
+
         public string GetDescription()
         {
             return descriptionBox.Text;
@@ -73,6 +82,12 @@ namespace Inventory_Managment_System.ProductManagement
         public string GetSearchQuery()
         {
             return SearchBox.Text;
+        }
+
+        // Method to get the search query
+        public void SetBarCode(int barcode)
+        {
+            barcodeBox.Text = barcode.ToString();
         }
 
         // Methods to set values in the view

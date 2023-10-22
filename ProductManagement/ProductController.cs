@@ -39,9 +39,10 @@ namespace Inventory_Managment_System
             string description = productView.GetDescription();
             string supplier = productView.GetSupplier();
             double price = productView.GetPrice();
+            int barcode = productView.GetBarcode();
             int quantity = productView.GetQuantity();
 
-            string resultMessage = await productModel.AddProductAsync(productName, description, supplier, price, quantity);
+            string resultMessage = await productModel.AddProductAsync(productName, description, supplier, price, quantity, barcode);
 
             if (resultMessage.Contains("Error"))
             {
@@ -62,8 +63,9 @@ namespace Inventory_Managment_System
             string supplier = productView.GetSupplier();
             double price = productView.GetPrice();
             int quantity = productView.GetQuantity();
+            int barcode = productView.GetBarcode();
 
-            string resultMessage = await productModel.UpdateProductAsync(productName, name, description, supplier, price, quantity);
+            string resultMessage = await productModel.UpdateProductAsync(productName, name, description, supplier, price, quantity, barcode);
 
             if (resultMessage.Contains("Error"))
             {
@@ -129,8 +131,9 @@ namespace Inventory_Managment_System
                     productView.SetName(productDetails.Item1);
                     productView.SetDescription(productDetails.Item2);
                     productView.SetSupplier(productDetails.Item3);
-                    productView.SetPrice(productDetails.Item4);
-                    productView.SetQuantity(productDetails.Item5);
+                    productView.SetBarCode(productDetails.Item4);
+                    productView.SetPrice(productDetails.Item5);
+                    productView.SetQuantity(productDetails.Item6);
                 }
                 else
                 {

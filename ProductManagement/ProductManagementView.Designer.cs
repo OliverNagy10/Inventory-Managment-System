@@ -49,6 +49,8 @@ namespace Inventory_Managment_System.ProductManagement
             this.addButton = new System.Windows.Forms.Button();
             this.productListView = new System.Windows.Forms.ListView();
             this.productScrollBar = new System.Windows.Forms.VScrollBar();
+            this.barcodeLabel = new System.Windows.Forms.Label();
+            this.barcodeBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ProductsLabel
@@ -133,7 +135,7 @@ namespace Inventory_Managment_System.ProductManagement
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(377, 398);
+            this.priceLabel.Location = new System.Drawing.Point(382, 457);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(43, 19);
             this.priceLabel.TabIndex = 10;
@@ -142,7 +144,7 @@ namespace Inventory_Managment_System.ProductManagement
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(380, 461);
+            this.quantityLabel.Location = new System.Drawing.Point(376, 518);
             this.quantityLabel.Name = "quantityLabel";
             this.quantityLabel.Size = new System.Drawing.Size(70, 19);
             this.quantityLabel.TabIndex = 11;
@@ -178,7 +180,7 @@ namespace Inventory_Managment_System.ProductManagement
             // priceBox
             // 
             this.priceBox.BackColor = System.Drawing.Color.Gray;
-            this.priceBox.Location = new System.Drawing.Point(504, 391);
+            this.priceBox.Location = new System.Drawing.Point(504, 451);
             this.priceBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(100, 25);
@@ -187,7 +189,7 @@ namespace Inventory_Managment_System.ProductManagement
             // quantityBox
             // 
             this.quantityBox.BackColor = System.Drawing.Color.Gray;
-            this.quantityBox.Location = new System.Drawing.Point(504, 454);
+            this.quantityBox.Location = new System.Drawing.Point(504, 512);
             this.quantityBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(100, 25);
@@ -250,11 +252,29 @@ namespace Inventory_Managment_System.ProductManagement
             this.productScrollBar.Size = new System.Drawing.Size(21, 539);
             this.productScrollBar.TabIndex = 21;
             // 
+            // barcodeLabel
+            // 
+            this.barcodeLabel.AutoSize = true;
+            this.barcodeLabel.Location = new System.Drawing.Point(378, 403);
+            this.barcodeLabel.Name = "barcodeLabel";
+            this.barcodeLabel.Size = new System.Drawing.Size(66, 19);
+            this.barcodeLabel.TabIndex = 22;
+            this.barcodeLabel.Text = "Barcode";
+            // 
+            // barcodeBox
+            // 
+            this.barcodeBox.Location = new System.Drawing.Point(504, 400);
+            this.barcodeBox.Name = "barcodeBox";
+            this.barcodeBox.Size = new System.Drawing.Size(200, 25);
+            this.barcodeBox.TabIndex = 23;
+            // 
             // ProductManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.barcodeBox);
+            this.Controls.Add(this.barcodeLabel);
             this.Controls.Add(this.productScrollBar);
             this.Controls.Add(this.productListView);
             this.Controls.Add(this.addButton);
@@ -308,5 +328,7 @@ namespace Inventory_Managment_System.ProductManagement
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ListView productListView;
         private System.Windows.Forms.VScrollBar productScrollBar;
+        private System.Windows.Forms.Label barcodeLabel;
+        private System.Windows.Forms.TextBox barcodeBox;
     }
 }

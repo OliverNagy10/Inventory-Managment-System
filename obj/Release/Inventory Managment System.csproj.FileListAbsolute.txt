@@ -108,3 +108,5 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\ob
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csproj.CopyComplete
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.exe
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.pdb
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory Managment System.csprojAssemblyReference.cache
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Checkout.resources
