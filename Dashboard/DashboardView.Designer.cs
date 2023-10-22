@@ -1,14 +1,14 @@
 ﻿
-namespace Inventory_Managment_System
+namespace Inventory_Managment_System.Dashboard
 {
-    partial class Dashboard
+    partial class DashboardView
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -237,8 +237,8 @@ namespace Inventory_Managment_System
             this.Controls.Add(this.runningLowLabel);
             this.Controls.Add(this.inventoryValueLabel);
             this.Controls.Add(this.label1);
-            this.Name = "Dashboard";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Name = "DashboardView";
+            
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BarChart)).EndInit();
@@ -250,6 +250,7 @@ namespace Inventory_Managment_System
         }
 
         #endregion
+
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label inventoryValueLabel;

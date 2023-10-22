@@ -42,19 +42,19 @@ namespace Inventory_Management_System
                         // Set the document ID to the user's ID token
                         DocumentReference newCompanyRef = companiesCollection.Document(signUpResponse.localId);
 
-                        newCompanyRef.SetAsync(new
+          await   newCompanyRef.SetAsync(new
                         {
                             name = companyName,
                             email = email
                         });
 
                         // Add "users" and "products" collections to the new document
-                        newCompanyRef.Collection("users").Document("initialUser").CreateAsync(new
+                await   newCompanyRef.Collection("users").Document("initialUser").CreateAsync(new
                         {
                             // Add user details here if needed
                         });
 
-                        newCompanyRef.Collection("products").Document("initialProduct").CreateAsync(new
+                 await  newCompanyRef.Collection("products").Document("initialProduct").CreateAsync(new
                         {
                             // Add product details here if needed
                         });

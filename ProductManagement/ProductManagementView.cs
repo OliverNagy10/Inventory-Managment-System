@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Managment_System
+namespace Inventory_Managment_System.ProductManagement
 {
-    public partial class ProductManagementView : Form
+    public partial class ProductManagementView : UserControl
     {
         // Event for the Add button click
         public event EventHandler AddButtonClicked;
@@ -23,10 +29,14 @@ namespace Inventory_Managment_System
             searchButton.Click += (sender, e) => SearchButtonClicked?.Invoke(this, EventArgs.Empty);
             saveButton.Click += (sender, e) => SaveButtonClicked?.Invoke(this, EventArgs.Empty);
             deleteButton.Click += (sender, e) => DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
-        }
 
-        // Methods to get input from the user
-        public string GetName()
+        
+
+       
+    }
+
+    // Methods to get input from the user
+    public string GetName()
         {
             return nameBox.Text;
         }
@@ -154,7 +164,14 @@ namespace Inventory_Managment_System
             }
         }
 
+        private void ProductManagementView1_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void ProductManagementView_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

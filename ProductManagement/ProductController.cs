@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Cloud.Firestore;
+using Inventory_Managment_System.ProductManagement;
 
 namespace Inventory_Managment_System
 {
@@ -11,13 +12,15 @@ namespace Inventory_Managment_System
         private ProductManagementView productView;
         private FirestoreDb db;
         private string IDToken;
+        private MainForm mainForm;
 
-        public ProductController(FirestoreDb firestoreDb, string idToken, ProductManagementView view)
+        public ProductController(FirestoreDb firestoreDb, string idToken, ProductManagementView view, MainForm mainForm)
         {
             db = firestoreDb;
             IDToken = idToken;
             productModel = new ProductModel(db, IDToken);
             productView = view;
+            this.mainForm = mainForm;
 
             productView.SearchButtonClicked += async (sender, args) => await SearchProductAsync();
             // Attach event handler for the Add button click event in the view

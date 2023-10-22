@@ -35,11 +35,7 @@ namespace Inventory_Management_System
 
                 // Handle the successful sign-in here
                 view.ShowSuccess("Login successful.");
-
-                // Navigate to the Dashboard with the ID token
-                Dashboard dashboard = new Dashboard(signInResponse.idToken);
-                dashboard.Show();
-                view.Hide(); // Hide the LoginForm
+                mainForm.InitiateDashboardView(signInResponse.idToken);
             }
             catch (Exception ex)
             {

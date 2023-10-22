@@ -15,6 +15,9 @@ namespace Inventory_Managment_System.LogIn_Management
         // Event for the login button click
         public event EventHandler LoginButtonClicked;
         public event EventHandler SignUpButtonClicked;
+        // Define your TableLayoutPanel and other controls.
+      
+
 
         public LoginView()
         {
@@ -23,6 +26,11 @@ namespace Inventory_Managment_System.LogIn_Management
             // Attach the button click event to the controller's method
             logInButton.Click += (sender, e) => LoginButtonClicked?.Invoke(this, EventArgs.Empty);
             signUpButton.Click += (sender, e) => SignUpButtonClicked?.Invoke(this, EventArgs.Empty);
+            // Center the controls in the panel
+       
+
+
+
         }
 
         // Existing code for InitializeFirebase, button1_Click, and SignUpClick methods
@@ -50,10 +58,17 @@ namespace Inventory_Managment_System.LogIn_Management
 
         private void LoginView_Load(object sender, EventArgs e)
         {
+            // Calculate the center position based on the form's size
+           
 
         }
 
         private void LoginView_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -171,11 +171,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard\Dashboard.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Dashboard\DashboardView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dashboard\Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="Dashboard\DashboardView.Designer.cs">
+      <DependentUpon>DashboardView.cs</DependentUpon>
     </Compile>
     <Compile Include="ErrorInfo.cs" />
     <Compile Include="FirebaseAuthLink.cs" />
@@ -196,7 +196,7 @@
     <Compile Include="ProductManagement\Product.cs" />
     <Compile Include="ProductManagement\ProductController.cs" />
     <Compile Include="ProductManagement\ProductManagementView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ProductManagement\ProductManagementView.Designer.cs">
       <DependentUpon>ProductManagementView.cs</DependentUpon>
@@ -213,8 +213,8 @@
     <Compile Include="SignUp Management\SignUpView.Designer.cs">
       <DependentUpon>SignUpView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dashboard\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard\DashboardView.resx">
+      <DependentUpon>DashboardView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn Management\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>

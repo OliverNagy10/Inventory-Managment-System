@@ -1,6 +1,4 @@
-﻿using Google.Cloud.Firestore;
-using Inventory_Management_System;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace Inventory_Managment_System
+
+namespace Inventory_Managment_System.Dashboard
 {
-    public partial class Dashboard : Form
+    public partial class DashboardView : UserControl
     {
         string IDToken;
-        public Dashboard(string idtoken)
+        private MainForm mainForm;
+        public DashboardView
+            (string idtoken, MainForm mainForm)
         {
             IDToken = idtoken;
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
@@ -25,7 +27,7 @@ namespace Inventory_Managment_System
 
         }
 
-        
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -43,8 +45,13 @@ namespace Inventory_Managment_System
 
         private void productMangementButton_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+
             mainForm.InitiateProductManager(IDToken);
+        }
+
+        private void DashboardView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

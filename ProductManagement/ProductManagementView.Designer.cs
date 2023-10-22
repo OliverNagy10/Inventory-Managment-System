@@ -1,14 +1,14 @@
 ﻿
-namespace Inventory_Managment_System
+namespace Inventory_Managment_System.ProductManagement
 {
     partial class ProductManagementView
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -255,7 +255,6 @@ namespace Inventory_Managment_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1182, 1055);
             this.Controls.Add(this.productScrollBar);
             this.Controls.Add(this.productListView);
             this.Controls.Add(this.addButton);
@@ -280,8 +279,8 @@ namespace Inventory_Managment_System
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductManagementView";
-            this.Text = "ProductManagement";
-            this.Load += new System.EventHandler(this.ProductManagementView_Load);
+            this.Size = new System.Drawing.Size(897, 794);
+            this.Load += new System.EventHandler(this.ProductManagementView_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
