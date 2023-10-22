@@ -101,7 +101,7 @@ namespace Inventory_Managment_System
 
             FirestoreDb firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
             ProductModel productModel = new ProductModel(firestoreDb, IDToken);
-            SalesManager salesManager = new SalesManager(productModel);
+            SalesManager salesManager = new SalesManager(productModel,firestoreDb);
             Checkout checkout = new Checkout(salesManager);
             panel1.Controls.Add(checkout);
             DashboardView.Visible = false;

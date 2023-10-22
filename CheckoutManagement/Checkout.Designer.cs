@@ -38,16 +38,17 @@ namespace Inventory_Managment_System
             this.addItemButton = new System.Windows.Forms.Button();
             this.basketListView = new System.Windows.Forms.ListView();
             this.removeFromBasketButtom = new System.Windows.Forms.Button();
+            this.DollarLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TotalLabel
             // 
             this.TotalLabel.AutoSize = true;
-            this.TotalLabel.Location = new System.Drawing.Point(899, 560);
+            this.TotalLabel.Location = new System.Drawing.Point(883, 560);
             this.TotalLabel.Name = "TotalLabel";
-            this.TotalLabel.Size = new System.Drawing.Size(40, 17);
+            this.TotalLabel.Size = new System.Drawing.Size(48, 17);
             this.TotalLabel.TabIndex = 1;
-            this.TotalLabel.Text = "Total";
+            this.TotalLabel.Text = "Total: ";
             // 
             // payWithCashButton
             // 
@@ -57,6 +58,7 @@ namespace Inventory_Managment_System
             this.payWithCashButton.TabIndex = 2;
             this.payWithCashButton.Text = "Pay with Cash";
             this.payWithCashButton.UseVisualStyleBackColor = true;
+            this.payWithCashButton.Click += new System.EventHandler(this.checkoutButton_ClickAsync);
             // 
             // payWithCardButton
             // 
@@ -70,11 +72,12 @@ namespace Inventory_Managment_System
             // AmountHolderLabel
             // 
             this.AmountHolderLabel.AutoSize = true;
-            this.AmountHolderLabel.Location = new System.Drawing.Point(1006, 560);
+            this.AmountHolderLabel.Location = new System.Drawing.Point(948, 560);
             this.AmountHolderLabel.Name = "AmountHolderLabel";
-            this.AmountHolderLabel.Size = new System.Drawing.Size(16, 17);
+            this.AmountHolderLabel.Size = new System.Drawing.Size(28, 17);
             this.AmountHolderLabel.TabIndex = 4;
-            this.AmountHolderLabel.Text = "£";
+            this.AmountHolderLabel.Text = "0.0";
+            this.AmountHolderLabel.Click += new System.EventHandler(this.AmountHolderLabel_Click);
             // 
             // nameTextBox
             // 
@@ -110,6 +113,7 @@ namespace Inventory_Managment_System
             this.basketListView.Size = new System.Drawing.Size(981, 274);
             this.basketListView.TabIndex = 8;
             this.basketListView.UseCompatibleStateImageBehavior = false;
+            this.basketListView.View = System.Windows.Forms.View.List;
             // 
             // removeFromBasketButtom
             // 
@@ -121,10 +125,20 @@ namespace Inventory_Managment_System
             this.removeFromBasketButtom.UseVisualStyleBackColor = true;
             this.removeFromBasketButtom.Click += new System.EventHandler(this.removeFromBasketButton_Click);
             // 
+            // DollarLabel
+            // 
+            this.DollarLabel.AutoSize = true;
+            this.DollarLabel.Location = new System.Drawing.Point(926, 560);
+            this.DollarLabel.Name = "DollarLabel";
+            this.DollarLabel.Size = new System.Drawing.Size(16, 17);
+            this.DollarLabel.TabIndex = 10;
+            this.DollarLabel.Text = "$";
+            // 
             // Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DollarLabel);
             this.Controls.Add(this.removeFromBasketButtom);
             this.Controls.Add(this.basketListView);
             this.Controls.Add(this.addItemButton);
@@ -153,5 +167,6 @@ namespace Inventory_Managment_System
         private System.Windows.Forms.Button addItemButton;
         private System.Windows.Forms.ListView basketListView;
         private System.Windows.Forms.Button removeFromBasketButtom;
+        private System.Windows.Forms.Label DollarLabel;
     }
 }

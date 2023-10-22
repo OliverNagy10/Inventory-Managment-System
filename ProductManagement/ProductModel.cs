@@ -231,6 +231,55 @@ namespace Inventory_Managment_System
             }
         }
 
+        public async Task<(string name, string description, string supplier, int barcode, double price, int quantity)> SearchProductByBarcodeAsync(int productBarcode)
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return (null, null, null, 0, 0.0, 0);
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve the product document with the specified barcode
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("Barcode", productBarcode).GetSnapshotAsync();
+
+                if (querySnapshot.Count == 1)
+                {
+                    // Retrieve the product document data
+                    var productDocument = querySnapshot.Documents[0];
+                    return (
+                        productDocument.GetValue<string>("Name"),
+                        productDocument.GetValue<string>("Description"),
+                        productDocument.GetValue<string>("Supplier"),
+                        productDocument.GetValue<int>("Barcode"),
+                        productDocument.GetValue<double>("Price"),
+                        productDocument.GetValue<int>("Quantity")
+                    );
+                }
+                else
+                {
+                    // Product not found or multiple products with the same barcode exist
+                    return (null, null, null, 0, 0, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return (null, null, null, 0, 0, 0);
+            }
+        }
+
+
         public async Task<List<string>> GetAllProductNamesAsync()
         {
             try
@@ -328,7 +377,7 @@ namespace Inventory_Managment_System
         }
 
 
-        private async Task<string> GetUserIdFromFirebaseAuthenticationAsync()
+        public async Task<string> GetUserIdFromFirebaseAuthenticationAsync()
         {
             // Replace with your Firebase project's API key
             string apiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";
