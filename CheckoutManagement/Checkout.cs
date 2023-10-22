@@ -83,6 +83,13 @@ namespace Inventory_Managment_System
 
         }
 
+        private async void checkoutWithCardButton_ClickAsync(object sender, EventArgs e)
+        {
+           
+                    await salesManager.CheckoutWithCardAsync();
+        }
+
+
         private async void checkoutButton_ClickAsync(object sender, EventArgs e)
         {
             // Check if the basket is not empty
@@ -106,12 +113,7 @@ namespace Inventory_Managment_System
         }
 
 
-        private void PayPalLoginButton_Click(object sender, EventArgs e)
-        {
-            // Navigate to the PayPal login page when the form loads
-            webBrowser1.Navigate(new Uri($"https://www.paypal.com/signin/authorize?response_type=code&client_id={ClientId}&redirect_uri={RedirectUri}&scope=openid"));
-        }
-
+       
        
         }
         

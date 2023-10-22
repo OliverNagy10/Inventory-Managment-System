@@ -3,6 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Stripe;
+using Stripe.Checkout;
+using System.Configuration;
+
+
 
 
 namespace Inventory_Managment_System.Sales_Manager
@@ -12,12 +16,18 @@ namespace Inventory_Managment_System.Sales_Manager
         public List<Product> basket;
         private ProductModel productManager;
         private FirestoreDb db;
+       
+
+       
 
         public SalesManager(ProductModel productManager, FirestoreDb firestoreDb)
         {
             basket = new List<Product>();
             this.productManager = productManager;
             db = firestoreDb;
+            // Move the Stripe configuration inside the constructor
+            string stripeApiKey = ConfigurationManager.AppSettings["StripeApiKey"];
+            StripeConfiguration.ApiKey = stripeApiKey;
         }
 
         public async Task AddToBasketAsync(int productBarcode, int quantity)
@@ -81,6 +91,64 @@ namespace Inventory_Managment_System.Sales_Manager
 
         public async Task CheckoutAsync()
         {
+            await CreateSalesDocumentAsync();
+            // Clear the basket
+            basket.Clear();
+
+
+        }
+
+
+        public async Task CheckoutWithCardAsync()
+        {
+            // Create a list of line items for the Stripe payment
+            List<SessionLineItemOptions> lineItems = new List<SessionLineItemOptions>();
+
+            foreach (var item in basket)
+            {
+                lineItems.Add(new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions
+                    {
+                        Currency = "usd", // Replace with your currency
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = item.Name,
+                        },
+                        UnitAmount = (long)(item.Price * 100), // Amount in cents
+                    },
+                    Quantity = item.Quantity
+                });
+            }
+
+            // Create a Stripe session for the payment
+            var options = new SessionCreateOptions
+            {
+                PaymentMethodTypes = new List<string> { "card" },
+                LineItems = lineItems,
+                Mode = "payment",
+                SuccessUrl = "https://yourwebsite.com/success",
+                CancelUrl = "https://yourwebsite.com/cancel"
+            };
+
+            var service = new SessionService();
+            var session = await service.CreateAsync(options);
+
+            // Get the payment link
+            string paymentLink = session.Url;
+
+            // Automatically open the payment link in the default web browser
+            System.Diagnostics.Process.Start(paymentLink);
+
+            // After the Stripe payment is successfully fulfilled, create a sales document and perform other checkout operations
+            await CreateSalesDocumentAsync();
+
+            // Clear the basket
+            basket.Clear();
+        }
+
+        private async Task CreateSalesDocumentAsync()
+        {
             // Get the currently authenticated user's ID
             string userId = await productManager.GetUserIdFromFirebaseAuthenticationAsync();
 
@@ -121,9 +189,6 @@ namespace Inventory_Managment_System.Sales_Manager
                     };
                     await saleItemsCollection.AddAsync(saleItemData);
                 }
-
-                // Clear the basket
-                basket.Clear();
             }
             catch (Exception ex)
             {
@@ -131,14 +196,7 @@ namespace Inventory_Managment_System.Sales_Manager
             }
         }
 
-
-      
-
-
-
-
-
-    public async Task UpdateProductQuantitiesAsync()
+        public async Task UpdateProductQuantitiesAsync()
         {
             foreach (var item in basket)
             {
