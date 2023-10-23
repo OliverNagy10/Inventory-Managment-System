@@ -29,15 +29,15 @@ namespace Inventory_Managment_System.Dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.inventoryValueLabel = new System.Windows.Forms.Label();
             this.runningLowLabel = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@ namespace Inventory_Managment_System.Dashboard
             this.LineChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backButton = new System.Windows.Forms.Button();
             this.productMangementButton = new System.Windows.Forms.Button();
-            this.stockTrackingButton = new System.Windows.Forms.Button();
+            this.checkOutButton = new System.Windows.Forms.Button();
             this.reportsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PieChart)).BeginInit();
@@ -121,50 +121,50 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // BarChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.BarChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.BarChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.BarChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.BarChart.Legends.Add(legend1);
             this.BarChart.Location = new System.Drawing.Point(16, 542);
             this.BarChart.Name = "BarChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.BarChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.BarChart.Series.Add(series1);
             this.BarChart.Size = new System.Drawing.Size(361, 311);
             this.BarChart.TabIndex = 8;
             this.BarChart.Text = "chart1";
             // 
             // PieChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.PieChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.PieChart.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.PieChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.PieChart.Legends.Add(legend2);
             this.PieChart.Location = new System.Drawing.Point(396, 542);
             this.PieChart.Name = "PieChart";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.PieChart.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.PieChart.Series.Add(series2);
             this.PieChart.Size = new System.Drawing.Size(515, 311);
             this.PieChart.TabIndex = 9;
             this.PieChart.Text = "chart1";
             // 
             // LineChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.LineChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.LineChart.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.LineChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.LineChart.Legends.Add(legend3);
             this.LineChart.Location = new System.Drawing.Point(946, 542);
             this.LineChart.Name = "LineChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.LineChart.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.LineChart.Series.Add(series3);
             this.LineChart.Size = new System.Drawing.Size(490, 311);
             this.LineChart.TabIndex = 10;
             this.LineChart.Text = "chart1";
@@ -186,17 +186,15 @@ namespace Inventory_Managment_System.Dashboard
             this.productMangementButton.TabIndex = 12;
             this.productMangementButton.Text = "Product and Stock Management ";
             this.productMangementButton.UseVisualStyleBackColor = true;
-            this.productMangementButton.Click += new System.EventHandler(this.productMangementButton_Click);
             // 
-            // stockTrackingButton
+            // checkOutButton
             // 
-            this.stockTrackingButton.Location = new System.Drawing.Point(324, 26);
-            this.stockTrackingButton.Name = "stockTrackingButton";
-            this.stockTrackingButton.Size = new System.Drawing.Size(189, 32);
-            this.stockTrackingButton.TabIndex = 14;
-            this.stockTrackingButton.Text = "Checkout";
-            this.stockTrackingButton.UseVisualStyleBackColor = true;
-            this.stockTrackingButton.Click += new System.EventHandler(this.Checkout_Click);
+            this.checkOutButton.Location = new System.Drawing.Point(324, 26);
+            this.checkOutButton.Name = "checkOutButton";
+            this.checkOutButton.Size = new System.Drawing.Size(189, 32);
+            this.checkOutButton.TabIndex = 14;
+            this.checkOutButton.Text = "Checkout";
+            this.checkOutButton.UseVisualStyleBackColor = true;
             // 
             // reportsButton
             // 
@@ -212,7 +210,7 @@ namespace Inventory_Managment_System.Dashboard
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.reportsButton);
-            this.Controls.Add(this.stockTrackingButton);
+            this.Controls.Add(this.checkOutButton);
             this.Controls.Add(this.productMangementButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.LineChart);
@@ -227,7 +225,7 @@ namespace Inventory_Managment_System.Dashboard
             this.Controls.Add(this.label1);
             this.Name = "DashboardView";
             this.Size = new System.Drawing.Size(1920, 1080);
-            this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.Load += new System.EventHandler(this.DashboardView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BarChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PieChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineChart)).EndInit();
@@ -251,7 +249,7 @@ namespace Inventory_Managment_System.Dashboard
         private System.Windows.Forms.DataVisualization.Charting.Chart LineChart;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button productMangementButton;
-        private System.Windows.Forms.Button stockTrackingButton;
+        private System.Windows.Forms.Button checkOutButton;
         private System.Windows.Forms.Button reportsButton;
     }
 }

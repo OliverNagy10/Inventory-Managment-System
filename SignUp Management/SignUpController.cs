@@ -1,4 +1,5 @@
-﻿using Inventory_Managment_System;
+﻿using Google.Cloud.Firestore;
+using Inventory_Managment_System;
 using Inventory_Managment_System.SignUp_Management;
 using System;
 using System.Threading.Tasks;
@@ -11,12 +12,16 @@ namespace Inventory_Management_System
         private SignUpView view;
         private SignUpModel model;
         private MainForm mainForm;
+        private FirestoreDb db;
+        private string FirebaseSignUpUrl;
 
-        public SignUpController(SignUpView view, SignUpModel model, MainForm mainForm)
+        public SignUpController(SignUpView view, SignUpModel model, MainForm mainForm, FirestoreDb db ,string FirebaseSignUpUrl)
         {
             this.view = view;
             this.model = model;
             this.mainForm = mainForm;
+            this.db = db;
+            this.FirebaseSignUpUrl = FirebaseSignUpUrl;
 
             // Attach event handlers in the view
             view.SignUpButtonClicked += async (sender, e) => await SignUpButtonClickedAsync();
@@ -31,7 +36,7 @@ namespace Inventory_Management_System
 
             try
             {
-                SignInResponse signUpResponse = await model.SignUpAsync(email, password,companyName);
+                SignInResponse signUpResponse = await model.SignUpAsync(email, password,companyName,db, FirebaseSignUpUrl);
 
                 // Handle the successful sign-up here
                 view.ShowSuccess("Sign-up successful.");

@@ -1,5 +1,6 @@
 ﻿using Google.Cloud.Firestore;
 using Inventory_Management_System;
+using Inventory_Managment_System.Checkout_Management;
 using Inventory_Managment_System.Dashboard;
 using Inventory_Managment_System.LogIn_Management;
 using Inventory_Managment_System.ProductManagement;
@@ -16,23 +17,53 @@ namespace Inventory_Managment_System
         private LoginModel loginModel;
         private LoginController loginController;
 
-        private SignUpView signUp;
+        private SignUpView signUpView;
         private SignUpModel signUpModel;
         private SignUpController signUpController;
+        FirestoreDb firestoreDb;
 
 
         private ProductManagementView productManagementView;
         private ProductController productController;
 
         private DashboardView DashboardView;
+        private DashboardModel dashboardModel;
+        private DashboardController dashboardController;
+
+
+        ProductModel productModel;
+        CheckoutView checkoutView;
         
+
+
+        private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";
+        private const string FirebaseSignInUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + FirebaseApiKey;
+        private const string FirebaseSignUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FirebaseApiKey;
+
 
 
         public MainForm()
         {
             InitializeComponent();
-
+            firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
             this.WindowState = FormWindowState.Maximized;
+
+            login = new LoginView();
+            panel1.Controls.Add(login);
+
+            signUpView = new SignUpView();
+            panel1.Controls.Add(signUpView);
+
+            DashboardView = new DashboardView();
+            panel1.Controls.Add(DashboardView);
+
+
+            productManagementView = new ProductManagementView();
+            panel1.Controls.Add(productManagementView);
+
+            checkoutView = new CheckoutView();
+            panel1.Controls.Add(checkoutView);
+
 
 
 
@@ -41,13 +72,8 @@ namespace Inventory_Managment_System
         }
         public void InitiateLogin()
         {
-            loginModel = new LoginModel();
-            login = new LoginView();
-            loginController = new LoginController(login, loginModel, this);
-            // Add the LoginView to the panel
-            panel1.Controls.Add(login);
-            signUp.Visible = false;
-            
+            DashboardView.Visible = false;
+            signUpView.Visible = false;
             login.Visible = true;
 
 
@@ -56,10 +82,13 @@ namespace Inventory_Managment_System
         public void ProgramStart()
         {
             loginModel = new LoginModel();
-            login = new LoginView();
-            loginController = new LoginController(login, loginModel,this);
+            
+            loginController = new LoginController(login, loginModel,this, FirebaseSignInUrl);
             panel1.Controls.Add(login);
-           
+            DashboardView.Visible = false;
+            productManagementView.Visible = false;
+            signUpView.Visible = false;
+            checkoutView.Visible = false;
             login.Visible = true;
             
         }
@@ -69,11 +98,10 @@ namespace Inventory_Managment_System
         public void InitiateSignUp()
         {
             signUpModel = new SignUpModel();
-            signUp = new SignUpView();
-            signUpController = new SignUpController(signUp, signUpModel ,this);
-            panel1.Controls.Add(signUp);
+            signUpController = new SignUpController(signUpView, signUpModel ,this, firestoreDb, FirebaseSignUpUrl);
+           
             login.Visible = false;
-            signUp.Visible = true;
+            signUpView.Visible = true;
             
 
 
@@ -82,13 +110,15 @@ namespace Inventory_Managment_System
 
         }
 
+       
+
         public void InitiateDashboardView(string IdToken)
         {
-            // Navigate to the DashboardView with the ID token
-            DashboardView = new DashboardView(IdToken, this);
-            panel1.Controls.Add(DashboardView);
+            dashboardModel = new DashboardModel();
+            dashboardController = new DashboardController(DashboardView, dashboardModel, this, IdToken);
+            productManagementView.Visible = false;
+            checkoutView.Visible = false;
             login.Visible = false;
-           
             DashboardView.Visible = true;
 
 
@@ -97,29 +127,26 @@ namespace Inventory_Managment_System
 
         public void InitiateCheckout(string IDToken)
         {
-
-
-            FirestoreDb firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
-            ProductModel productModel = new ProductModel(firestoreDb, IDToken);
-            SalesManager salesManager = new SalesManager(productModel,firestoreDb);
-            Checkout checkout = new Checkout(salesManager);
-            panel1.Controls.Add(checkout);
+            productModel = new ProductModel(firestoreDb,IDToken);
+            CheckoutModel checkout = new CheckoutModel(productModel, firestoreDb);
+            CheckoutController checkoutController = new CheckoutController(checkout, checkoutView, this, IDToken);
+            
             DashboardView.Visible = false;
-            checkout.Visible = true; 
+            checkoutView.Visible = true; 
         }
 
         public void InitiateProductManager(string IDToken)
         {
 
-            FirestoreDb firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");
-            productManagementView = new ProductManagementView();
+           
+           
             productController = new ProductController(firestoreDb, IDToken, productManagementView, this);
-            panel1.Controls.Add(productManagementView);
+      
             DashboardView.Visible = false;
             productManagementView.Visible = true;
 
 
-        } 
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -10,11 +10,11 @@ namespace Inventory_Management_System
 {
     public class SignUpModel
     {
-        private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0"; // Replace with your Firebase project's API key
-        private const string FirebaseSignUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + FirebaseApiKey;
-        private FirestoreDb db = FirestoreDb.Create("inventory-management-sys-df9e8");
+      
+       
+      
 
-        public async Task<SignInResponse> SignUpAsync(string email, string password, string companyName)
+        public async Task<SignInResponse> SignUpAsync(string email, string password, string companyName, FirestoreDb db , string FirebaseSignUpUrl)
         {
             try
             {

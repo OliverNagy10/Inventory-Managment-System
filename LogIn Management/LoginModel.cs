@@ -9,10 +9,8 @@ namespace Inventory_Management_System
 {
     public class LoginModel
     {
-        private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";
-        private const string FirebaseSignInUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + FirebaseApiKey;
 
-        public async Task<SignInResponse> SignInAsync(string email, string password)
+        public async Task<SignInResponse> SignInAsync(string email, string password, string FirebaseSignInUrl)
         {
             try
             {

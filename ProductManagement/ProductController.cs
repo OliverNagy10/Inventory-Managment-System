@@ -27,6 +27,7 @@ namespace Inventory_Managment_System
             productView.AddButtonClicked += async (sender, args) => await AddProductAsync();
             productView.SaveButtonClicked += async (sender, args) => await SaveProductAsync();
             productView.DeleteButtonClicked += async (sender, args) => await SaveProductAsync();
+            productView.BackButtonClicked += async (sender, args) => Back_Click();
 
             // Start loading product names as soon as the controller is created
             GetProductNamesAsync();
@@ -115,6 +116,10 @@ namespace Inventory_Managment_System
             {
                 productView.ShowError("No products found.");
             }
+        }
+        private void Back_Click()
+        {
+            mainForm.InitiateDashboardView(IDToken);
         }
 
         public async Task SearchProductAsync()

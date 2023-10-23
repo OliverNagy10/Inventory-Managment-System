@@ -1,60 +1,23 @@
-﻿using Google.Cloud.Firestore;
-using Inventory_Managment_System.Sales_Manager;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Inventory_Managment_System.Dashboard
 {
     public partial class DashboardView : UserControl
     {
-        string IDToken;
-        private MainForm mainForm;
-        public DashboardView
-            (string idtoken, MainForm mainForm)
+        private DashboardController controller;
+
+        public event EventHandler ProductManagementButtonClicked;
+        public event EventHandler CheckoutButtonClicked;
+        public event EventHandler BackButtonClicked;
+
+        public DashboardView()
         {
-            IDToken = idtoken;
-            this.mainForm = mainForm;
             InitializeComponent();
-        }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stockTrackingButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productMangementButton_Click(object sender, EventArgs e)
-        {
-
-            mainForm.InitiateProductManager(IDToken);
-        }
-
-
-        private void Checkout_Click(object sender, EventArgs e)
-        {
-            mainForm.InitiateCheckout(IDToken);
+            productMangementButton.Click += (sender, e) => ProductManagementButtonClicked?.Invoke(this, EventArgs.Empty);
+            checkOutButton.Click += (sender, e) => CheckoutButtonClicked?.Invoke(this, EventArgs.Empty);
+            backButton.Click += (sender, e) => BackButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
         private void DashboardView_Load(object sender, EventArgs e)

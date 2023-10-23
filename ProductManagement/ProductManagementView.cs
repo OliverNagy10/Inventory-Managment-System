@@ -17,6 +17,8 @@ namespace Inventory_Managment_System.ProductManagement
         public event EventHandler SearchButtonClicked;
         public event EventHandler SaveButtonClicked;
         public event EventHandler DeleteButtonClicked;
+        public event EventHandler BackButtonClicked;
+
 
         public ProductManagementView()
         {
@@ -29,11 +31,12 @@ namespace Inventory_Managment_System.ProductManagement
             searchButton.Click += (sender, e) => SearchButtonClicked?.Invoke(this, EventArgs.Empty);
             saveButton.Click += (sender, e) => SaveButtonClicked?.Invoke(this, EventArgs.Empty);
             deleteButton.Click += (sender, e) => DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
+            backButton.Click += (sender, e) => BackButtonClicked?.Invoke(this, EventArgs.Empty);
 
-        
 
-       
-    }
+
+
+        }
 
     // Methods to get input from the user
     public string GetName()
@@ -151,6 +154,11 @@ namespace Inventory_Managment_System.ProductManagement
             DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+           BackButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
         public void ClearTextFields()
         {
             nameBox.Clear();
@@ -178,6 +186,8 @@ namespace Inventory_Managment_System.ProductManagement
                 productListView.TopItem = productListView.Items[productScrollBar.Value];
             }
         }
+
+        
 
         private void ProductManagementView1_Load(object sender, EventArgs e)
         {

@@ -11,13 +11,16 @@ namespace Inventory_Management_System
         private LoginView view;
         private LoginModel model;
         private MainForm mainForm; // Add a field to store the MainForm instance
+        private string IDToken;
+        private string FirebaseSignInUrl;
 
 
-        public LoginController(LoginView view, LoginModel model,MainForm mainForm)
+        public LoginController(LoginView view, LoginModel model,MainForm mainForm, string FirebaseSignInUrl)
         {
             this.view = view;
             this.model = model;
             this.mainForm = mainForm; // Store the MainForm instance
+            this.FirebaseSignInUrl = FirebaseSignInUrl;
 
             // Attach event handlers in the view
             view.LoginButtonClicked += async (sender, e) => await LoginButtonClickedAsync();
@@ -31,11 +34,12 @@ namespace Inventory_Management_System
 
             try
             {
-                SignInResponse signInResponse = await model.SignInAsync(email, password);
+                SignInResponse signInResponse = await model.SignInAsync(email, password,FirebaseSignInUrl);
 
                 // Handle the successful sign-in here
                 view.ShowSuccess("Login successful.");
-                mainForm.InitiateDashboardView(signInResponse.idToken);
+                IDToken = signInResponse.idToken;
+                mainForm.InitiateDashboardView(IDToken);
             }
             catch (Exception ex)
             {
@@ -48,6 +52,13 @@ namespace Inventory_Management_System
         {
            
             mainForm.InitiateSignUp();
+        }
+
+        public string GetIDToken()
+        {
+
+
+            return IDToken;
         }
     }
 }

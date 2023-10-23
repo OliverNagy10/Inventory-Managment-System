@@ -5,29 +5,36 @@ using System.Threading.Tasks;
 using Stripe;
 using Stripe.Checkout;
 using System.Configuration;
-
-
-
+using Inventory_Managment_System.Checkout_Management;
 
 namespace Inventory_Managment_System.Sales_Manager
 {
-    public class SalesManager
+    public class CheckoutModel
     {
         public List<Product> basket;
         private ProductModel productManager;
         private FirestoreDb db;
        
-
+     
        
 
-        public SalesManager(ProductModel productManager, FirestoreDb firestoreDb)
-        {
-            basket = new List<Product>();
+
+
+
+        public CheckoutModel(ProductModel productManager, FirestoreDb firestoreDb)
+        { 
+
             this.productManager = productManager;
-            db = firestoreDb;
+            this.db = firestoreDb;
+            
+            
+       
+            basket = new List<Product>();
             // Move the Stripe configuration inside the constructor
             string stripeApiKey = ConfigurationManager.AppSettings["StripeApiKey"];
             StripeConfiguration.ApiKey = stripeApiKey;
+          
+
         }
 
         public async Task AddToBasketAsync(int productBarcode, int quantity)
@@ -97,6 +104,8 @@ namespace Inventory_Managment_System.Sales_Manager
 
 
         }
+
+       
 
 
         public async Task CheckoutWithCardAsync()
@@ -204,6 +213,6 @@ namespace Inventory_Managment_System.Sales_Manager
             }
         }
 
-        
+
     }
 }
