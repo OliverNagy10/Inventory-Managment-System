@@ -65,6 +65,7 @@ namespace Inventory_Managment_System
         {
 
             await CheckoutModel.CheckoutWithCardAsync();
+            await CheckoutModel.UpdateProductQuantitiesAsync();
         }
 
 
@@ -81,6 +82,7 @@ namespace Inventory_Managment_System
 
                 // Update the total amount label
                 checkoutView.SetAmountHolder("0.0");
+               
             }
             else
             {

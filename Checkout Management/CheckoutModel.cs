@@ -99,8 +99,12 @@ namespace Inventory_Managment_System.Sales_Manager
         public async Task CheckoutAsync()
         {
             await CreateSalesDocumentAsync();
+            await UpdateProductQuantitiesAsync();
             // Clear the basket
             basket.Clear();
+
+
+            
 
 
         }
@@ -151,6 +155,8 @@ namespace Inventory_Managment_System.Sales_Manager
 
             // After the Stripe payment is successfully fulfilled, create a sales document and perform other checkout operations
             await CreateSalesDocumentAsync();
+
+            await UpdateProductQuantitiesAsync();
 
             // Clear the basket
             basket.Clear();
