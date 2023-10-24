@@ -20,6 +20,18 @@ namespace Inventory_Managment_System.Dashboard
             backButton.Click += (sender, e) => BackButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        public void UpdateInventoryValue(double value)
+        {
+            // Update the inventoryValueHolder label
+            inventoryValueHolder.Text = "$" + value;
+        }
+
+        public void UpdateTotalSales(double sales)
+        {
+            // Update the totalSalesHolder label
+            totalSalesHolder.Text = "$" + sales;
+        }
+
         private void DashboardView_Load(object sender, EventArgs e)
         {
 

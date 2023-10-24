@@ -26,7 +26,7 @@ namespace Inventory_Managment_System
             checkoutView.DeleteItemButtonClicked += async (sender, args) => await RemoveFromBasket();
             checkoutView.PayWithCardClicked += async (sender, args) => await checkoutWithCardAsync();
             checkoutView.PaywithCashClicked += async (sender, args) => await CheckoutWithCashAsync();
-            checkoutView.ExitButtonClicked += async (sender, args) => Exit();
+            checkoutView.ExitButtonClicked += (sender, args) => Exit();
 
 
 
@@ -38,8 +38,8 @@ namespace Inventory_Managment_System
 
                 await CheckoutModel.AddToBasketAsync(checkoutView.GetProductBarcode(), quantity);
 
-                // Update the basketListView
-                UpdateBasketListView();
+            // Update the basketListView
+            await UpdateBasketListView();
 
             
         }
@@ -50,18 +50,16 @@ namespace Inventory_Managment_System
 
              CheckoutModel.RemoveFromBasket(checkoutView.getRemovefromBasket());
 
-                // Update the basketListView
-                UpdateBasketListView();
+            // Update the basketListView
+            await UpdateBasketListView();
             
         }
 
-        private  async Task UpdateBasketListView()
+        private  Task UpdateBasketListView()
         {
-
             checkoutView.UpdateBasketListView(CheckoutModel);
+            return Task.CompletedTask;
         }
-
-       
 
         private async Task checkoutWithCardAsync()
         {

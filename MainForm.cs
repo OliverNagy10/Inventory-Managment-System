@@ -114,8 +114,9 @@ namespace Inventory_Managment_System
 
         public void InitiateDashboardView(string IdToken)
         {
+            productModel = new ProductModel(firestoreDb, IdToken);
             dashboardModel = new DashboardModel();
-            dashboardController = new DashboardController(DashboardView, dashboardModel, this, IdToken);
+            dashboardController = new DashboardController(DashboardView, dashboardModel, this, IdToken,firestoreDb,productModel);
             productManagementView.Visible = false;
             checkoutView.Visible = false;
             login.Visible = false;
@@ -127,7 +128,6 @@ namespace Inventory_Managment_System
 
         public void InitiateCheckout(string IDToken)
         {
-            productModel = new ProductModel(firestoreDb,IDToken);
             CheckoutModel checkout = new CheckoutModel(productModel, firestoreDb);
             CheckoutController checkoutController = new CheckoutController(checkout, checkoutView, this, IDToken);
             

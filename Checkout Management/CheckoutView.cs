@@ -49,7 +49,7 @@ namespace Inventory_Managment_System.Checkout_Management
         basketListView.Items.Clear();
             }
 
-        private void CheckoutView1_Load(object sender, EventArgs e)
+        private void CheckoutView_Load(object sender, EventArgs e)
         {
             // Set the View property of the basketListView to Details
             basketListView.View = View.Details;
@@ -102,10 +102,7 @@ namespace Inventory_Managment_System.Checkout_Management
             SetAmountHolder(model.CalculateTotalPrice().ToString());
         }
 
-        private void CheckoutView_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         
                 private void addButton_Click(object sender, EventArgs e)
