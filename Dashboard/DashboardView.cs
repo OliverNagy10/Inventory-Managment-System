@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting; // Make sure to include this namespace
 
@@ -56,6 +57,33 @@ namespace Inventory_Managment_System.Dashboard
             // Refresh the chart to display the data
             LineChart.Invalidate();
         }
+        public void UpdatePieChartBestSellers(Series series)
+        {
+            
+
+            PieChart.Series.Clear();
+            
+
+            PieChart.Series.Add(series);
+          
+            // Refresh the chart to display the data
+            PieChart.Invalidate();
+          
+        }
+        // Update the method in DashboardView
+        public void UpdateBarChartBestSellers(Series series)
+        {
+            // Make sure to set the chart title and other properties as needed
+            BarChart.Series.Clear();
+            BarChart.Series.Add(series);
+        }
+
+        public void ShowLoadingMessage(bool show)
+        {
+            // Assuming you have a StatusLabel to display the loading message
+            pictureBox1.Visible = show;
+        }
+
 
         private void DashboardView_Load(object sender, EventArgs e)
         {
@@ -65,9 +93,6 @@ namespace Inventory_Managment_System.Dashboard
             LowProductsListView.Columns.Add("Quantity", 50); // Column 2: Quantity
         }
 
-        private void LineChart_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

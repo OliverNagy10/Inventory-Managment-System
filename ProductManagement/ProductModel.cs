@@ -376,6 +376,46 @@ namespace Inventory_Managment_System
             }
         }
 
+        public async Task<string> GetProductNameById(string productId)
+        {
+            try
+            {
+                // Get the currently authenticated user's ID
+                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+
+                if (userId == null)
+                {
+                    return null;
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+
+                // Get a reference to the "products" collection within the company's document
+                CollectionReference productsCollection = companyRef.Collection("products");
+
+                // Query to retrieve the product document with the specified ID
+                QuerySnapshot querySnapshot = await productsCollection.WhereEqualTo("ProductId", productId).GetSnapshotAsync();
+
+                if (querySnapshot.Count == 1)
+                {
+                    // Retrieve the product document and get its name
+                    return querySnapshot.Documents[0].GetValue<string>("Name");
+                }
+                else
+                {
+                    // Product not found or multiple products with the same ID exist
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return null;
+            }
+        }
+
 
         public async Task<string> GetUserIdFromFirebaseAuthenticationAsync()
         {

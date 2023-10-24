@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Diagnostics;
 
 namespace Inventory_Managment_System.Dashboard
 {
@@ -40,6 +41,8 @@ namespace Inventory_Managment_System.Dashboard
             // Load and display inventory value and total sales
             await UpdateDashboard();
         }
+
+
         public void OnProductManagementButtonClick()
         {
             // Handle the product management button click event
@@ -64,10 +67,12 @@ namespace Inventory_Managment_System.Dashboard
         {
             try
             {
+                // Show the loading message
+                view.ShowLoadingMessage(true);
+
                 // Calculate the total sales and inventory value
                 double totalInventoryValue = await CalculateTotalInventoryValue();
                 double totalSales = await CalculateTotalSalesThisMonth();
-                
 
                 // Debug statements
                 Console.WriteLine("Total Sales: " + totalSales);
@@ -80,13 +85,24 @@ namespace Inventory_Managment_System.Dashboard
                 int thresholdQuantity = 10; // Change this to your desired threshold
                 await GetRunningLowProducts(thresholdQuantity);
                 await CalculateSalesByDay();
+                await CalculateBestSellers();
+                await CalculateBestSellersByCashValue();
             }
             catch (Exception ex)
             {
                 // Handle exceptions and errors
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
+            finally
+            {
+                // Hide the loading message when all tasks are done
+                view.ShowLoadingMessage(false);
+            }
         }
+
+
+
+       
 
 
         // Add other controller methods as needed to handle user interactions
@@ -327,7 +343,7 @@ namespace Inventory_Managment_System.Dashboard
                 }
 
                 // Create a series for the line chart
-                Series series = new Series("WeeklySales");
+                Series series = new Series("Weekly Sales by Day");
                 series.ChartType = SeriesChartType.Line;
 
                 // Add data points to the series for each day
@@ -338,6 +354,231 @@ namespace Inventory_Managment_System.Dashboard
 
                 // Update the line chart in the view
                 view.UpdateLineChartSales(series);
+            }
+            catch (Exception ex)
+            {
+                // Handle the error or return a default value if necessary
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+        }
+
+        public async Task CalculateBestSellers()
+        {
+            try
+            {
+                Console.WriteLine("Entering CalculateBestSellers method.");
+
+                // Get the currently authenticated user's ID
+                string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+                Console.WriteLine($"User ID: {userId}");
+
+                if (userId == null)
+                {
+                    // Handle the unauthenticated user case as needed
+                    Console.WriteLine("User is not authenticated.");
+                    return;
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+                Console.WriteLine("Retrieved company reference.");
+
+                // Get a reference to the "sales" collection within the company's document
+                CollectionReference salesCollection = companyRef.Collection("sales");
+                Console.WriteLine("Retrieved sales collection reference.");
+
+                // Calculate the start and end dates for the current month
+                DateTime today = DateTime.UtcNow;
+                DateTime startDate = new DateTime(today.Year, today.Month, 1, 0, 0, 0, DateTimeKind.Utc);
+                DateTime endDate = startDate.AddMonths(1);
+                Console.WriteLine($"Start Date: {startDate}, End Date: {endDate}");
+
+                Dictionary<string, int> productSales = new Dictionary<string, int>();
+
+                // Query for sales records within the current month
+                QuerySnapshot querySnapshot = await salesCollection
+                    .WhereGreaterThanOrEqualTo("Date", startDate)
+                    .WhereLessThan("Date", endDate)
+                    .GetSnapshotAsync();
+                
+
+                foreach (var salesDocument in querySnapshot)
+                {
+                    // Get the "items" subcollection within each sales document
+                    CollectionReference itemsCollection = salesDocument.Reference.Collection("items");
+
+                    // Iterate through items within the "items" subcollection
+                    QuerySnapshot itemsSnapshot = await itemsCollection.GetSnapshotAsync();
+
+                    foreach (var itemDocument in itemsSnapshot)
+                    {
+                        if (itemDocument.Exists)
+                        {
+                            // Extract the "Name" and "Quantity" fields
+                            var itemData = itemDocument.ToDictionary();
+                            Console.WriteLine("Extracted item data: " + string.Join(", ", itemData.Select(kvp => $"{kvp.Key}: {kvp.Value}")));
+
+                            if (itemData.ContainsKey("Name") && itemData["Name"] is string itemName)
+                            {
+                                // Retrieve the "Quantity" as described
+                                if (itemData.ContainsKey("Quantity") && int.TryParse(itemData["Quantity"].ToString(), out int quantity))
+                                {
+                                    // If the item is not in the dictionary, add it with the sold quantity
+                                    if (!productSales.ContainsKey(itemName))
+                                    {
+                                        productSales[itemName] = quantity;
+                                    }
+                                    else
+                                    {
+                                        // Otherwise, update the sold quantity
+                                        productSales[itemName] += quantity;
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"Item {itemName} has a non-integer Quantity value.");
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Sort the products by sales quantity in descending order
+                var topSellers = productSales.OrderByDescending(x => x.Value).Take(3);
+                Console.WriteLine("Top Sellers:");
+
+                foreach (var seller in topSellers)
+                {
+                    Console.WriteLine($"{seller.Key}: {seller.Value}");
+                }
+
+                // Create a series for the pie chart
+                Series series = new Series("Top 3 Sellers This Month")
+                {
+                    ChartType = SeriesChartType.Pie
+                };
+                Console.WriteLine("Created pie chart series.");
+
+                // Add data points to the series for each top seller
+                foreach (var seller in topSellers)
+                {
+                    series.Points.AddXY(seller.Key, seller.Value);
+                }
+
+                Console.WriteLine("Added data points to the pie chart series.");
+
+                // Update the pie chart in the view
+                view.UpdatePieChartBestSellers(series);
+            }
+            catch (Exception ex)
+            {
+                // Handle the error or return a default value if necessary
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+        }
+
+        public async Task CalculateBestSellersByCashValue()
+        {
+            try
+            {
+                Console.WriteLine("Entering CalculateBestSellersByCashValue method.");
+
+                // Get the currently authenticated user's ID
+                string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+                Console.WriteLine($"User ID: {userId}");
+
+                if (userId == null)
+                {
+                    // Handle the unauthenticated user case as needed
+                    Console.WriteLine("User is not authenticated.");
+                    return;
+                }
+
+                // Get a reference to the company's document in the "companies" collection
+                DocumentReference companyRef = db.Collection("companies").Document(userId);
+                Console.WriteLine("Retrieved company reference.");
+
+                // Get a reference to the "sales" collection within the company's document
+                CollectionReference salesCollection = companyRef.Collection("sales");
+                Console.WriteLine("Retrieved sales collection reference.");
+
+                // Calculate the start and end dates for the current month
+                DateTime today = DateTime.UtcNow;
+                DateTime startDate = new DateTime(today.Year, today.Month, 1, 0, 0, 0, DateTimeKind.Utc);
+                DateTime endDate = startDate.AddMonths(1);
+                Console.WriteLine($"Start Date: {startDate}, End Date: {endDate}");
+
+                Dictionary<string, double> productSalesByCashValue = new Dictionary<string, double>();
+
+                // Query for sales records within the current month
+                QuerySnapshot querySnapshot = await salesCollection
+                    .WhereGreaterThanOrEqualTo("Date", startDate)
+                    .WhereLessThan("Date", endDate)
+                    .GetSnapshotAsync();
+                Console.WriteLine($"Queried for sales records. Found {querySnapshot.Count} records.");
+
+                foreach (var salesDocument in querySnapshot)
+                {
+                    // Get the "items" subcollection within each sales document
+                    CollectionReference itemsCollection = salesDocument.Reference.Collection("items");
+
+                    // Iterate through items within the "items" subcollection
+                    QuerySnapshot itemsSnapshot = await itemsCollection.GetSnapshotAsync();
+
+                    foreach (var itemDocument in itemsSnapshot)
+                    {
+                        if (itemDocument.Exists)
+                        {
+                            // Extract the "Name," "Quantity," and "Price" fields
+                            var itemData = itemDocument.ToDictionary();
+                            Console.WriteLine("Extracted item data: " + string.Join(", ", itemData.Select(kvp => $"{kvp.Key}: {kvp.Value}")));
+
+                            if (itemData.ContainsKey("Name") && itemData["Name"] is string itemName
+                                && itemData.ContainsKey("Quantity") && int.TryParse(itemData["Quantity"].ToString(), out int quantity)
+                                && itemData.ContainsKey("Price") && double.TryParse(itemData["Price"].ToString(), out double price))
+                            {
+                                double cashValue = price * quantity;
+
+                                // If the item is not in the dictionary, add it with the cash value
+                                if (!productSalesByCashValue.ContainsKey(itemName))
+                                {
+                                    productSalesByCashValue[itemName] = cashValue;
+                                }
+                                else
+                                {
+                                    // Otherwise, update the cash value
+                                    productSalesByCashValue[itemName] += cashValue;
+                                }
+                            }
+                            else
+                            {
+                              
+                            }
+                        }
+                    }
+                }
+
+                // Sort the products by cash value in descending order
+                var topSellersByCashValue = productSalesByCashValue.OrderByDescending(x => x.Value).Take(3);
+                Console.WriteLine("Top Sellers by Cash");
+
+                foreach (var seller in topSellersByCashValue)
+                {
+                    Console.WriteLine($"{seller.Key}: ${seller.Value}");
+                }
+
+                // Create a series for the bar chart
+                Series series = new Series("TopSellersByCashValue");
+                series.ChartType = SeriesChartType.Column;
+
+                // Add data points to the series for each top seller by cash value
+                foreach (var seller in topSellersByCashValue)
+                {
+                    series.Points.AddXY(seller.Key, seller.Value);
+                }
+
+                // Update the bar chart in the view
+                view.UpdateBarChartBestSellers(series);
             }
             catch (Exception ex)
             {
