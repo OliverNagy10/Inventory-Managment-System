@@ -43,7 +43,6 @@ namespace Inventory_Managment_System.Dashboard
             this.runningLowLabel = new System.Windows.Forms.Label();
             this.monthSalesTotal = new System.Windows.Forms.Label();
             this.inventoryValueHolder = new System.Windows.Forms.Label();
-            this.runningLowHolder = new System.Windows.Forms.Label();
             this.totalSalesHolder = new System.Windows.Forms.Label();
             this.BarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -52,6 +51,7 @@ namespace Inventory_Managment_System.Dashboard
             this.productMangementButton = new System.Windows.Forms.Button();
             this.checkOutButton = new System.Windows.Forms.Button();
             this.reportsButton = new System.Windows.Forms.Button();
+            this.LowProductsListView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.BarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineChart)).BeginInit();
@@ -77,16 +77,16 @@ namespace Inventory_Managment_System.Dashboard
             // runningLowLabel
             // 
             this.runningLowLabel.AutoSize = true;
-            this.runningLowLabel.Location = new System.Drawing.Point(45, 67);
+            this.runningLowLabel.Location = new System.Drawing.Point(65, 71);
             this.runningLowLabel.Name = "runningLowLabel";
-            this.runningLowLabel.Size = new System.Drawing.Size(113, 17);
+            this.runningLowLabel.Size = new System.Drawing.Size(164, 17);
             this.runningLowLabel.TabIndex = 2;
-            this.runningLowLabel.Text = "Running low on: ";
+            this.runningLowLabel.Text = "Products With Low Stock";
             // 
             // monthSalesTotal
             // 
             this.monthSalesTotal.AutoSize = true;
-            this.monthSalesTotal.Location = new System.Drawing.Point(45, 107);
+            this.monthSalesTotal.Location = new System.Drawing.Point(45, 277);
             this.monthSalesTotal.Name = "monthSalesTotal";
             this.monthSalesTotal.Size = new System.Drawing.Size(148, 17);
             this.monthSalesTotal.TabIndex = 3;
@@ -97,27 +97,18 @@ namespace Inventory_Managment_System.Dashboard
             this.inventoryValueHolder.AutoSize = true;
             this.inventoryValueHolder.Location = new System.Drawing.Point(204, 26);
             this.inventoryValueHolder.Name = "inventoryValueHolder";
-            this.inventoryValueHolder.Size = new System.Drawing.Size(16, 17);
+            this.inventoryValueHolder.Size = new System.Drawing.Size(36, 17);
             this.inventoryValueHolder.TabIndex = 5;
-            this.inventoryValueHolder.Text = "$";
-            // 
-            // runningLowHolder
-            // 
-            this.runningLowHolder.AutoSize = true;
-            this.runningLowHolder.Location = new System.Drawing.Point(173, 67);
-            this.runningLowHolder.Name = "runningLowHolder";
-            this.runningLowHolder.Size = new System.Drawing.Size(72, 17);
-            this.runningLowHolder.TabIndex = 6;
-            this.runningLowHolder.Text = "Coca Cola";
+            this.inventoryValueHolder.Text = "$0.0";
             // 
             // totalSalesHolder
             // 
             this.totalSalesHolder.AutoSize = true;
-            this.totalSalesHolder.Location = new System.Drawing.Point(207, 107);
+            this.totalSalesHolder.Location = new System.Drawing.Point(204, 277);
             this.totalSalesHolder.Name = "totalSalesHolder";
-            this.totalSalesHolder.Size = new System.Drawing.Size(16, 17);
+            this.totalSalesHolder.Size = new System.Drawing.Size(36, 17);
             this.totalSalesHolder.TabIndex = 7;
-            this.totalSalesHolder.Text = "£";
+            this.totalSalesHolder.Text = "$0.0";
             // 
             // BarChart
             // 
@@ -168,6 +159,7 @@ namespace Inventory_Managment_System.Dashboard
             this.LineChart.Size = new System.Drawing.Size(490, 311);
             this.LineChart.TabIndex = 10;
             this.LineChart.Text = "chart1";
+            this.LineChart.Click += new System.EventHandler(this.LineChart_Click);
             // 
             // backButton
             // 
@@ -205,10 +197,21 @@ namespace Inventory_Managment_System.Dashboard
             this.reportsButton.Text = "Sales Reports";
             this.reportsButton.UseVisualStyleBackColor = true;
             // 
+            // LowProductsListView
+            // 
+            this.LowProductsListView.HideSelection = false;
+            this.LowProductsListView.Location = new System.Drawing.Point(48, 102);
+            this.LowProductsListView.Name = "LowProductsListView";
+            this.LowProductsListView.Size = new System.Drawing.Size(192, 97);
+            this.LowProductsListView.TabIndex = 16;
+            this.LowProductsListView.UseCompatibleStateImageBehavior = false;
+            this.LowProductsListView.View = System.Windows.Forms.View.List;
+            // 
             // DashboardView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LowProductsListView);
             this.Controls.Add(this.reportsButton);
             this.Controls.Add(this.checkOutButton);
             this.Controls.Add(this.productMangementButton);
@@ -217,7 +220,6 @@ namespace Inventory_Managment_System.Dashboard
             this.Controls.Add(this.PieChart);
             this.Controls.Add(this.BarChart);
             this.Controls.Add(this.totalSalesHolder);
-            this.Controls.Add(this.runningLowHolder);
             this.Controls.Add(this.inventoryValueHolder);
             this.Controls.Add(this.monthSalesTotal);
             this.Controls.Add(this.runningLowLabel);
@@ -242,7 +244,6 @@ namespace Inventory_Managment_System.Dashboard
         private System.Windows.Forms.Label runningLowLabel;
         private System.Windows.Forms.Label monthSalesTotal;
         private System.Windows.Forms.Label inventoryValueHolder;
-        private System.Windows.Forms.Label runningLowHolder;
         private System.Windows.Forms.Label totalSalesHolder;
         private System.Windows.Forms.DataVisualization.Charting.Chart BarChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart PieChart;
@@ -251,5 +252,6 @@ namespace Inventory_Managment_System.Dashboard
         private System.Windows.Forms.Button productMangementButton;
         private System.Windows.Forms.Button checkOutButton;
         private System.Windows.Forms.Button reportsButton;
+        private System.Windows.Forms.ListView LowProductsListView;
     }
 }
