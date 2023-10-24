@@ -165,8 +165,7 @@ namespace Inventory_Managment_System
                         await newProductRef.SetAsync(originalProductSnapshot.ToDictionary());
                     }
 
-                    // Delete the original product document
-                    await productDocumentRef.DeleteAsync();
+                    
 
                     return "Product updated successfully.";
                 }
@@ -279,8 +278,7 @@ namespace Inventory_Managment_System
             }
         }
 
-
-        public async Task<List<string>> GetAllProductNamesAsync()
+        public async Task<List<(string name, string description, string supplier, int barcode, double price, int quantity)>> GetProductDetailsAsync()
         {
             try
             {
@@ -289,7 +287,8 @@ namespace Inventory_Managment_System
 
                 if (userId == null)
                 {
-                    return new List<string>(); // User is not authenticated
+                    Console.WriteLine("User is not authenticated.");
+                    return new List<(string, string, string, int, double, int)>(); // User is not authenticated
                 }
 
                 // Get a reference to the company's document in the "companies" collection
@@ -301,22 +300,31 @@ namespace Inventory_Managment_System
                 // Query to retrieve all product documents
                 QuerySnapshot querySnapshot = await productsCollection.GetSnapshotAsync();
 
-                if (querySnapshot.Count > 0)
+                var productDetailsList = new List<(string, string, string, int, double, int)>();
+
+                foreach (var productDocument in querySnapshot.Documents)
                 {
-                    // Extract the names of all products
-                    var productNames = querySnapshot.Documents.Select(doc => doc.GetValue<string>("Name")).ToList();
-                    return productNames;
+                    // Retrieve the product document data
+                    var productDetails = (
+                        productDocument.GetValue<string>("Name"),
+                        productDocument.GetValue<string>("Description"),
+                        productDocument.GetValue<string>("Supplier"),
+                        productDocument.GetValue<int>("Barcode"),
+                        productDocument.GetValue<double>("Price"),
+                        productDocument.GetValue<int>("Quantity")
+                    );
+
+                    productDetailsList.Add(productDetails);
                 }
-                else
-                {
-                    return new List<string>(); // No products found
-                }
+
+                Console.WriteLine("Successfully retrieved product details.");
+                return productDetailsList;
             }
             catch (Exception ex)
             {
                 // Handle any errors
                 Console.WriteLine("An error occurred: " + ex.Message);
-                return new List<string>();
+                return new List<(string, string, string, int, double, int)>();
             }
         }
 

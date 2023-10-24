@@ -12,11 +12,12 @@ namespace Inventory_Managment_System.ProductManagement
 {
     public partial class ProductManagementView : UserControl
     {
-        // Event for the Add button click
+
         public event EventHandler AddButtonClicked;
         public event EventHandler SearchButtonClicked;
         public event EventHandler SaveButtonClicked;
         public event EventHandler DeleteButtonClicked;
+        public event EventHandler<string> ListViewItemSelectionChanged;
         public event EventHandler BackButtonClicked;
 
 
@@ -26,7 +27,7 @@ namespace Inventory_Managment_System.ProductManagement
 
             // Attach event handler for the Add button click
             addButton.Click += (sender, e) => AddButtonClicked?.Invoke(this, EventArgs.Empty);
-            productScrollBar.ValueChanged += ProductScrollBar_ValueChanged;
+        
             // Attach event handler for the Search button click
             searchButton.Click += (sender, e) => SearchButtonClicked?.Invoke(this, EventArgs.Empty);
             saveButton.Click += (sender, e) => SaveButtonClicked?.Invoke(this, EventArgs.Empty);
@@ -86,6 +87,11 @@ namespace Inventory_Managment_System.ProductManagement
         {
             return SearchBox.Text;
         }
+        public void SetSearchQuery(string name)
+        {
+            SearchBox.Text = name;
+
+        }
 
         // Method to get the search query
         public void SetBarCode(int barcode)
@@ -131,7 +137,15 @@ namespace Inventory_Managment_System.ProductManagement
 
         private void ProductManagementView_Load(object sender, EventArgs e)
         {
-            // Any initialization code
+            // Set the View property of the productListView to Details
+            productListView.View = View.Details;
+            // Set up the columns for the productListView
+            productListView.Columns.Add("Name", 200); // Column 1: Name
+            productListView.Columns.Add("Description", 200); // Column 2: Description
+            productListView.Columns.Add("Supplier", 200); // Column 1: Name
+            productListView.Columns.Add("Quantity", 100); // Column 3: Quantity
+            productListView.Columns.Add("Price", 100); // Column 4: Price
+            productListView.Columns.Add("Barcode", 100); // Column 5: Barcode
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -167,7 +181,6 @@ namespace Inventory_Managment_System.ProductManagement
             priceBox.Clear();
             quantityBox.Clear();
         }
-
         public void PopulateProductListView(List<string> productNames)
         {
             productListView.Items.Clear();
@@ -177,22 +190,42 @@ namespace Inventory_Managment_System.ProductManagement
                 ListViewItem item = new ListViewItem(productName);
                 productListView.Items.Add(item);
             }
-        }
 
-        private void ProductScrollBar_ValueChanged(object sender, EventArgs e)
-        {
-            if (productScrollBar.Value >= 0 && productScrollBar.Value < productListView.Items.Count)
+            // Attach an event handler to handle item selection change
+            productListView.SelectedIndexChanged += (sender, e) =>
             {
-                productListView.TopItem = productListView.Items[productScrollBar.Value];
-            }
+                if (productListView.SelectedItems.Count > 0)
+                {
+                    var selectedItem = productListView.SelectedItems[0];
+                    // Trigger the ListViewItemSelectionChanged event with the selected product name
+                    ListViewItemSelectionChanged?.Invoke(this, selectedItem.Text);
+                }
+            };
         }
 
-        
-
-        private void ProductManagementView1_Load(object sender, EventArgs e)
+        public void UpdateProductListView(List<object> products)
         {
+            productListView.Items.Clear();
 
+            foreach (var product in products)
+            {
+                var productDetails = (dynamic)product;
+                ListViewItem item = new ListViewItem(productDetails.Name);
+                item.SubItems.Add(productDetails.Description); // Description
+                item.SubItems.Add(productDetails.Supplier); // Supplier
+                item.SubItems.Add(productDetails.Quantity.ToString()); // Quantity
+                item.SubItems.Add(productDetails.Price.ToString()); // Price
+                item.SubItems.Add(productDetails.Barcode.ToString()); // Barcode
+                                                                    
+
+                productListView.Items.Add(item);
+            }
+
+            Console.WriteLine("Successfully updated product list view in the view.");
         }
+
+
+
 
         private void ProductManagementView_Load_1(object sender, EventArgs e)
         {

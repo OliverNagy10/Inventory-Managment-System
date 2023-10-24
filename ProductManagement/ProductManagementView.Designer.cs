@@ -47,17 +47,16 @@ namespace Inventory_Managment_System.ProductManagement
             this.deleteButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.productListView = new System.Windows.Forms.ListView();
-            this.productScrollBar = new System.Windows.Forms.VScrollBar();
             this.barcodeLabel = new System.Windows.Forms.Label();
             this.barcodeBox = new System.Windows.Forms.TextBox();
+            this.productListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // ProductsLabel
             // 
             this.ProductsLabel.AutoSize = true;
             this.ProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductsLabel.Location = new System.Drawing.Point(96, 53);
+            this.ProductsLabel.Location = new System.Drawing.Point(34, 81);
             this.ProductsLabel.Name = "ProductsLabel";
             this.ProductsLabel.Size = new System.Drawing.Size(97, 25);
             this.ProductsLabel.TabIndex = 0;
@@ -66,7 +65,7 @@ namespace Inventory_Managment_System.ProductManagement
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(414, 100);
+            this.searchLabel.Location = new System.Drawing.Point(335, 28);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(54, 19);
             this.searchLabel.TabIndex = 3;
@@ -75,7 +74,7 @@ namespace Inventory_Managment_System.ProductManagement
             // SearchBox
             // 
             this.SearchBox.BackColor = System.Drawing.Color.Gray;
-            this.SearchBox.Location = new System.Drawing.Point(487, 94);
+            this.SearchBox.Location = new System.Drawing.Point(409, 25);
             this.SearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(180, 25);
@@ -85,7 +84,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             this.searchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.searchButton.ForeColor = System.Drawing.Color.White;
-            this.searchButton.Location = new System.Drawing.Point(702, 93);
+            this.searchButton.Location = new System.Drawing.Point(607, 23);
             this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 27);
@@ -108,7 +107,7 @@ namespace Inventory_Managment_System.ProductManagement
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(374, 198);
+            this.nameLabel.Location = new System.Drawing.Point(163, 344);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(51, 19);
             this.nameLabel.TabIndex = 7;
@@ -117,7 +116,7 @@ namespace Inventory_Managment_System.ProductManagement
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(374, 265);
+            this.descriptionLabel.Location = new System.Drawing.Point(150, 392);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(89, 19);
             this.descriptionLabel.TabIndex = 8;
@@ -126,7 +125,7 @@ namespace Inventory_Managment_System.ProductManagement
             // supplierLabel
             // 
             this.supplierLabel.AutoSize = true;
-            this.supplierLabel.Location = new System.Drawing.Point(374, 327);
+            this.supplierLabel.Location = new System.Drawing.Point(150, 443);
             this.supplierLabel.Name = "supplierLabel";
             this.supplierLabel.Size = new System.Drawing.Size(66, 19);
             this.supplierLabel.TabIndex = 9;
@@ -135,7 +134,7 @@ namespace Inventory_Managment_System.ProductManagement
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(382, 457);
+            this.priceLabel.Location = new System.Drawing.Point(150, 541);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(43, 19);
             this.priceLabel.TabIndex = 10;
@@ -144,7 +143,7 @@ namespace Inventory_Managment_System.ProductManagement
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(376, 518);
+            this.quantityLabel.Location = new System.Drawing.Point(144, 586);
             this.quantityLabel.Name = "quantityLabel";
             this.quantityLabel.Size = new System.Drawing.Size(70, 19);
             this.quantityLabel.TabIndex = 11;
@@ -153,7 +152,7 @@ namespace Inventory_Managment_System.ProductManagement
             // nameBox
             // 
             this.nameBox.BackColor = System.Drawing.Color.Gray;
-            this.nameBox.Location = new System.Drawing.Point(504, 192);
+            this.nameBox.Location = new System.Drawing.Point(252, 344);
             this.nameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(200, 25);
@@ -162,7 +161,7 @@ namespace Inventory_Managment_System.ProductManagement
             // descriptionBox
             // 
             this.descriptionBox.BackColor = System.Drawing.Color.Gray;
-            this.descriptionBox.Location = new System.Drawing.Point(504, 258);
+            this.descriptionBox.Location = new System.Drawing.Point(252, 386);
             this.descriptionBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.Size = new System.Drawing.Size(200, 25);
@@ -171,7 +170,7 @@ namespace Inventory_Managment_System.ProductManagement
             // supplierBox
             // 
             this.supplierBox.BackColor = System.Drawing.Color.Gray;
-            this.supplierBox.Location = new System.Drawing.Point(504, 319);
+            this.supplierBox.Location = new System.Drawing.Point(252, 437);
             this.supplierBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.supplierBox.Name = "supplierBox";
             this.supplierBox.Size = new System.Drawing.Size(200, 25);
@@ -180,7 +179,7 @@ namespace Inventory_Managment_System.ProductManagement
             // priceBox
             // 
             this.priceBox.BackColor = System.Drawing.Color.Gray;
-            this.priceBox.Location = new System.Drawing.Point(504, 451);
+            this.priceBox.Location = new System.Drawing.Point(252, 541);
             this.priceBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(100, 25);
@@ -189,7 +188,7 @@ namespace Inventory_Managment_System.ProductManagement
             // quantityBox
             // 
             this.quantityBox.BackColor = System.Drawing.Color.Gray;
-            this.quantityBox.Location = new System.Drawing.Point(504, 512);
+            this.quantityBox.Location = new System.Drawing.Point(252, 580);
             this.quantityBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(100, 25);
@@ -198,7 +197,7 @@ namespace Inventory_Managment_System.ProductManagement
             // deleteButton
             // 
             this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.deleteButton.Location = new System.Drawing.Point(380, 572);
+            this.deleteButton.Location = new System.Drawing.Point(353, 649);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 27);
@@ -210,7 +209,7 @@ namespace Inventory_Managment_System.ProductManagement
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.saveButton.Location = new System.Drawing.Point(504, 572);
+            this.saveButton.Location = new System.Drawing.Point(472, 649);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 27);
@@ -223,7 +222,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(629, 572);
+            this.addButton.Location = new System.Drawing.Point(590, 649);
             this.addButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 27);
@@ -232,30 +231,10 @@ namespace Inventory_Managment_System.ProductManagement
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // productListView
-            // 
-            this.productListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.productListView.GridLines = true;
-            this.productListView.HideSelection = false;
-            this.productListView.Location = new System.Drawing.Point(27, 103);
-            this.productListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.productListView.Name = "productListView";
-            this.productListView.Size = new System.Drawing.Size(226, 538);
-            this.productListView.TabIndex = 20;
-            this.productListView.UseCompatibleStateImageBehavior = false;
-            this.productListView.View = System.Windows.Forms.View.List;
-            // 
-            // productScrollBar
-            // 
-            this.productScrollBar.Location = new System.Drawing.Point(256, 103);
-            this.productScrollBar.Name = "productScrollBar";
-            this.productScrollBar.Size = new System.Drawing.Size(21, 539);
-            this.productScrollBar.TabIndex = 21;
-            // 
             // barcodeLabel
             // 
             this.barcodeLabel.AutoSize = true;
-            this.barcodeLabel.Location = new System.Drawing.Point(378, 403);
+            this.barcodeLabel.Location = new System.Drawing.Point(148, 484);
             this.barcodeLabel.Name = "barcodeLabel";
             this.barcodeLabel.Size = new System.Drawing.Size(66, 19);
             this.barcodeLabel.TabIndex = 22;
@@ -263,20 +242,28 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // barcodeBox
             // 
-            this.barcodeBox.Location = new System.Drawing.Point(504, 400);
+            this.barcodeBox.Location = new System.Drawing.Point(252, 481);
             this.barcodeBox.Name = "barcodeBox";
             this.barcodeBox.Size = new System.Drawing.Size(200, 25);
             this.barcodeBox.TabIndex = 23;
+            // 
+            // productListView
+            // 
+            this.productListView.HideSelection = false;
+            this.productListView.Location = new System.Drawing.Point(39, 109);
+            this.productListView.Name = "productListView";
+            this.productListView.Size = new System.Drawing.Size(825, 185);
+            this.productListView.TabIndex = 24;
+            this.productListView.UseCompatibleStateImageBehavior = false;
             // 
             // ProductManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.productListView);
             this.Controls.Add(this.barcodeBox);
             this.Controls.Add(this.barcodeLabel);
-            this.Controls.Add(this.productScrollBar);
-            this.Controls.Add(this.productListView);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
@@ -300,7 +287,7 @@ namespace Inventory_Managment_System.ProductManagement
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductManagementView";
             this.Size = new System.Drawing.Size(897, 794);
-            this.Load += new System.EventHandler(this.ProductManagementView_Load_1);
+            this.Load += new System.EventHandler(this.ProductManagementView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,9 +313,8 @@ namespace Inventory_Managment_System.ProductManagement
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.ListView productListView;
-        private System.Windows.Forms.VScrollBar productScrollBar;
         private System.Windows.Forms.Label barcodeLabel;
         private System.Windows.Forms.TextBox barcodeBox;
+        private System.Windows.Forms.ListView productListView;
     }
 }
