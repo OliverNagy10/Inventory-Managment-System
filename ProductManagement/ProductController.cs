@@ -14,9 +14,9 @@ namespace Inventory_Managment_System
         private ProductManagementView productView;
         private FirestoreDb db;
         private string IDToken;
-        private MainForm mainForm;
+        private ApplicationManager mainForm;
 
-        public ProductController(FirestoreDb firestoreDb, string idToken, ProductManagementView view, MainForm mainForm)
+        public ProductController(FirestoreDb firestoreDb, string idToken, ProductManagementView view, ApplicationManager mainForm)
         {
             db = firestoreDb;
             IDToken = idToken;

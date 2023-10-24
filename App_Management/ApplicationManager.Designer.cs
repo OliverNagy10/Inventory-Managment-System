@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory_Managment_System
 {
-    partial class MainForm
+    partial class ApplicationManager
     {
         /// <summary>
         /// Required designer variable.

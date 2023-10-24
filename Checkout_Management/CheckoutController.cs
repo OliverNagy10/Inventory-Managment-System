@@ -12,10 +12,10 @@ namespace Inventory_Managment_System
         private CheckoutModel CheckoutModel;
         public event EventHandler ExitButtonClicked;
         private CheckoutView checkoutView;
-        private MainForm mainform;
+        private ApplicationManager mainform;
         private string IDToken;
 
-        public CheckoutController(CheckoutModel model, CheckoutView checkoutView, MainForm mainform , string IDToken)
+        public CheckoutController(CheckoutModel model, CheckoutView checkoutView, ApplicationManager mainform , string IDToken)
         {
             this.CheckoutModel = model;
             this.checkoutView = checkoutView;

@@ -206,8 +206,7 @@
     <Compile Include="Dashboard_Management\DashboardView.Designer.cs">
       <DependentUpon>DashboardView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ErrorInfo.cs" />
-    <Compile Include="FirebaseAuthLink.cs" />
+    <Compile Include="App_Management\ErrorInfo.cs" />
     <Compile Include="Login_Management\LoginController.cs" />
     <Compile Include="Login_Management\LoginModel.cs" />
     <Compile Include="Login_Management\LoginView.cs">
@@ -216,11 +215,11 @@
     <Compile Include="Login_Management\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="App_Management\ApplicationManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="App_Management\ApplicationManager.Designer.cs">
+      <DependentUpon>ApplicationManager.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductManagement\Product.cs" />
     <Compile Include="ProductManagement\ProductController.cs" />
@@ -253,8 +252,8 @@
     <EmbeddedResource Include="Login_Management\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="App_Management\ApplicationManager.resx">
+      <DependentUpon>ApplicationManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductManagement\ProductManagementView.resx">
       <DependentUpon>ProductManagementView.cs</DependentUpon>
@@ -272,7 +271,7 @@
     <EmbeddedResource Include="Signup_Management\SignUpView.resx">
       <DependentUpon>SignUpView.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="inventory-management-sys-df9e8-firebase-adminsdk-bjow6-42ab060a6b.json" />
+    <None Include="Json\inventory-management-sys-df9e8-firebase-adminsdk-bjow6-42ab060a6b.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

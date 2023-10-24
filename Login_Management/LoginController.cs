@@ -10,12 +10,12 @@ namespace Inventory_Management_System
     {
         private LoginView view;
         private LoginModel model;
-        private MainForm mainForm; // Add a field to store the MainForm instance
+        private ApplicationManager mainForm; // Add a field to store the MainForm instance
         private string IDToken;
         private string FirebaseSignInUrl;
 
 
-        public LoginController(LoginView view, LoginModel model,MainForm mainForm, string FirebaseSignInUrl)
+        public LoginController(LoginView view, LoginModel model,ApplicationManager mainForm, string FirebaseSignInUrl)
         {
             this.view = view;
             this.model = model;

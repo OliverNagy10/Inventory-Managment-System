@@ -11,11 +11,11 @@ namespace Inventory_Management_System
     {
         private SignUpView view;
         private SignUpModel model;
-        private MainForm mainForm;
+        private ApplicationManager mainForm;
         private FirestoreDb db;
         private string FirebaseSignUpUrl;
 
-        public SignUpController(SignUpView view, SignUpModel model, MainForm mainForm, FirestoreDb db ,string FirebaseSignUpUrl)
+        public SignUpController(SignUpView view, SignUpModel model, ApplicationManager mainForm, FirestoreDb db ,string FirebaseSignUpUrl)
         {
             this.view = view;
             this.model = model;

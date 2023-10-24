@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Inventory_Managment_System
 {
-    public partial class MainForm : Form
+    public partial class ApplicationManager : Form
     {
         private LoginView login;
         private LoginModel loginModel;
@@ -42,7 +42,7 @@ namespace Inventory_Managment_System
 
 
 
-        public MainForm()
+        public ApplicationManager()
         {
             InitializeComponent();
             firestoreDb = FirestoreDb.Create("inventory-management-sys-df9e8");

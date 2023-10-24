@@ -13,12 +13,12 @@ namespace Inventory_Managment_System.Dashboard
     {
         private DashboardView view;
         private DashboardModel model;
-        private MainForm mainForm;
+        private ApplicationManager mainForm;
         private string IDToken;
         private FirestoreDb db; // Firestore database reference
         ProductModel  productModel;
 
-        public  DashboardController(DashboardView view, DashboardModel model, MainForm mainForm, string IDToken, FirestoreDb firestoreDb , ProductModel productModel)
+        public  DashboardController(DashboardView view, DashboardModel model, ApplicationManager mainForm, string IDToken, FirestoreDb firestoreDb , ProductModel productModel)
         {
             this.view = view;
             this.model = model;
