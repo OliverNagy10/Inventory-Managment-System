@@ -109,6 +109,21 @@ namespace Inventory_Managment_System.ProductManagement
         {
             descriptionBox.Text = description;
         }
+        public void SetCost(double cost)
+        {
+
+            procutCostTextBox.Text = cost.ToString();
+        }
+
+        public double  GetCost()
+        {
+            if (double.TryParse(procutCostTextBox.Text, out double cost))
+            {
+                return cost;
+            }
+            return 0.0; // Default value if parsing fails
+
+        }
 
         public void SetSupplier(string supplier)
         {
@@ -144,6 +159,7 @@ namespace Inventory_Managment_System.ProductManagement
             productListView.Columns.Add("Description", 200); // Column 2: Description
             productListView.Columns.Add("Supplier", 200); // Column 1: Name
             productListView.Columns.Add("Quantity", 100); // Column 3: Quantity
+            productListView.Columns.Add("Cost", 100); // Column 3: Quantity
             productListView.Columns.Add("Price", 100); // Column 4: Price
             productListView.Columns.Add("Barcode", 100); // Column 5: Barcode
         }
@@ -179,7 +195,9 @@ namespace Inventory_Managment_System.ProductManagement
             descriptionBox.Clear();
             supplierBox.Clear();
             priceBox.Clear();
+            barcodeBox.Clear();
             quantityBox.Clear();
+            procutCostTextBox.Clear();
         }
         public void PopulateProductListView(List<string> productNames)
         {
@@ -202,7 +220,10 @@ namespace Inventory_Managment_System.ProductManagement
                 }
             };
         }
-
+        /// <summary>
+        /// //////////////
+        /// </summary>
+        /// <param name="products"></param>
         public void UpdateProductListView(List<object> products)
         {
             productListView.Items.Clear();
@@ -214,12 +235,23 @@ namespace Inventory_Managment_System.ProductManagement
                 item.SubItems.Add(productDetails.Description); // Description
                 item.SubItems.Add(productDetails.Supplier); // Supplier
                 item.SubItems.Add(productDetails.Quantity.ToString()); // Quantity
+                item.SubItems.Add(productDetails.Cost.ToString()); // Quantity
                 item.SubItems.Add(productDetails.Price.ToString()); // Price
                 item.SubItems.Add(productDetails.Barcode.ToString()); // Barcode
                                                                     
 
                 productListView.Items.Add(item);
             }
+
+            productListView.SelectedIndexChanged += (sender, e) =>
+            {
+                if (productListView.SelectedItems.Count > 0)
+                {
+                    var selectedItem = productListView.SelectedItems[0];
+                    // Trigger the ListViewItemSelectionChanged event with the selected product name
+                    ListViewItemSelectionChanged?.Invoke(this, selectedItem.Text);
+                }
+            };
 
             Console.WriteLine("Successfully updated product list view in the view.");
         }

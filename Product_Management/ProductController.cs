@@ -61,8 +61,9 @@ namespace Inventory_Managment_System
                     productView.SetDescription(productDetails.Item2);
                     productView.SetSupplier(productDetails.Item3);
                     productView.SetBarCode(productDetails.Item4);
-                    productView.SetPrice(productDetails.Item5);
-                    productView.SetQuantity(productDetails.Item6);
+                    productView.SetCost(productDetails.Item5);
+                    productView.SetPrice(productDetails.Item6);
+                    productView.SetQuantity(productDetails.Item7);
                 }
                 else
                 {
@@ -83,8 +84,9 @@ namespace Inventory_Managment_System
             double price = productView.GetPrice();
             int barcode = productView.GetBarcode();
             int quantity = productView.GetQuantity();
+            double cost = productView.GetCost();
 
-            string resultMessage = await productModel.AddProductAsync(productName, description, supplier, price, quantity, barcode);
+            string resultMessage = await productModel.AddProductAsync(productName, description, supplier, price, quantity, barcode,cost);
 
             if (resultMessage.Contains("Error"))
             {
@@ -106,8 +108,9 @@ namespace Inventory_Managment_System
             double price = productView.GetPrice();
             int quantity = productView.GetQuantity();
             int barcode = productView.GetBarcode();
+            double cost = productView.GetCost();
 
-            string resultMessage = await productModel.UpdateProductAsync(productName, name, description, supplier, price, quantity, barcode);
+            string resultMessage = await productModel.UpdateProductAsync(productName, name, description, supplier, price, quantity, barcode, cost);
 
             if (resultMessage.Contains("Error"))
             {
@@ -157,6 +160,7 @@ namespace Inventory_Managment_System
                     Description = product.description,
                     Supplier = product.supplier,
                     Barcode = product.barcode,
+                    Cost = product.cost,
                     Price = product.price,
                     Quantity = product.quantity
                 }).ToList();
@@ -194,8 +198,9 @@ namespace Inventory_Managment_System
                     productView.SetDescription(productDetails.Item2);
                     productView.SetSupplier(productDetails.Item3);
                     productView.SetBarCode(productDetails.Item4);
-                    productView.SetPrice(productDetails.Item5);
-                    productView.SetQuantity(productDetails.Item6);
+                    productView.SetCost(productDetails.Item5);
+                    productView.SetPrice(productDetails.Item6);
+                    productView.SetQuantity(productDetails.Item7);
                 }
                 else
                 {

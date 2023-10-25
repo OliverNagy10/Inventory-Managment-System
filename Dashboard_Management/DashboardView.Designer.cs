@@ -188,7 +188,7 @@ namespace Inventory_Managment_System.Dashboard
             this.reportsButton.Name = "reportsButton";
             this.reportsButton.Size = new System.Drawing.Size(213, 35);
             this.reportsButton.TabIndex = 15;
-            this.reportsButton.Text = "Sales Reports";
+            this.reportsButton.Text = "Analytics and Reports";
             this.reportsButton.UseVisualStyleBackColor = true;
             // 
             // LowProductsListView

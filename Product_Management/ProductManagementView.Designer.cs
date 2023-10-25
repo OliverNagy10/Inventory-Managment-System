@@ -50,6 +50,8 @@ namespace Inventory_Managment_System.ProductManagement
             this.barcodeLabel = new System.Windows.Forms.Label();
             this.barcodeBox = new System.Windows.Forms.TextBox();
             this.productListView = new System.Windows.Forms.ListView();
+            this.ProductCostLabel = new System.Windows.Forms.Label();
+            this.procutCostTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ProductsLabel
@@ -134,16 +136,16 @@ namespace Inventory_Managment_System.ProductManagement
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(150, 541);
+            this.priceLabel.Location = new System.Drawing.Point(93, 575);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(43, 19);
+            this.priceLabel.Size = new System.Drawing.Size(146, 19);
             this.priceLabel.TabIndex = 10;
-            this.priceLabel.Text = "Price";
+            this.priceLabel.Text = "Product Retail Price";
             // 
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(144, 586);
+            this.quantityLabel.Location = new System.Drawing.Point(150, 611);
             this.quantityLabel.Name = "quantityLabel";
             this.quantityLabel.Size = new System.Drawing.Size(70, 19);
             this.quantityLabel.TabIndex = 11;
@@ -179,16 +181,16 @@ namespace Inventory_Managment_System.ProductManagement
             // priceBox
             // 
             this.priceBox.BackColor = System.Drawing.Color.Gray;
-            this.priceBox.Location = new System.Drawing.Point(252, 541);
+            this.priceBox.Location = new System.Drawing.Point(252, 565);
             this.priceBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(100, 25);
+            this.priceBox.Size = new System.Drawing.Size(163, 25);
             this.priceBox.TabIndex = 15;
             // 
             // quantityBox
             // 
             this.quantityBox.BackColor = System.Drawing.Color.Gray;
-            this.quantityBox.Location = new System.Drawing.Point(252, 580);
+            this.quantityBox.Location = new System.Drawing.Point(252, 605);
             this.quantityBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(100, 25);
@@ -256,11 +258,29 @@ namespace Inventory_Managment_System.ProductManagement
             this.productListView.TabIndex = 24;
             this.productListView.UseCompatibleStateImageBehavior = false;
             // 
+            // ProductCostLabel
+            // 
+            this.ProductCostLabel.AutoSize = true;
+            this.ProductCostLabel.Location = new System.Drawing.Point(131, 539);
+            this.ProductCostLabel.Name = "ProductCostLabel";
+            this.ProductCostLabel.Size = new System.Drawing.Size(99, 19);
+            this.ProductCostLabel.TabIndex = 25;
+            this.ProductCostLabel.Text = "Product Cost";
+            // 
+            // procutCostTextBox
+            // 
+            this.procutCostTextBox.Location = new System.Drawing.Point(252, 533);
+            this.procutCostTextBox.Name = "procutCostTextBox";
+            this.procutCostTextBox.Size = new System.Drawing.Size(200, 25);
+            this.procutCostTextBox.TabIndex = 26;
+            // 
             // ProductManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.procutCostTextBox);
+            this.Controls.Add(this.ProductCostLabel);
             this.Controls.Add(this.productListView);
             this.Controls.Add(this.barcodeBox);
             this.Controls.Add(this.barcodeLabel);
@@ -316,5 +336,7 @@ namespace Inventory_Managment_System.ProductManagement
         private System.Windows.Forms.Label barcodeLabel;
         private System.Windows.Forms.TextBox barcodeBox;
         private System.Windows.Forms.ListView productListView;
+        private System.Windows.Forms.Label ProductCostLabel;
+        private System.Windows.Forms.TextBox procutCostTextBox;
     }
 }

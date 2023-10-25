@@ -20,7 +20,7 @@ namespace Inventory_Managment_System
             IDToken = idToken;
         }
 
-        public async Task<string> AddProductAsync(string productName, string description, string supplier, double price, int quantity, int barcode)
+        public async Task<string> AddProductAsync(string productName, string description, string supplier, double price, int quantity, int barcode , double cost)
         {
             // Ensure the user is logged in or otherwise handle the authentication status
             var userId = await GetUserIdFromFirebaseAuthenticationAsync();
@@ -56,6 +56,7 @@ namespace Inventory_Managment_System
                         Description = description,
                         Supplier = supplier,
                         Barcode = barcode,
+                        Cost  = cost,
                         Price = price,
                         Quantity = quantity
                     };
@@ -115,7 +116,7 @@ namespace Inventory_Managment_System
         }
 
 
-        public async Task<string> UpdateProductAsync(string originalName, string newName, string description, string supplier, double price, int quantity , int barcode)
+        public async Task<string> UpdateProductAsync(string originalName, string newName, string description, string supplier, double price, int quantity , int barcode, double cost)
         {
             try
             {
@@ -148,6 +149,7 @@ namespace Inventory_Managment_System
                 { "Description", description },
                 { "Supplier", supplier },
                 { "Barcode",barcode },
+                { "Cost", cost },
                 { "Price", price },
                 { "Quantity", quantity }
             };
@@ -182,7 +184,7 @@ namespace Inventory_Managment_System
 
 
 
-        public async Task<(string name, string description, string supplier, int barcode ,   double price, int quantity )> SearchProductAsync(string productName)
+        public async Task<(string name, string description, string supplier, int barcode ,double cost,   double price, int quantity )> SearchProductAsync(string productName)
         {
             try
             {
@@ -191,7 +193,7 @@ namespace Inventory_Managment_System
 
                 if (userId == null)
                 {
-                    return (null, null, null, 0, 0.0, 0);
+                    return (null, null, null, 0,  0.0, 0.0, 0);
                 }
 
                 // Get a reference to the company's document in the "companies" collection
@@ -212,6 +214,7 @@ namespace Inventory_Managment_System
                         productDocument.GetValue<string>("Description"),
                         productDocument.GetValue<string>("Supplier"),
                         productDocument.GetValue<int>("Barcode"),
+                        productDocument.GetValue<double>("Cost"),
                         productDocument.GetValue<double>("Price"),
                         productDocument.GetValue<int>("Quantity")
                     );
@@ -219,14 +222,14 @@ namespace Inventory_Managment_System
                 else
                 {
                     // Product not found or multiple products with the same name exist
-                    return (null, null, null, 0, 0, 0);
+                    return (null, null, null, 0, 0,0, 0);
                 }
             }
             catch (Exception ex)
             {
                 // Handle any errors
                 Console.WriteLine("An error occurred: " + ex.Message);
-                return (null, null, null, 0, 0, 0);
+                return (null, null, null, 0,0, 0, 0);
             }
         }
 
@@ -278,7 +281,7 @@ namespace Inventory_Managment_System
             }
         }
 
-        public async Task<List<(string name, string description, string supplier, int barcode, double price, int quantity)>> GetProductDetailsAsync()
+        public async Task<List<(string name, string description, string supplier, int barcode, double cost , double price, int quantity)>> GetProductDetailsAsync()
         {
             try
             {
@@ -288,7 +291,7 @@ namespace Inventory_Managment_System
                 if (userId == null)
                 {
                     Console.WriteLine("User is not authenticated.");
-                    return new List<(string, string, string, int, double, int)>(); // User is not authenticated
+                    return new List<(string, string, string, int, double ,double, int)>(); // User is not authenticated
                 }
 
                 // Get a reference to the company's document in the "companies" collection
@@ -300,7 +303,7 @@ namespace Inventory_Managment_System
                 // Query to retrieve all product documents
                 QuerySnapshot querySnapshot = await productsCollection.GetSnapshotAsync();
 
-                var productDetailsList = new List<(string, string, string, int, double, int)>();
+                var productDetailsList = new List<(string, string, string, int,double, double, int)>();
 
                 foreach (var productDocument in querySnapshot.Documents)
                 {
@@ -310,6 +313,7 @@ namespace Inventory_Managment_System
                         productDocument.GetValue<string>("Description"),
                         productDocument.GetValue<string>("Supplier"),
                         productDocument.GetValue<int>("Barcode"),
+                        productDocument.GetValue<int>("Cost"),
                         productDocument.GetValue<double>("Price"),
                         productDocument.GetValue<int>("Quantity")
                     );
@@ -324,7 +328,7 @@ namespace Inventory_Managment_System
             {
                 // Handle any errors
                 Console.WriteLine("An error occurred: " + ex.Message);
-                return new List<(string, string, string, int, double, int)>();
+                return new List<(string, string, string, int,double, double, int)>();
             }
         }
 
