@@ -227,7 +227,6 @@
       <DependentUpon>CheckoutView.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard_Management\DashboardController.cs" />
-    <Compile Include="Dashboard_Management\DashboardModel.cs" />
     <Compile Include="Dashboard_Management\DashboardView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,6 +260,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Checkout_Management\Basket.cs" />
+    <Compile Include="Reports_Management\ReportsController.cs" />
+    <Compile Include="Reports_Management\ReportsModel.cs" />
     <Compile Include="Reports_Management\ReportsView.cs">
       <SubType>UserControl</SubType>
     </Compile>

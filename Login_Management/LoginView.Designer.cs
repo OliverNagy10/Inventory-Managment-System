@@ -55,7 +55,7 @@ namespace Inventory_Managment_System.LogIn_Management
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(270, 36);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "email";
+            this.textBox1.Text = "t@gmail.com";
             // 
             // textBox2
             // 
@@ -65,7 +65,7 @@ namespace Inventory_Managment_System.LogIn_Management
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(270, 36);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "password";
+            this.textBox2.Text = "123456";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dontHaveLabel

@@ -31,5 +31,10 @@ namespace Inventory_Managment_System.Reports_Management
         {
 
         }
+
+        private void ReportsView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

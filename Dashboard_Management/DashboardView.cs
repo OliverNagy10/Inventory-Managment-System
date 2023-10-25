@@ -8,11 +8,12 @@ namespace Inventory_Managment_System.Dashboard
 {
     public partial class DashboardView : UserControl
     {
-        private DashboardController controller;
+       
 
         public event EventHandler ProductManagementButtonClicked;
         public event EventHandler CheckoutButtonClicked;
         public event EventHandler BackButtonClicked;
+        public event EventHandler ReportsButtonClicked;
 
         public DashboardView()
         {
@@ -21,6 +22,7 @@ namespace Inventory_Managment_System.Dashboard
             productMangementButton.Click += (sender, e) => ProductManagementButtonClicked?.Invoke(this, EventArgs.Empty);
             checkOutButton.Click += (sender, e) => CheckoutButtonClicked?.Invoke(this, EventArgs.Empty);
             backButton.Click += (sender, e) => BackButtonClicked?.Invoke(this, EventArgs.Empty);
+            reportsButton.Click += (sender, e) => ReportsButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
         public void UpdateInventoryValue(double value)

@@ -4,6 +4,7 @@ using Inventory_Managment_System.Checkout_Management;
 using Inventory_Managment_System.Dashboard;
 using Inventory_Managment_System.LogIn_Management;
 using Inventory_Managment_System.ProductManagement;
+using Inventory_Managment_System.Reports_Management;
 using Inventory_Managment_System.Sales_Manager;
 using Inventory_Managment_System.SignUp_Management;
 using System;
@@ -23,15 +24,20 @@ namespace Inventory_Managment_System
         FirestoreDb firestoreDb;
 
 
-        private ProductManagementView productManagementView;
+        
+        ProductModel productModel;
         private ProductController productController;
+        private ProductManagementView productManagementView;
 
         private DashboardView DashboardView;
-        private DashboardModel dashboardModel;
         private DashboardController dashboardController;
 
+        ReportsModel reportsModel;
+        ReportsController ReportsController;
+        ReportsView reportsView;
 
-        ProductModel productModel;
+        CheckoutController checkoutController;
+        CheckoutModel checkModel;
         CheckoutView checkoutView;
         
 
@@ -64,6 +70,9 @@ namespace Inventory_Managment_System
             checkoutView = new CheckoutView();
             panel1.Controls.Add(checkoutView);
 
+            reportsView = new ReportsView();
+            panel1.Controls.Add(reportsView);
+
 
 
 
@@ -89,6 +98,7 @@ namespace Inventory_Managment_System
             productManagementView.Visible = false;
             signUpView.Visible = false;
             checkoutView.Visible = false;
+            reportsView.Visible = false;
             login.Visible = true;
             
         }
@@ -115,12 +125,23 @@ namespace Inventory_Managment_System
         public void InitiateDashboardView(string IdToken)
         {
             productModel = new ProductModel(firestoreDb, IdToken);
-            dashboardModel = new DashboardModel();
-            dashboardController = new DashboardController(DashboardView, dashboardModel, this, IdToken,firestoreDb,productModel);
+            dashboardController = new DashboardController(DashboardView,  this,firestoreDb,productModel, IdToken);
             productManagementView.Visible = false;
             checkoutView.Visible = false;
             login.Visible = false;
             DashboardView.Visible = true;
+
+
+
+        }
+
+        public void InitiateReportsView()
+        {
+            reportsModel = new ReportsModel(firestoreDb, productModel);
+            ReportsController = new ReportsController(reportsView, reportsModel);
+
+            DashboardView.Visible = false;
+            reportsView.Visible = true;
 
 
 
