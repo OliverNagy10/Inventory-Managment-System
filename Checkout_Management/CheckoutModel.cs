@@ -40,7 +40,7 @@ namespace Inventory_Managment_System.Sales_Manager
         public async Task AddToBasketAsync(int productBarcode, int quantity)
         {
             // Search for the product by barcode
-            var (name, description, supplier, barcode, price, availableQuantity) = await productManager.SearchProductByBarcodeAsync(productBarcode);
+            var (name, description, supplier, barcode,cost, price, availableQuantity) = await productManager.SearchProductByBarcodeAsync(productBarcode);
 
             // Check if the product was found
             if (name != null)
@@ -55,6 +55,7 @@ namespace Inventory_Managment_System.Sales_Manager
                         Description = description,
                         Supplier = supplier,
                         Barcode = barcode,
+                        Cost = cost,
                         Price = price,
                         Quantity = quantity
                     });
@@ -199,6 +200,7 @@ namespace Inventory_Managment_System.Sales_Manager
                         Description = item.Description,
                         Supplier = item.Supplier,
                         Barcode = item.Barcode,
+                        Cost = item.Cost,
                         Price = item.Price,
                         Quantity = item.Quantity
                     };

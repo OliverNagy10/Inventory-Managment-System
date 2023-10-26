@@ -260,6 +260,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Checkout_Management\Basket.cs" />
+    <Compile Include="Reports_Management\Expense.cs" />
     <Compile Include="Reports_Management\ReportsController.cs" />
     <Compile Include="Reports_Management\ReportsModel.cs" />
     <Compile Include="Reports_Management\ReportsView.cs">

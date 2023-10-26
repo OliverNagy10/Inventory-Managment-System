@@ -233,7 +233,7 @@ namespace Inventory_Managment_System
             }
         }
 
-        public async Task<(string name, string description, string supplier, int barcode, double price, int quantity)> SearchProductByBarcodeAsync(int productBarcode)
+        public async Task<(string name, string description, string supplier ,int barcode, double cost, double price, int quantity)> SearchProductByBarcodeAsync(int productBarcode)
         {
             try
             {
@@ -242,7 +242,7 @@ namespace Inventory_Managment_System
 
                 if (userId == null)
                 {
-                    return (null, null, null, 0, 0.0, 0);
+                    return (null, null, null, 0, 0, 0.0, 0);
                 }
 
                 // Get a reference to the company's document in the "companies" collection
@@ -263,6 +263,7 @@ namespace Inventory_Managment_System
                         productDocument.GetValue<string>("Description"),
                         productDocument.GetValue<string>("Supplier"),
                         productDocument.GetValue<int>("Barcode"),
+                         productDocument.GetValue<int>("Cost"),
                         productDocument.GetValue<double>("Price"),
                         productDocument.GetValue<int>("Quantity")
                     );
@@ -270,14 +271,14 @@ namespace Inventory_Managment_System
                 else
                 {
                     // Product not found or multiple products with the same barcode exist
-                    return (null, null, null, 0, 0, 0);
+                    return (null, null, null, 0, 0, 0, 0);
                 }
             }
             catch (Exception ex)
             {
                 // Handle any errors
                 Console.WriteLine("An error occurred: " + ex.Message);
-                return (null, null, null, 0, 0, 0);
+                return (null, null, null, 0, 0, 0, 0);
             }
         }
 
