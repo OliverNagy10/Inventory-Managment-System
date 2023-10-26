@@ -13,17 +13,20 @@ namespace Inventory_Managment_System
     {
         private FirestoreDb db;
         private string IDToken;
+        private string userId;
 
         public ProductModel(FirestoreDb firestoreDb, string idToken)
         {
             db = firestoreDb;
             IDToken = idToken;
+            this.userId = GetUserIdFromFirebaseAuthentication();
+
         }
 
         public async Task<string> AddProductAsync(string productName, string description, string supplier, double price, int quantity, int barcode , double cost)
         {
             // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -77,8 +80,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+            
 
                 if (userId == null)
                 {
@@ -120,8 +122,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+            
 
                 if (userId == null)
                 {
@@ -188,8 +189,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+             
 
                 if (userId == null)
                 {
@@ -237,8 +237,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+                
 
                 if (userId == null)
                 {
@@ -286,9 +285,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
-
+               
                 if (userId == null)
                 {
                     Console.WriteLine("User is not authenticated.");
@@ -337,8 +334,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+            
 
                 if (userId == null)
                 {
@@ -393,8 +389,7 @@ namespace Inventory_Managment_System
         {
             try
             {
-                // Get the currently authenticated user's ID
-                string userId = await GetUserIdFromFirebaseAuthenticationAsync();
+                
 
                 if (userId == null)
                 {
@@ -430,7 +425,7 @@ namespace Inventory_Managment_System
         }
 
 
-        public async Task<string> GetUserIdFromFirebaseAuthenticationAsync()
+        public string GetUserIdFromFirebaseAuthentication()
         {
             // Replace with your Firebase project's API key
             string apiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";

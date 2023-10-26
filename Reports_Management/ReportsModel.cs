@@ -11,11 +11,13 @@ namespace Inventory_Managment_System.Reports_Management
     {
         private FirestoreDb db;
         private ProductModel productModel;
+        private string userId;
 
         public ReportsModel(FirestoreDb firestoreDb, ProductModel productModel)
         {
             db = firestoreDb;
             this.productModel = productModel;
+            this.userId = productModel.GetUserIdFromFirebaseAuthentication();
         }
 
 
@@ -45,8 +47,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<List<SaleRecord>> LoadSales()
         {
-            // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {
@@ -96,8 +97,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<List<Expense>> LoadExpenses()
         {
-            // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {
@@ -150,8 +150,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<List<Expense>> SearchExpense(string name)
         {
-            // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -203,8 +202,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<string> DeleteExpenseAsync(string expenseName, DateTime date)
         {
-            // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {
@@ -244,8 +242,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<string> AddExpenseAsync(string expenseName, double amount)
         {
-            // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -283,7 +280,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double> CalculateTotalGrossProfitMarginYear()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -350,7 +347,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double> CalculateTotalGrossProfitYear()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+         
 
             if (userId == null)
             {
@@ -407,7 +404,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double> CalculateNetProfit()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
             try
             {
                 // Calculate the total gross profit for the year
@@ -451,8 +448,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double> CalculateTotalSalesThisYear()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
-
+          
             try
             {
                 DateTime today = DateTime.UtcNow;
@@ -491,7 +487,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double> CalculateTotalSalesThisMonth()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             try
             {
@@ -531,7 +527,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double> CalculateTotalInventoryValue()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             try
             {
@@ -579,7 +575,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task GetRunningLowProducts(int thresholdQuantity)
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+          
 
             if (userId == null)
             {
@@ -613,7 +609,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double[]> CalculateSalesByDay()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -656,7 +652,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<Dictionary<string, int>> CalculateBestSellers()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -715,7 +711,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<Dictionary<string, int>> CalculateWorstSellersbyYear()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+         
 
             if (userId == null)
             {
@@ -774,7 +770,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<Dictionary<string, int>> CalculateBestSellersYear()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+           
 
             if (userId == null)
             {
@@ -833,7 +829,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<double[]> SalesForEachWeekYear()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {
@@ -879,7 +875,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<List<(string ProductName, double ProfitMargin)>> MostProfitableProducts(int n)
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {
@@ -928,7 +924,6 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<Dictionary<string, double>> CalculateBestSellersByCashValue()
         {
-            string userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
 
             if (userId == null)
             {
@@ -990,8 +985,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         public async Task<Dictionary<string, double>> CalculateTotalSalesForEachMonth()
         {
-            // Ensure the user is logged in or otherwise handle the authentication status
-            var userId = await productModel.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {

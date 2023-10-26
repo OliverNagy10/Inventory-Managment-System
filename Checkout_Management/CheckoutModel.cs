@@ -6,6 +6,9 @@ using Stripe;
 using Stripe.Checkout;
 using System.Configuration;
 using Inventory_Managment_System.Checkout_Management;
+using System.Net.Http;
+using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace Inventory_Managment_System.Sales_Manager
 {
@@ -14,6 +17,7 @@ namespace Inventory_Managment_System.Sales_Manager
         public List<Product> basket;
         private ProductModel productManager;
         private FirestoreDb db;
+        private string userId;
        
      
        
@@ -21,18 +25,21 @@ namespace Inventory_Managment_System.Sales_Manager
 
 
 
-        public CheckoutModel(ProductModel productManager, FirestoreDb firestoreDb)
+        public  CheckoutModel(ProductModel productManager, FirestoreDb firestoreDb)
         { 
 
             this.productManager = productManager;
             this.db = firestoreDb;
-            
-            
-       
+            this.userId = productManager.GetUserIdFromFirebaseAuthentication();
+     
+
+
+
             basket = new List<Product>();
             // Move the Stripe configuration inside the constructor
             string stripeApiKey = ConfigurationManager.AppSettings["StripeApiKey"];
             StripeConfiguration.ApiKey = stripeApiKey;
+            
           
 
         }
@@ -166,7 +173,7 @@ namespace Inventory_Managment_System.Sales_Manager
         private async Task CreateSalesDocumentAsync()
         {
             // Get the currently authenticated user's ID
-            string userId = await productManager.GetUserIdFromFirebaseAuthenticationAsync();
+            
 
             if (userId == null)
             {
