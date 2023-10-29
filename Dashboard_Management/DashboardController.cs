@@ -48,7 +48,7 @@ namespace Inventory_Managment_System.Dashboard
         public void OnReportsButtonClick()
         {
 
-            mainForm.InitiateReportsView();
+            mainForm.InitiateReportsView(IDtoken);
         }
 
         public void OnCheckoutButtonClick()

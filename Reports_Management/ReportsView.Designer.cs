@@ -44,9 +44,9 @@ namespace Inventory_Managment_System.Reports_Management
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.monthlySales = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.monthlySalesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.exitButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.downloadReportButton = new System.Windows.Forms.Button();
             this.worstSellersYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.salesRevenueLabel = new System.Windows.Forms.Label();
             this.GrossRevenueLabel = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@ namespace Inventory_Managment_System.Reports_Management
             this.YearLabel = new System.Windows.Forms.Label();
             this.bestSellersYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.mostProfiableProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.SalesbyWeek = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.SalesbyWeekYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SalesLabel = new System.Windows.Forms.Label();
             this.SalesListView = new System.Windows.Forms.ListView();
             this.GrossMarginLabel = new System.Windows.Forms.Label();
@@ -76,28 +76,28 @@ namespace Inventory_Managment_System.Reports_Management
             this.searchBox = new System.Windows.Forms.TextBox();
             this.NetProfitLabel = new System.Windows.Forms.Label();
             this.NetProfitHolder = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlySales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlySalesChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.worstSellersYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestSellersYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostProfiableProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesbyWeek)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesbyWeekYear)).BeginInit();
             this.SuspendLayout();
             // 
-            // monthlySales
+            // monthlySalesChart
             // 
             chartArea1.Name = "ChartArea1";
-            this.monthlySales.ChartAreas.Add(chartArea1);
+            this.monthlySalesChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.monthlySales.Legends.Add(legend1);
-            this.monthlySales.Location = new System.Drawing.Point(977, 380);
-            this.monthlySales.Name = "monthlySales";
+            this.monthlySalesChart.Legends.Add(legend1);
+            this.monthlySalesChart.Location = new System.Drawing.Point(977, 380);
+            this.monthlySalesChart.Name = "monthlySalesChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.monthlySales.Series.Add(series1);
-            this.monthlySales.Size = new System.Drawing.Size(300, 300);
-            this.monthlySales.TabIndex = 0;
-            this.monthlySales.Text = "Montly Sales Chart";
+            this.monthlySalesChart.Series.Add(series1);
+            this.monthlySalesChart.Size = new System.Drawing.Size(300, 300);
+            this.monthlySalesChart.TabIndex = 0;
+            this.monthlySalesChart.Text = "Montly Sales Chart";
             // 
             // exitButton
             // 
@@ -108,14 +108,14 @@ namespace Inventory_Managment_System.Reports_Management
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // downloadReportButton
             // 
-            this.button1.Location = new System.Drawing.Point(791, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Download Report";
-            this.button1.UseVisualStyleBackColor = true;
+            this.downloadReportButton.Location = new System.Drawing.Point(791, 20);
+            this.downloadReportButton.Name = "downloadReportButton";
+            this.downloadReportButton.Size = new System.Drawing.Size(180, 23);
+            this.downloadReportButton.TabIndex = 2;
+            this.downloadReportButton.Text = "Download Report";
+            this.downloadReportButton.UseVisualStyleBackColor = true;
             // 
             // worstSellersYear
             // 
@@ -126,6 +126,7 @@ namespace Inventory_Managment_System.Reports_Management
             this.worstSellersYear.Location = new System.Drawing.Point(674, 380);
             this.worstSellersYear.Name = "worstSellersYear";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.worstSellersYear.Series.Add(series2);
@@ -206,6 +207,7 @@ namespace Inventory_Managment_System.Reports_Management
             this.bestSellersYear.Location = new System.Drawing.Point(359, 380);
             this.bestSellersYear.Name = "bestSellersYear";
             series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.bestSellersYear.Series.Add(series3);
@@ -229,21 +231,22 @@ namespace Inventory_Managment_System.Reports_Management
             this.mostProfiableProducts.TabIndex = 15;
             this.mostProfiableProducts.Text = "chart1";
             // 
-            // SalesbyWeek
+            // SalesbyWeekYear
             // 
             chartArea5.Name = "ChartArea1";
-            this.SalesbyWeek.ChartAreas.Add(chartArea5);
+            this.SalesbyWeekYear.ChartAreas.Add(chartArea5);
             legend5.Name = "Legend1";
-            this.SalesbyWeek.Legends.Add(legend5);
-            this.SalesbyWeek.Location = new System.Drawing.Point(32, 380);
-            this.SalesbyWeek.Name = "SalesbyWeek";
+            this.SalesbyWeekYear.Legends.Add(legend5);
+            this.SalesbyWeekYear.Location = new System.Drawing.Point(32, 380);
+            this.SalesbyWeekYear.Name = "SalesbyWeekYear";
             series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series5.Legend = "Legend1";
             series5.Name = "Series1";
-            this.SalesbyWeek.Series.Add(series5);
-            this.SalesbyWeek.Size = new System.Drawing.Size(300, 300);
-            this.SalesbyWeek.TabIndex = 16;
-            this.SalesbyWeek.Text = "chart1";
+            this.SalesbyWeekYear.Series.Add(series5);
+            this.SalesbyWeekYear.Size = new System.Drawing.Size(300, 300);
+            this.SalesbyWeekYear.TabIndex = 16;
+            this.SalesbyWeekYear.Text = "chart1";
             // 
             // SalesLabel
             // 
@@ -422,7 +425,7 @@ namespace Inventory_Managment_System.Reports_Management
             this.Controls.Add(this.GrossMarginLabel);
             this.Controls.Add(this.SalesListView);
             this.Controls.Add(this.SalesLabel);
-            this.Controls.Add(this.SalesbyWeek);
+            this.Controls.Add(this.SalesbyWeekYear);
             this.Controls.Add(this.mostProfiableProducts);
             this.Controls.Add(this.bestSellersYear);
             this.Controls.Add(this.YearLabel);
@@ -433,17 +436,17 @@ namespace Inventory_Managment_System.Reports_Management
             this.Controls.Add(this.GrossRevenueLabel);
             this.Controls.Add(this.salesRevenueLabel);
             this.Controls.Add(this.worstSellersYear);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.downloadReportButton);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.monthlySales);
+            this.Controls.Add(this.monthlySalesChart);
             this.Name = "ReportsView";
             this.Size = new System.Drawing.Size(1879, 698);
             this.Load += new System.EventHandler(this.ReportsView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.monthlySales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlySalesChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.worstSellersYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestSellersYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostProfiableProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesbyWeek)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesbyWeekYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,9 +454,9 @@ namespace Inventory_Managment_System.Reports_Management
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart monthlySales;
+        private System.Windows.Forms.DataVisualization.Charting.Chart monthlySalesChart;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button downloadReportButton;
         private System.Windows.Forms.DataVisualization.Charting.Chart worstSellersYear;
         private System.Windows.Forms.Label salesRevenueLabel;
         private System.Windows.Forms.Label GrossRevenueLabel;
@@ -464,7 +467,7 @@ namespace Inventory_Managment_System.Reports_Management
         private System.Windows.Forms.Label YearLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart bestSellersYear;
         private System.Windows.Forms.DataVisualization.Charting.Chart mostProfiableProducts;
-        private System.Windows.Forms.DataVisualization.Charting.Chart SalesbyWeek;
+        private System.Windows.Forms.DataVisualization.Charting.Chart SalesbyWeekYear;
         private System.Windows.Forms.Label SalesLabel;
         private System.Windows.Forms.ListView SalesListView;
         private System.Windows.Forms.Label GrossMarginLabel;

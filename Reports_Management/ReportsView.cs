@@ -18,6 +18,8 @@ namespace Inventory_Managment_System.Reports_Management
         public event Action<string, double, DateTime> AddExpenseClicked;
         public event Action<string> SearchButtonClicked;
         public event Action<string,DateTime> DeleteExpenseClicked;
+        public event Action DownloadReportClicked;
+        public event Action ExitClicked;
 
 
 
@@ -30,11 +32,13 @@ namespace Inventory_Managment_System.Reports_Management
             searchButton.Click += (sender, e) => OnSearchButtonClicked();
             deleteExpenseButton.Click += (sender, e) => OnDeleteExpenseClicked();
             expenseListView.MouseClick += OnExpenseListViewMouseClick;
+            downloadReportButton.Click += (sender, e) => OnDownloadClicked();
+            exitButton.Click += (sender, e) => OnExitClicked();
 
 
         }
 
-        // Other view methods and properties...
+     
 
         private void OnAddExpenseClicked()
         {
@@ -192,6 +196,20 @@ namespace Inventory_Managment_System.Reports_Management
             DeleteExpenseClicked?.Invoke(expenseName, date);
         }
 
+
+        private void OnDownloadClicked()
+        {
+         
+            DownloadReportClicked?.Invoke();
+        }
+
+       private void OnExitClicked()
+        {
+
+            ExitClicked?.Invoke();
+        }
+
+
         private void OnExpenseListViewMouseClick(object sender, MouseEventArgs e)
         {
             // Get the selected item
@@ -218,6 +236,72 @@ namespace Inventory_Managment_System.Reports_Management
                 SalesListView.Items.Add(item);
             }
         }
+
+
+        public void PopulateMonthlySalesChart(Dictionary<string, double> monthlySales)
+        {
+            // Clear any existing data points in the chart
+            monthlySalesChart.Series[0].Points.Clear();
+
+            // Populate the chart with monthly sales data
+            foreach (var monthYear in monthlySales.Keys)
+            {
+                double salesAmount = monthlySales[monthYear];
+                DateTime date = DateTime.ParseExact(monthYear, "yyyy-MM", CultureInfo.InvariantCulture);
+
+                // Add a data point to the chart
+                monthlySalesChart.Series[0].Points.AddXY(date, salesAmount);
+            }
+        }
+
+        public void PopulateWorstSellersYearChart(Dictionary<string, int> worstSellers)
+        {
+            // Clear any existing data points in the chart
+            worstSellersYear.Series[0].Points.Clear();
+
+            // Populate the chart with worst sellers data
+            foreach (var product in worstSellers)
+            {
+                worstSellersYear.Series[0].Points.AddXY(product.Key, product.Value);
+            }
+        }
+
+        public void PopulateBestSellersYearChart(Dictionary<string, int> bestSellers)
+        {
+            // Clear any existing data points in the chart
+            bestSellersYear.Series[0].Points.Clear();
+
+            // Populate the chart with best sellers data
+            foreach (var product in bestSellers)
+            {
+                bestSellersYear.Series[0].Points.AddXY(product.Key, product.Value);
+            }
+        }
+
+        public void PopulateSalesbyWeekYearChart(double[] weeklySales)
+        {
+            // Clear any existing data points in the chart
+            SalesbyWeekYear.Series[0].Points.Clear();
+
+            // Populate the chart with weekly sales data
+            for (int week = 0; week < weeklySales.Length; week++)
+            {
+                SalesbyWeekYear.Series[0].Points.AddY(weeklySales[week]);
+            }
+        }
+
+        public void PopulateMostProfitableProductsChart(List<(string ProductName, double ProfitMargin)> products)
+        {
+            // Clear any existing data points in the chart
+            mostProfiableProducts.Series[0].Points.Clear();
+
+            // Populate the chart with most profitable products data
+            foreach (var product in products)
+            {
+                mostProfiableProducts.Series[0].Points.AddXY(product.ProductName, product.ProfitMargin);
+            }
+        }
+
 
 
     }

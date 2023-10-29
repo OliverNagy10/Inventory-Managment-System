@@ -128,6 +128,7 @@ namespace Inventory_Managment_System
             dashboardController = new DashboardController(DashboardView,  this,firestoreDb,productModel, IdToken);
             productManagementView.Visible = false;
             checkoutView.Visible = false;
+            reportsView.Visible = false;
             login.Visible = false;
             DashboardView.Visible = true;
 
@@ -135,10 +136,10 @@ namespace Inventory_Managment_System
 
         }
 
-        public void InitiateReportsView()
+        public void InitiateReportsView(string IDToken)
         {
             reportsModel = new ReportsModel(firestoreDb, productModel);
-            ReportsController = new ReportsController(reportsView, reportsModel);
+            ReportsController = new ReportsController(reportsView, reportsModel,this, IDToken);
 
             DashboardView.Visible = false;
             reportsView.Visible = true;
