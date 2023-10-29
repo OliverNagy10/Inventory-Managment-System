@@ -93,6 +93,7 @@ namespace Inventory_Managment_System.LogIn_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(214)))), ((int)(((byte)(172)))));
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.dontHaveLabel);
             this.Controls.Add(this.textBox2);

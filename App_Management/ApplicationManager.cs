@@ -174,5 +174,10 @@ namespace Inventory_Managment_System
         {
 
         }
+
+        private void ApplicationManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
