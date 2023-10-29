@@ -107,8 +107,8 @@ namespace Inventory_Managment_System.Reports_Management
 
             try
             {
-                // Get a reference to the user's document in the "users" collection
-                DocumentReference userRef = db.Collection("users").Document(userId);
+                // Get a reference to the user's document in the "companies" collection
+                DocumentReference userRef = db.Collection("companies").Document(userId);
 
                 // Get a reference to the "expenses" collection within the user's document
                 CollectionReference expensesCollection = userRef.Collection("expenses");
@@ -160,8 +160,8 @@ namespace Inventory_Managment_System.Reports_Management
 
             try
             {
-                // Get a reference to the user's document in the "users" collection
-                DocumentReference userRef = db.Collection("users").Document(userId);
+                // Get a reference to the user's document in the "companies" collection
+                DocumentReference userRef = db.Collection("companies").Document(userId);
 
                 // Get a reference to the "expenses" collection within the user's document
                 CollectionReference expensesCollection = userRef.Collection("expenses");
@@ -211,8 +211,8 @@ namespace Inventory_Managment_System.Reports_Management
 
             try
             {
-                // Get a reference to the user's document in the "users" collection
-                DocumentReference userRef = db.Collection("users").Document(userId);
+                // Get a reference to the user's document in the "companies" collection
+                DocumentReference userRef = db.Collection("companies").Document(userId);
 
                 // Get a reference to the "expenses" collection within the user's document
                 CollectionReference expensesCollection = userRef.Collection("expenses");
@@ -252,7 +252,7 @@ namespace Inventory_Managment_System.Reports_Management
             {
                 Console.WriteLine("AddExpenseAsync: Calling Firestore to add an expense...");
 
-                // Get a reference to the user's document in the "users" collection
+                // Get a reference to the user's document in the "companies" collection
                 DocumentReference userRef = db.Collection("companies").Document(userId);
 
                 // Get a reference to the "expenses" collection within the user's document
@@ -415,8 +415,8 @@ namespace Inventory_Managment_System.Reports_Management
                 // Calculate the total gross profit for the year
                 double totalGrossProfit = await CalculateTotalGrossProfitYear();
 
-                // Get a reference to the user's document in the "users" collection
-                DocumentReference userRef = db.Collection("users").Document(userId);
+                // Get a reference to the user's document in the "companies" collection
+                DocumentReference userRef = db.Collection("companies").Document(userId);
 
                 // Get a reference to the "expenses" collection within the user's document
                 CollectionReference expensesCollection = userRef.Collection("expenses");
