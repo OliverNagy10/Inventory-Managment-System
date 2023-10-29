@@ -240,19 +240,20 @@ namespace Inventory_Managment_System.Reports_Management
             }
         }
 
-        public async Task<string> AddExpenseAsync(string expenseName, double amount)
+        public async Task<string> AddExpenseAsync(string expenseName, double amount, DateTime date)
         {
-           
-
             if (userId == null)
             {
+                Console.WriteLine("AddExpenseAsync: User is not authenticated.");
                 return "User is not authenticated.";
             }
 
             try
             {
+                Console.WriteLine("AddExpenseAsync: Calling Firestore to add an expense...");
+
                 // Get a reference to the user's document in the "users" collection
-                DocumentReference userRef = db.Collection("users").Document(userId);
+                DocumentReference userRef = db.Collection("companies").Document(userId);
 
                 // Get a reference to the "expenses" collection within the user's document
                 CollectionReference expensesCollection = userRef.Collection("expenses");
@@ -264,24 +265,28 @@ namespace Inventory_Managment_System.Reports_Management
                 {
                     Name = expenseName,
                     Amount = amount,
-                    Date = DateTime.UtcNow
+                    Date = date
                 };
+
+                Console.WriteLine("AddExpenseAsync: Adding expense to Firestore...");
 
                 // Add the new expense document to the "expenses" collection
                 await newExpenseRef.SetAsync(newExpense);
+
+                Console.WriteLine("AddExpenseAsync: Expense added successfully.");
 
                 return "Expense added successfully.";
             }
             catch (Exception ex)
             {
+                Console.WriteLine("AddExpenseAsync: An error occurred: " + ex.Message);
                 return "An error occurred: " + ex.Message;
             }
         }
 
+
         public async Task<double> CalculateTotalGrossProfitMarginYear()
         {
-           
-
             if (userId == null)
             {
                 // Handle the unauthenticated user case as needed
@@ -333,10 +338,10 @@ namespace Inventory_Managment_System.Reports_Management
                 }
             }
 
-            // Calculate Gross Profit Margin as a percentage
+            // Calculate Gross Profit Margin as a decimal (not percentage)
             if (totalSales > 0)
             {
-                double grossProfitMargin = ((totalSales - totalCost) / totalSales) * 100;
+                double grossProfitMargin = (totalSales - totalCost) / totalSales;
                 return grossProfitMargin;
             }
             else
