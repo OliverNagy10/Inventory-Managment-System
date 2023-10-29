@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory_Managment_System.Sales_Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,14 @@ namespace Inventory_Managment_System.Reports_Management
             expenseListView.View = View.Details;
             expenseListView.Columns.Add("Name", 50);     // Column 1: Name
             expenseListView.Columns.Add("Amount", 50); // Column 2:
-            expenseListView.Columns.Add("Date", 50); 
+            expenseListView.Columns.Add("Date", 50);
+
+
+
+            SalesListView.View = View.Details;
+            SalesListView.Columns.Add("Date", 50);     // Column 1: Name
+            SalesListView.Columns.Add("Total", 50); // Column 2:
+            
         }
 
         public void DisplayTotalSalesRevenue(double totalSalesRevenue)
@@ -196,6 +204,21 @@ namespace Inventory_Managment_System.Reports_Management
                 SearchButtonClicked?.Invoke(expenseName);
             }
         }
+
+
+        public void PopulateSalesListView(List<SaleRecord> salesRecords)
+        {
+            // Clear any existing items in the list view
+            SalesListView.Items.Clear();
+
+            foreach (var sale in salesRecords)
+            {
+                // Create a ListViewItem to represent each sale record and add it to the list view
+                var item = new ListViewItem(new[] { sale.Date.ToString("MM/dd/yyyy"), sale.TotalSalePrice.ToString("0.00") });
+                SalesListView.Items.Add(item);
+            }
+        }
+
 
     }
 

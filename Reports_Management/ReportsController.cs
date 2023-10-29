@@ -50,9 +50,10 @@ namespace Inventory_Managment_System.Reports_Management
             double totalGrossMargin = await model.CalculateTotalGrossProfitMarginYear();
             double totalNetProfit = await model.CalculateNetProfit();
             double totalNetProfitMargin = await model.CalculateNetProfitMargin();
-            LoadExpensesAndPopulateListView();
 
-            // Update the view with the calculated values
+            LoadExpensesAndPopulateListView();
+            await LoadAndPopulateSalesListView();
+         
             view.DisplayTotalNetProfitMargin(totalNetProfitMargin);
             view.DisplayTotalNetProfit(totalNetProfit);
             view.DisplayTotalSalesRevenue(totalSalesRevenue);
@@ -139,6 +140,15 @@ namespace Inventory_Managment_System.Reports_Management
             }
         }
 
+
+        private async Task LoadAndPopulateSalesListView()
+        {
+            // Load sales records from the model
+            var salesRecords = await model.LoadSales();
+
+            // Populate the SalesListView in the view with loaded sales records
+            view.PopulateSalesListView(salesRecords);
+        }
 
 
 

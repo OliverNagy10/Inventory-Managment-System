@@ -29,21 +29,21 @@ namespace Inventory_Managment_System.Reports_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.monthlySales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.exitButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@ namespace Inventory_Managment_System.Reports_Management
             this.mostProfiableProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SalesbyWeek = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SalesLabel = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.SalesListView = new System.Windows.Forms.ListView();
             this.GrossMarginLabel = new System.Windows.Forms.Label();
             this.grossMarginHolder = new System.Windows.Forms.Label();
             this.ExpenseLabel = new System.Windows.Forms.Label();
@@ -85,16 +85,16 @@ namespace Inventory_Managment_System.Reports_Management
             // 
             // monthlySales
             // 
-            chartArea6.Name = "ChartArea1";
-            this.monthlySales.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.monthlySales.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.monthlySales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.monthlySales.Legends.Add(legend1);
             this.monthlySales.Location = new System.Drawing.Point(977, 380);
             this.monthlySales.Name = "monthlySales";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.monthlySales.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.monthlySales.Series.Add(series1);
             this.monthlySales.Size = new System.Drawing.Size(300, 300);
             this.monthlySales.TabIndex = 0;
             this.monthlySales.Text = "Montly Sales Chart";
@@ -119,16 +119,16 @@ namespace Inventory_Managment_System.Reports_Management
             // 
             // worstSellersYear
             // 
-            chartArea7.Name = "ChartArea1";
-            this.worstSellersYear.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.worstSellersYear.Legends.Add(legend7);
+            chartArea2.Name = "ChartArea1";
+            this.worstSellersYear.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.worstSellersYear.Legends.Add(legend2);
             this.worstSellersYear.Location = new System.Drawing.Point(674, 380);
             this.worstSellersYear.Name = "worstSellersYear";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.worstSellersYear.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.worstSellersYear.Series.Add(series2);
             this.worstSellersYear.Size = new System.Drawing.Size(297, 300);
             this.worstSellersYear.TabIndex = 6;
             this.worstSellersYear.Text = "chart2";
@@ -199,48 +199,48 @@ namespace Inventory_Managment_System.Reports_Management
             // 
             // bestSellersYear
             // 
-            chartArea8.Name = "ChartArea1";
-            this.bestSellersYear.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.bestSellersYear.Legends.Add(legend8);
+            chartArea3.Name = "ChartArea1";
+            this.bestSellersYear.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.bestSellersYear.Legends.Add(legend3);
             this.bestSellersYear.Location = new System.Drawing.Point(359, 380);
             this.bestSellersYear.Name = "bestSellersYear";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.bestSellersYear.Series.Add(series8);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.bestSellersYear.Series.Add(series3);
             this.bestSellersYear.Size = new System.Drawing.Size(300, 300);
             this.bestSellersYear.TabIndex = 14;
             this.bestSellersYear.Text = "chart1";
             // 
             // mostProfiableProducts
             // 
-            chartArea9.Name = "ChartArea1";
-            this.mostProfiableProducts.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.mostProfiableProducts.Legends.Add(legend9);
+            chartArea4.Name = "ChartArea1";
+            this.mostProfiableProducts.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.mostProfiableProducts.Legends.Add(legend4);
             this.mostProfiableProducts.Location = new System.Drawing.Point(32, 39);
             this.mostProfiableProducts.Name = "mostProfiableProducts";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.mostProfiableProducts.Series.Add(series9);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.mostProfiableProducts.Series.Add(series4);
             this.mostProfiableProducts.Size = new System.Drawing.Size(300, 300);
             this.mostProfiableProducts.TabIndex = 15;
             this.mostProfiableProducts.Text = "chart1";
             // 
             // SalesbyWeek
             // 
-            chartArea10.Name = "ChartArea1";
-            this.SalesbyWeek.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.SalesbyWeek.Legends.Add(legend10);
+            chartArea5.Name = "ChartArea1";
+            this.SalesbyWeek.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.SalesbyWeek.Legends.Add(legend5);
             this.SalesbyWeek.Location = new System.Drawing.Point(32, 380);
             this.SalesbyWeek.Name = "SalesbyWeek";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.SalesbyWeek.Series.Add(series10);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.SalesbyWeek.Series.Add(series5);
             this.SalesbyWeek.Size = new System.Drawing.Size(300, 300);
             this.SalesbyWeek.TabIndex = 16;
             this.SalesbyWeek.Text = "chart1";
@@ -254,14 +254,14 @@ namespace Inventory_Managment_System.Reports_Management
             this.SalesLabel.TabIndex = 17;
             this.SalesLabel.Text = "Sales";
             // 
-            // listView1
+            // SalesListView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(602, 168);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(612, 186);
-            this.listView1.TabIndex = 18;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.SalesListView.HideSelection = false;
+            this.SalesListView.Location = new System.Drawing.Point(608, 168);
+            this.SalesListView.Name = "SalesListView";
+            this.SalesListView.Size = new System.Drawing.Size(612, 186);
+            this.SalesListView.TabIndex = 18;
+            this.SalesListView.UseCompatibleStateImageBehavior = false;
             // 
             // GrossMarginLabel
             // 
@@ -420,7 +420,7 @@ namespace Inventory_Managment_System.Reports_Management
             this.Controls.Add(this.ExpenseLabel);
             this.Controls.Add(this.grossMarginHolder);
             this.Controls.Add(this.GrossMarginLabel);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.SalesListView);
             this.Controls.Add(this.SalesLabel);
             this.Controls.Add(this.SalesbyWeek);
             this.Controls.Add(this.mostProfiableProducts);
@@ -466,7 +466,7 @@ namespace Inventory_Managment_System.Reports_Management
         private System.Windows.Forms.DataVisualization.Charting.Chart mostProfiableProducts;
         private System.Windows.Forms.DataVisualization.Charting.Chart SalesbyWeek;
         private System.Windows.Forms.Label SalesLabel;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView SalesListView;
         private System.Windows.Forms.Label GrossMarginLabel;
         private System.Windows.Forms.Label grossMarginHolder;
         private System.Windows.Forms.Label ExpenseLabel;
