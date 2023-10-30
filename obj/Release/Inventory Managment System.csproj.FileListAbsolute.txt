@@ -35,6 +35,7 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Grpc.Net.Client.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Grpc.Net.Common.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\LiteDB.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.AnalysisServices.AdomdClient.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Microsoft.Extensions.Logging.Abstractions.dll
@@ -54,11 +55,15 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.ValueTuple.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.ChartView.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.GridView.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.PivotGrid.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.Themes.TelerikMetro.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.Themes.Windows11.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.UI.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\TelerikCommon.dll
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\TelerikData.dll
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\EPPlus.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Firebase.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Firebase.Auth.xml
@@ -118,7 +123,11 @@ C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bi
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\System.ValueTuple.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.ChartView.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.GridView.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.PivotGrid.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\Telerik.WinControls.UI.xml
+C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\bin\Release\TelerikData.xml
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Checkout_Management.CheckoutView.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.Dashboard.DashboardView.resources
 C:\Users\ocsio\Desktop\Inventory Management System\Inventory Managment System\obj\Release\Inventory_Managment_System.LogIn_Management.LoginView.resources

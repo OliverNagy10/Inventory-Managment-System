@@ -4,6 +4,7 @@ using Google.Cloud.Firestore;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory_Managment_System.Sales_Manager;
+using Telerik.WinControls.UI;
 
 namespace Inventory_Managment_System.Reports_Management
 {
@@ -578,14 +579,14 @@ namespace Inventory_Managment_System.Reports_Management
             }
         }
 
-        public async Task GetRunningLowProducts(int thresholdQuantity)
+        public async Task<List<ListViewDataItem>> GetRunningLowProducts(int thresholdQuantity)
         {
-          
+            List<ListViewDataItem> lowProducts = new List<ListViewDataItem>();
 
             if (userId == null)
             {
                 // Handle the unauthenticated user case as needed
-                return;
+                return lowProducts;
             }
 
             DocumentReference companyRef = db.Collection("companies").Document(userId);
@@ -595,8 +596,6 @@ namespace Inventory_Managment_System.Reports_Management
                 .WhereLessThan("Quantity", thresholdQuantity)
                 .GetSnapshotAsync();
 
-            List<string> lowProducts = new List<string>();
-
             foreach (var documentSnapshot in querySnapshot)
             {
                 if (documentSnapshot.Exists)
@@ -604,12 +603,16 @@ namespace Inventory_Managment_System.Reports_Management
                     var productData = documentSnapshot.ToDictionary();
                     if (productData.ContainsKey("Name") && productData["Name"] is string productName)
                     {
-                        lowProducts.Add(productName);
+                        var dataItem = new ListViewDataItem();
+                        dataItem[0] = productName;  // Set the name
+                       
+
+                        lowProducts.Add(dataItem);
                     }
                 }
             }
 
-            // Process the list of low products as needed (e.g., notify users)
+            return lowProducts;
         }
 
         public async Task<double[]> CalculateSalesByDay()

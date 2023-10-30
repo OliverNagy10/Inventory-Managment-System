@@ -86,7 +86,11 @@ namespace Inventory_Managment_System.Dashboard
 
                 // Call GetRunningLowProducts with your desired threshold
                 int thresholdQuantity = 10; // Change this to your desired threshold
-                await reportsModel.GetRunningLowProducts(thresholdQuantity);
+              
+                var lowProducts = await reportsModel.GetRunningLowProducts(thresholdQuantity); // Get the list of low products
+
+                // Update the LowProductsListView with the list of low products
+                view.UpdateLowProductsListView(lowProducts);
 
                 // Call other methods from reportsModel
                 await reportsModel.CalculateSalesByDay();

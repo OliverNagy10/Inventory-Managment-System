@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting; // Make sure to include this namespace
+using Telerik.WinControls.UI;
 
 namespace Inventory_Managment_System.Dashboard
 {
@@ -19,10 +20,10 @@ namespace Inventory_Managment_System.Dashboard
         {
             InitializeComponent();
 
-            productMangementButton.Click += (sender, e) => ProductManagementButtonClicked?.Invoke(this, EventArgs.Empty);
-            checkOutButton.Click += (sender, e) => CheckoutButtonClicked?.Invoke(this, EventArgs.Empty);
-            backButton.Click += (sender, e) => BackButtonClicked?.Invoke(this, EventArgs.Empty);
-            reportsButton.Click += (sender, e) => ReportsButtonClicked?.Invoke(this, EventArgs.Empty);
+            MenuProduct.Click += (sender, e) => ProductManagementButtonClicked?.Invoke(this, EventArgs.Empty);
+            MenuCheckout.Click += (sender, e) => CheckoutButtonClicked?.Invoke(this, EventArgs.Empty);
+            MenuLogout.Click += (sender, e) => BackButtonClicked?.Invoke(this, EventArgs.Empty);
+            MenuReports.Click += (sender, e) => ReportsButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
         public void UpdateInventoryValue(double value)
@@ -34,14 +35,14 @@ namespace Inventory_Managment_System.Dashboard
         public void UpdateTotalSales(double sales)
         {
             // Update the totalSalesHolder label
-            totalSalesHolder.Text = "$" + sales;
+            salesValueHolder.Text = "$" + sales;
         }
 
-        public void UpdateLowProductsListView(List<ListViewItem> items)
+        public void UpdateLowProductsListView(List<ListViewDataItem> items)
         {
             // Clear the existing items in the ListView
             LowProductsListView.Items.Clear();
-
+            
             // Add the new items to the ListView
             LowProductsListView.Items.AddRange(items.ToArray());
         }
@@ -87,14 +88,24 @@ namespace Inventory_Managment_System.Dashboard
         }
 
 
-        private void DashboardView_Load(object sender, EventArgs e)
+        private void radMenuItem1_Click(object sender, EventArgs e)
         {
-            // Set the View property of the basketListView to Details
-            LowProductsListView.View = View.Details;
-            LowProductsListView.Columns.Add("Name", 50);     // Column 1: Name
-            LowProductsListView.Columns.Add("Quantity", 50); // Column 2: Quantity
+
         }
 
-      
+        private void LowProductsListView_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DashboardView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lowLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
