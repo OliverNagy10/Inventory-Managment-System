@@ -29,6 +29,7 @@ namespace Inventory_Managment_System.Dashboard
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -54,6 +55,7 @@ namespace Inventory_Managment_System.Dashboard
             this.LowProductsListView = new System.Windows.Forms.ListView();
             this.PieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PieChart)).BeginInit();
@@ -229,6 +231,12 @@ namespace Inventory_Managment_System.Dashboard
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // DashboardView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -279,5 +287,6 @@ namespace Inventory_Managment_System.Dashboard
         private System.Windows.Forms.ListView LowProductsListView;
         private System.Windows.Forms.DataVisualization.Charting.Chart PieChart;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -29,81 +29,154 @@ namespace Inventory_Managment_System.LogIn_Management
         /// </summary>
         private void InitializeComponent()
         {
-            this.logInButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dontHaveLabel = new System.Windows.Forms.Label();
-            this.signUpButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
+            this.LogInLabel = new Telerik.WinControls.UI.RadLabel();
+            this.windows11DarkTheme1 = new Telerik.WinControls.Themes.Windows11DarkTheme();
+            this.emailTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.passwordTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.loginButton = new Telerik.WinControls.UI.RadButton();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.signupButton = new Telerik.WinControls.UI.RadButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LogInLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signupButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // logInButton
+            // LogInLabel
             // 
-            this.logInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInButton.Location = new System.Drawing.Point(930, 540);
-            this.logInButton.Margin = new System.Windows.Forms.Padding(4);
-            this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(270, 50);
-            this.logInButton.TabIndex = 0;
-            this.logInButton.Text = "Login";
-            this.logInButton.UseVisualStyleBackColor = true;
+            this.LogInLabel.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.LogInLabel.Location = new System.Drawing.Point(59, 13);
+            this.LogInLabel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.LogInLabel.Name = "LogInLabel";
+            this.LogInLabel.Size = new System.Drawing.Size(201, 38);
+            this.LogInLabel.TabIndex = 5;
+            this.LogInLabel.Text = "WELCOME BACK";
+            this.LogInLabel.ThemeName = "Windows11Dark";
+            this.LogInLabel.Click += new System.EventHandler(this.LogInLabel_Click);
             // 
-            // textBox1
+            // emailTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(930, 373);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 36);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "t@gmail.com";
+            this.emailTextBox.Location = new System.Drawing.Point(59, 222);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(369, 40);
+            this.emailTextBox.TabIndex = 6;
+            this.emailTextBox.Text = "Email";
+            this.emailTextBox.ThemeName = "Windows11Dark";
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(930, 448);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(270, 36);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "123456";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.passwordTextBox.Location = new System.Drawing.Point(59, 331);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(369, 40);
+            this.passwordTextBox.TabIndex = 7;
+            this.passwordTextBox.Text = "Password";
+            this.passwordTextBox.ThemeName = "Windows11Dark";
             // 
-            // dontHaveLabel
+            // contextMenuStrip1
             // 
-            this.dontHaveLabel.AutoSize = true;
-            this.dontHaveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dontHaveLabel.Location = new System.Drawing.Point(729, 674);
-            this.dontHaveLabel.Name = "dontHaveLabel";
-            this.dontHaveLabel.Size = new System.Drawing.Size(297, 29);
-            this.dontHaveLabel.TabIndex = 3;
-            this.dontHaveLabel.Text = "Dont Have An Account ? ";
-            this.dontHaveLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // signUpButton
+            // loginButton
             // 
-            this.signUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpButton.Location = new System.Drawing.Point(1032, 668);
-            this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(168, 40);
-            this.signUpButton.TabIndex = 4;
-            this.signUpButton.Text = "Sign Up ";
-            this.signUpButton.UseVisualStyleBackColor = true;
+            this.loginButton.Location = new System.Drawing.Point(176, 471);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(145, 40);
+            this.loginButton.TabIndex = 9;
+            this.loginButton.Text = "LOG IN";
+            this.loginButton.ThemeName = "Windows11Dark";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Location = new System.Drawing.Point(59, 640);
+            this.radLabel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(225, 27);
+            this.radLabel1.TabIndex = 10;
+            this.radLabel1.Text = "Dont have an account yet ?";
+            this.radLabel1.ThemeName = "Windows11Dark";
+            // 
+            // signupButton
+            // 
+            this.signupButton.Location = new System.Drawing.Point(294, 638);
+            this.signupButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.signupButton.Name = "signupButton";
+            this.signupButton.Size = new System.Drawing.Size(134, 40);
+            this.signupButton.TabIndex = 11;
+            this.signupButton.Text = "SIGN UP";
+            this.signupButton.ThemeName = "Windows11Dark";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1046, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(895, 199);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox2.Location = new System.Drawing.Point(811, -142);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 1457);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(905, 385);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1115, 604);
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
             // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(214)))), ((int)(((byte)(172)))));
-            this.Controls.Add(this.signUpButton);
-            this.Controls.Add(this.dontHaveLabel);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.logInButton);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.signupButton);
+            this.Controls.Add(this.radLabel1);
+            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.LogInLabel);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginView";
-            this.Size = new System.Drawing.Size(1920, 1080);
+            this.Size = new System.Drawing.Size(2093, 1080);
             this.Load += new System.EventHandler(this.LoginView_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.LogInLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signupButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,11 +184,16 @@ namespace Inventory_Managment_System.LogIn_Management
 
         #endregion
 
-
-        private System.Windows.Forms.Button logInButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label dontHaveLabel;
-        private System.Windows.Forms.Button signUpButton;
+        private Telerik.WinControls.UI.RadLabel LogInLabel;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.Themes.Windows11DarkTheme windows11DarkTheme1;
+        private Telerik.WinControls.UI.RadTextBox emailTextBox;
+        private Telerik.WinControls.UI.RadTextBox passwordTextBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private Telerik.WinControls.UI.RadButton loginButton;
+        private Telerik.WinControls.UI.RadButton signupButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

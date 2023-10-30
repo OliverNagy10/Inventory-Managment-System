@@ -24,8 +24,8 @@ namespace Inventory_Managment_System.LogIn_Management
             InitializeComponent();
 
             // Attach the button click event to the controller's method
-            logInButton.Click += (sender, e) => LoginButtonClicked?.Invoke(this, EventArgs.Empty);
-            signUpButton.Click += (sender, e) => SignUpButtonClicked?.Invoke(this, EventArgs.Empty);
+            loginButton.Click += (sender, e) => LoginButtonClicked?.Invoke(this, EventArgs.Empty);
+            signupButton.Click += (sender, e) => SignUpButtonClicked?.Invoke(this, EventArgs.Empty);
             // Center the controls in the panel
        
 
@@ -38,12 +38,12 @@ namespace Inventory_Managment_System.LogIn_Management
         // Methods to get user input
         public string GetEmail()
         {
-            return textBox1.Text;
+            return emailTextBox.Text;
         }
 
         public string GetPassword()
         {
-            return textBox2.Text;
+            return passwordTextBox.Text;
         }
 
         public void ShowSuccess(string message)
@@ -69,6 +69,11 @@ namespace Inventory_Managment_System.LogIn_Management
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogInLabel_Click(object sender, EventArgs e)
         {
 
         }

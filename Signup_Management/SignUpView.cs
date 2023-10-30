@@ -23,12 +23,12 @@ namespace Inventory_Managment_System.SignUp_Management
 
         public string GetEmail()
         {
-            return companyEmailBox.Text;
+            return emailTextBox.Text;
         }
 
         public string GetPassword()
         {
-            return passwordBox.Text;
+            return passwordTextBox.Text;
         }
 
         public string GetCompanyName()
