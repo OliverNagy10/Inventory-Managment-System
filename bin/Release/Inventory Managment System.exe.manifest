@@ -366,14 +366,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventory Managment System.exe" size="970712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventory Managment System.exe" size="972760">
       <assemblyIdentity name="Inventory Managment System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ks3Bx1ZI4x+RNgqYD0Z/nmiSGKazhGeH8/cDY50N5mw=</dsig:DigestValue>
+        <dsig:DigestValue>Yn++C0gj9fzoTTm2aY9ybObEQQ2imjY8sbIICw3S7Eo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

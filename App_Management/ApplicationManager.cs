@@ -24,7 +24,7 @@ namespace Inventory_Managment_System
         FirestoreDb firestoreDb;
 
 
-        
+
         ProductModel productModel;
         private ProductController productController;
         private ProductManagementView productManagementView;
@@ -39,7 +39,7 @@ namespace Inventory_Managment_System
         CheckoutController checkoutController;
         CheckoutModel checkModel;
         CheckoutView checkoutView;
-        
+
 
 
         private const string FirebaseApiKey = "AIzaSyAz7GmkdHjccaWX8oogwq7rzmMMqI20Nc0";
@@ -55,6 +55,7 @@ namespace Inventory_Managment_System
             this.WindowState = FormWindowState.Maximized;
 
             login = new LoginView();
+
             panel1.Controls.Add(login);
 
             signUpView = new SignUpView();
@@ -91,8 +92,8 @@ namespace Inventory_Managment_System
         public void ProgramStart()
         {
             loginModel = new LoginModel();
-            
-            loginController = new LoginController(login, loginModel,this, FirebaseSignInUrl);
+
+            loginController = new LoginController(login, loginModel, this, FirebaseSignInUrl);
             panel1.Controls.Add(login);
             DashboardView.Visible = false;
             productManagementView.Visible = false;
@@ -100,7 +101,7 @@ namespace Inventory_Managment_System
             checkoutView.Visible = false;
             reportsView.Visible = false;
             login.Visible = true;
-            
+
         }
 
 
@@ -108,11 +109,11 @@ namespace Inventory_Managment_System
         public void InitiateSignUp()
         {
             signUpModel = new SignUpModel();
-            signUpController = new SignUpController(signUpView, signUpModel ,this, firestoreDb, FirebaseSignUpUrl);
-           
+            signUpController = new SignUpController(signUpView, signUpModel, this, firestoreDb, FirebaseSignUpUrl);
+
             login.Visible = false;
             signUpView.Visible = true;
-            
+
 
 
 
@@ -120,12 +121,12 @@ namespace Inventory_Managment_System
 
         }
 
-       
+
 
         public void InitiateDashboardView(string IdToken)
         {
             productModel = new ProductModel(firestoreDb, IdToken);
-            dashboardController = new DashboardController(DashboardView,  this,firestoreDb,productModel, IdToken);
+            dashboardController = new DashboardController(DashboardView, this, firestoreDb, productModel, IdToken);
             productManagementView.Visible = false;
             checkoutView.Visible = false;
             reportsView.Visible = false;
@@ -139,7 +140,7 @@ namespace Inventory_Managment_System
         public void InitiateReportsView(string IDToken)
         {
             reportsModel = new ReportsModel(firestoreDb, productModel);
-            ReportsController = new ReportsController(reportsView, reportsModel,this, IDToken);
+            ReportsController = new ReportsController(reportsView, reportsModel, this, IDToken);
 
             DashboardView.Visible = false;
             reportsView.Visible = true;
@@ -152,18 +153,18 @@ namespace Inventory_Managment_System
         {
             CheckoutModel checkout = new CheckoutModel(productModel, firestoreDb);
             CheckoutController checkoutController = new CheckoutController(checkout, checkoutView, this, IDToken);
-            
+
             DashboardView.Visible = false;
-            checkoutView.Visible = true; 
+            checkoutView.Visible = true;
         }
 
         public void InitiateProductManager(string IDToken)
         {
 
-           
-           
+
+
             productController = new ProductController(firestoreDb, IDToken, productManagementView, this);
-      
+
             DashboardView.Visible = false;
             productManagementView.Visible = true;
 
@@ -178,11 +179,12 @@ namespace Inventory_Managment_System
         private void ApplicationManager_Load(object sender, EventArgs e)
         {
 
+            Screen primaryScreen = Screen.PrimaryScreen;
+            this.Width = primaryScreen.WorkingArea.Width;
+            this.Height = primaryScreen.WorkingArea.Height;
+
         }
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

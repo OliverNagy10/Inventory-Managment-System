@@ -29,39 +29,36 @@ namespace Inventory_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new Telerik.WinControls.UI.RadPanel();
             this.windows11DarkTheme1 = new Telerik.WinControls.Themes.Windows11DarkTheme();
-            ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1902, 1033);
+            this.panel1.Size = new System.Drawing.Size(1540, 845);
             this.panel1.TabIndex = 0;
-            this.panel1.ThemeName = "Windows11Dark";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // ApplicationManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ApplicationManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Inventory Management System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ApplicationManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panel1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Telerik.WinControls.UI.RadPanel panel1;
         private Telerik.WinControls.Themes.Windows11DarkTheme windows11DarkTheme1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

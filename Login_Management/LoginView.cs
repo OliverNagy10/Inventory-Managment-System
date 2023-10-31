@@ -68,12 +68,12 @@ namespace Inventory_Managment_System.LogIn_Management
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LogInLabel_Click(object sender, EventArgs e)
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -110,6 +110,9 @@ namespace Inventory_Managment_System.Checkout_Management
                     AddItemButtonClicked?.Invoke(this, EventArgs.Empty);
                 }
 
+        private void radLabel1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

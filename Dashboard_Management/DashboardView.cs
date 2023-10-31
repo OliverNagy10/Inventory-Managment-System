@@ -85,6 +85,7 @@ namespace Inventory_Managment_System.Dashboard
         {
             // Assuming you have a StatusLabel to display the loading message
             pictureBox1.Visible = show;
+      
         }
 
 
@@ -104,6 +105,11 @@ namespace Inventory_Managment_System.Dashboard
         }
 
         private void lowLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LineChart_Click(object sender, EventArgs e)
         {
 
         }
