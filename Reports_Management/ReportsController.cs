@@ -35,7 +35,7 @@ namespace Inventory_Managment_System.Reports_Management
             {
                 var result = await AddExpense(expenseName, expenseAmount, dateOfExpense);
                 LoadExpensesAndPopulateListView();
-                Initialize();
+                Update();
                 // Handle the result as needed, e.g., show a success message or error message in the view
             };
 
@@ -43,8 +43,8 @@ namespace Inventory_Managment_System.Reports_Management
             {
                 var result = await DeleteExpense(expenseName, date);
                 LoadExpensesAndPopulateListView();
-                Initialize();
-               
+                Update();
+
             };
 
             view.DownloadReportClicked += async () =>
@@ -110,7 +110,35 @@ namespace Inventory_Managment_System.Reports_Management
                 view.ShowLoadingMessage(false);
             }
         }
-    
+
+
+        private async void Update()
+        {
+          
+
+                // Calculate and display the total sales revenue, gross profit, etc.
+                double totalSalesRevenue = await model.CalculateTotalSalesThisYear();
+                double totalGrossProfit = await model.CalculateTotalGrossProfitYear();
+                double totalGrossMargin = await model.CalculateTotalGrossProfitMarginYear();
+                double totalNetProfit = await model.CalculateNetProfit();
+                double totalNetProfitMargin = await model.CalculateNetProfitMargin();
+
+                LoadExpensesAndPopulateListView();
+                await LoadAndPopulateSalesListView();
+                await LoadAndPopulateMonthlySalesChart();
+                await LoadAndPopulateWorstSellersYearChart();
+                await LoadAndPopulateBestSellersYearChart();
+                await LoadAndPopulateSalesbyWeekYearChart();
+                await LoadAndPopulateMostProfitableProductsChart();
+
+                view.DisplayTotalNetProfitMargin(totalNetProfitMargin);
+                view.DisplayTotalNetProfit(totalNetProfit);
+                view.DisplayTotalSalesRevenue(totalSalesRevenue);
+                view.DisplayTotalGrossProfit(totalGrossProfit);
+                view.DisplayTotalGrossMargin(totalGrossMargin);
+
+
+        }
 
         private async Task<string> AddExpense(string expenseName, double amount, DateTime date)
         {
