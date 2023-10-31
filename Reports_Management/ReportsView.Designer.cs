@@ -29,424 +29,497 @@ namespace Inventory_Managment_System.Reports_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn6 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "NAME");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn7 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "AMOUNT");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "DATE");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "DATE");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "PRICE");
             this.monthlySalesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.downloadReportButton = new System.Windows.Forms.Button();
             this.worstSellersYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.salesRevenueLabel = new System.Windows.Forms.Label();
-            this.GrossRevenueLabel = new System.Windows.Forms.Label();
-            this.netProfitMarginLabel = new System.Windows.Forms.Label();
-            this.netProfitMarginHolder = new System.Windows.Forms.Label();
-            this.grossProfitHolder = new System.Windows.Forms.Label();
-            this.SalesRevenueHolder = new System.Windows.Forms.Label();
-            this.YearLabel = new System.Windows.Forms.Label();
             this.bestSellersYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.mostProfiableProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SalesbyWeekYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.SalesLabel = new System.Windows.Forms.Label();
-            this.SalesListView = new System.Windows.Forms.ListView();
-            this.GrossMarginLabel = new System.Windows.Forms.Label();
-            this.grossMarginHolder = new System.Windows.Forms.Label();
-            this.ExpenseLabel = new System.Windows.Forms.Label();
-            this.expenseListView = new System.Windows.Forms.ListView();
-            this.deleteExpenseButton = new System.Windows.Forms.Button();
-            this.addExpenseButton = new System.Windows.Forms.Button();
-            this.expenseNameTextBox = new System.Windows.Forms.TextBox();
-            this.ExpenseAmountTextBox = new System.Windows.Forms.TextBox();
-            this.ExpenseNameLabel = new System.Windows.Forms.Label();
-            this.ExpenseAmountLabel = new System.Windows.Forms.Label();
-            this.DateOfExpneseLabel = new System.Windows.Forms.Label();
-            this.dateOfExpenseTextBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.NetProfitLabel = new System.Windows.Forms.Label();
-            this.NetProfitHolder = new System.Windows.Forms.Label();
+            this.windows11DarkTheme = new Telerik.WinControls.Themes.Windows11DarkTheme();
+            this.exitButton = new Telerik.WinControls.UI.RadButton();
+            this.downloadReportButton = new Telerik.WinControls.UI.RadButton();
+            this.addExpenseButton = new Telerik.WinControls.UI.RadButton();
+            this.deleteExpenseButton = new Telerik.WinControls.UI.RadButton();
+            this.searchButton = new Telerik.WinControls.UI.RadButton();
+            this.expenseNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.ExpenseAmountTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.dateOfExpenseTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.searchBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.expenseListView = new Telerik.WinControls.UI.RadListView();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.SalesListView = new Telerik.WinControls.UI.RadListView();
+            this.SalesRevenueHolder = new Telerik.WinControls.UI.RadTextBox();
+            this.grossProfitHolder = new Telerik.WinControls.UI.RadTextBox();
+            this.netProfitMarginHolder = new Telerik.WinControls.UI.RadTextBox();
+            this.NetProfitHolder = new Telerik.WinControls.UI.RadTextBox();
+            this.grossMarginHolder = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.monthlySalesChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.worstSellersYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestSellersYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostProfiableProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesbyWeekYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadReportButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addExpenseButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteExpenseButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpenseAmountTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateOfExpenseTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesRevenueHolder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grossProfitHolder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.netProfitMarginHolder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NetProfitHolder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grossMarginHolder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             this.SuspendLayout();
             // 
             // monthlySalesChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.monthlySalesChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.monthlySalesChart.Legends.Add(legend1);
-            this.monthlySalesChart.Location = new System.Drawing.Point(977, 380);
+            chartArea6.Name = "ChartArea1";
+            this.monthlySalesChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.monthlySalesChart.Legends.Add(legend6);
+            this.monthlySalesChart.Location = new System.Drawing.Point(507, 540);
+            this.monthlySalesChart.Margin = new System.Windows.Forms.Padding(2);
             this.monthlySalesChart.Name = "monthlySalesChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.monthlySalesChart.Series.Add(series1);
-            this.monthlySalesChart.Size = new System.Drawing.Size(300, 300);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.monthlySalesChart.Series.Add(series6);
+            this.monthlySalesChart.Size = new System.Drawing.Size(225, 244);
             this.monthlySalesChart.TabIndex = 0;
             this.monthlySalesChart.Text = "Montly Sales Chart";
             // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(1202, 20);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 1;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            // 
-            // downloadReportButton
-            // 
-            this.downloadReportButton.Location = new System.Drawing.Point(791, 20);
-            this.downloadReportButton.Name = "downloadReportButton";
-            this.downloadReportButton.Size = new System.Drawing.Size(180, 23);
-            this.downloadReportButton.TabIndex = 2;
-            this.downloadReportButton.Text = "Download Report";
-            this.downloadReportButton.UseVisualStyleBackColor = true;
-            // 
             // worstSellersYear
             // 
-            chartArea2.Name = "ChartArea1";
-            this.worstSellersYear.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.worstSellersYear.Legends.Add(legend2);
-            this.worstSellersYear.Location = new System.Drawing.Point(674, 380);
+            chartArea7.Name = "ChartArea1";
+            this.worstSellersYear.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.worstSellersYear.Legends.Add(legend7);
+            this.worstSellersYear.Location = new System.Drawing.Point(781, 238);
+            this.worstSellersYear.Margin = new System.Windows.Forms.Padding(2);
             this.worstSellersYear.Name = "worstSellersYear";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.worstSellersYear.Series.Add(series2);
-            this.worstSellersYear.Size = new System.Drawing.Size(297, 300);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.worstSellersYear.Series.Add(series7);
+            this.worstSellersYear.Size = new System.Drawing.Size(223, 244);
             this.worstSellersYear.TabIndex = 6;
             this.worstSellersYear.Text = "chart2";
             // 
-            // salesRevenueLabel
-            // 
-            this.salesRevenueLabel.AutoSize = true;
-            this.salesRevenueLabel.Location = new System.Drawing.Point(356, 115);
-            this.salesRevenueLabel.Name = "salesRevenueLabel";
-            this.salesRevenueLabel.Size = new System.Drawing.Size(140, 17);
-            this.salesRevenueLabel.TabIndex = 7;
-            this.salesRevenueLabel.Text = "Total Sales Revenue";
-            // 
-            // GrossRevenueLabel
-            // 
-            this.GrossRevenueLabel.AutoSize = true;
-            this.GrossRevenueLabel.Location = new System.Drawing.Point(356, 155);
-            this.GrossRevenueLabel.Name = "GrossRevenueLabel";
-            this.GrossRevenueLabel.Size = new System.Drawing.Size(83, 17);
-            this.GrossRevenueLabel.TabIndex = 8;
-            this.GrossRevenueLabel.Text = "Gross Profit";
-            // 
-            // netProfitMarginLabel
-            // 
-            this.netProfitMarginLabel.AutoSize = true;
-            this.netProfitMarginLabel.Location = new System.Drawing.Point(356, 256);
-            this.netProfitMarginLabel.Name = "netProfitMarginLabel";
-            this.netProfitMarginLabel.Size = new System.Drawing.Size(114, 17);
-            this.netProfitMarginLabel.TabIndex = 9;
-            this.netProfitMarginLabel.Text = "Net Profit Margin";
-            // 
-            // netProfitMarginHolder
-            // 
-            this.netProfitMarginHolder.AutoSize = true;
-            this.netProfitMarginHolder.Location = new System.Drawing.Point(486, 256);
-            this.netProfitMarginHolder.Name = "netProfitMarginHolder";
-            this.netProfitMarginHolder.Size = new System.Drawing.Size(28, 17);
-            this.netProfitMarginHolder.TabIndex = 10;
-            this.netProfitMarginHolder.Text = "0.0";
-            // 
-            // grossProfitHolder
-            // 
-            this.grossProfitHolder.AutoSize = true;
-            this.grossProfitHolder.Location = new System.Drawing.Point(486, 155);
-            this.grossProfitHolder.Name = "grossProfitHolder";
-            this.grossProfitHolder.Size = new System.Drawing.Size(28, 17);
-            this.grossProfitHolder.TabIndex = 11;
-            this.grossProfitHolder.Text = "0.0";
-            // 
-            // SalesRevenueHolder
-            // 
-            this.SalesRevenueHolder.AutoSize = true;
-            this.SalesRevenueHolder.Location = new System.Drawing.Point(498, 115);
-            this.SalesRevenueHolder.Name = "SalesRevenueHolder";
-            this.SalesRevenueHolder.Size = new System.Drawing.Size(28, 17);
-            this.SalesRevenueHolder.TabIndex = 12;
-            this.SalesRevenueHolder.Text = "0.0";
-            // 
-            // YearLabel
-            // 
-            this.YearLabel.AutoSize = true;
-            this.YearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearLabel.Location = new System.Drawing.Point(582, 12);
-            this.YearLabel.Name = "YearLabel";
-            this.YearLabel.Size = new System.Drawing.Size(173, 29);
-            this.YearLabel.TabIndex = 13;
-            this.YearLabel.Text = "Yearly Report ";
-            // 
             // bestSellersYear
             // 
-            chartArea3.Name = "ChartArea1";
-            this.bestSellersYear.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.bestSellersYear.Legends.Add(legend3);
-            this.bestSellersYear.Location = new System.Drawing.Point(359, 380);
+            chartArea8.Name = "ChartArea1";
+            this.bestSellersYear.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.bestSellersYear.Legends.Add(legend8);
+            this.bestSellersYear.Location = new System.Drawing.Point(507, 238);
+            this.bestSellersYear.Margin = new System.Windows.Forms.Padding(2);
             this.bestSellersYear.Name = "bestSellersYear";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.bestSellersYear.Series.Add(series3);
-            this.bestSellersYear.Size = new System.Drawing.Size(300, 300);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.bestSellersYear.Series.Add(series8);
+            this.bestSellersYear.Size = new System.Drawing.Size(225, 244);
             this.bestSellersYear.TabIndex = 14;
             this.bestSellersYear.Text = "chart1";
             // 
             // mostProfiableProducts
             // 
-            chartArea4.Name = "ChartArea1";
-            this.mostProfiableProducts.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.mostProfiableProducts.Legends.Add(legend4);
-            this.mostProfiableProducts.Location = new System.Drawing.Point(32, 39);
+            chartArea9.Name = "ChartArea1";
+            this.mostProfiableProducts.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.mostProfiableProducts.Legends.Add(legend9);
+            this.mostProfiableProducts.Location = new System.Drawing.Point(102, 364);
+            this.mostProfiableProducts.Margin = new System.Windows.Forms.Padding(2);
             this.mostProfiableProducts.Name = "mostProfiableProducts";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.mostProfiableProducts.Series.Add(series4);
-            this.mostProfiableProducts.Size = new System.Drawing.Size(300, 300);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.mostProfiableProducts.Series.Add(series9);
+            this.mostProfiableProducts.Size = new System.Drawing.Size(225, 244);
             this.mostProfiableProducts.TabIndex = 15;
             this.mostProfiableProducts.Text = "chart1";
             // 
             // SalesbyWeekYear
             // 
-            chartArea5.Name = "ChartArea1";
-            this.SalesbyWeekYear.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.SalesbyWeekYear.Legends.Add(legend5);
-            this.SalesbyWeekYear.Location = new System.Drawing.Point(32, 380);
+            chartArea10.Name = "ChartArea1";
+            this.SalesbyWeekYear.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.SalesbyWeekYear.Legends.Add(legend10);
+            this.SalesbyWeekYear.Location = new System.Drawing.Point(781, 540);
+            this.SalesbyWeekYear.Margin = new System.Windows.Forms.Padding(2);
             this.SalesbyWeekYear.Name = "SalesbyWeekYear";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.SalesbyWeekYear.Series.Add(series5);
-            this.SalesbyWeekYear.Size = new System.Drawing.Size(300, 300);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.SalesbyWeekYear.Series.Add(series10);
+            this.SalesbyWeekYear.Size = new System.Drawing.Size(225, 244);
             this.SalesbyWeekYear.TabIndex = 16;
             this.SalesbyWeekYear.Text = "chart1";
             // 
-            // SalesLabel
+            // exitButton
             // 
-            this.SalesLabel.AutoSize = true;
-            this.SalesLabel.Location = new System.Drawing.Point(638, 95);
-            this.SalesLabel.Name = "SalesLabel";
-            this.SalesLabel.Size = new System.Drawing.Size(43, 17);
-            this.SalesLabel.TabIndex = 17;
-            this.SalesLabel.Text = "Sales";
+            this.exitButton.Location = new System.Drawing.Point(54, 752);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(99, 32);
+            this.exitButton.TabIndex = 37;
+            this.exitButton.Text = "BACK";
+            this.exitButton.ThemeName = "Windows11Dark";
             // 
-            // SalesListView
+            // downloadReportButton
             // 
-            this.SalesListView.HideSelection = false;
-            this.SalesListView.Location = new System.Drawing.Point(608, 168);
-            this.SalesListView.Name = "SalesListView";
-            this.SalesListView.Size = new System.Drawing.Size(612, 186);
-            this.SalesListView.TabIndex = 18;
-            this.SalesListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // GrossMarginLabel
-            // 
-            this.GrossMarginLabel.AutoSize = true;
-            this.GrossMarginLabel.Location = new System.Drawing.Point(359, 186);
-            this.GrossMarginLabel.Name = "GrossMarginLabel";
-            this.GrossMarginLabel.Size = new System.Drawing.Size(93, 17);
-            this.GrossMarginLabel.TabIndex = 21;
-            this.GrossMarginLabel.Text = "Gross Margin";
-            // 
-            // grossMarginHolder
-            // 
-            this.grossMarginHolder.AutoSize = true;
-            this.grossMarginHolder.Location = new System.Drawing.Point(489, 186);
-            this.grossMarginHolder.Name = "grossMarginHolder";
-            this.grossMarginHolder.Size = new System.Drawing.Size(28, 17);
-            this.grossMarginHolder.TabIndex = 22;
-            this.grossMarginHolder.Text = "0.0";
-            // 
-            // ExpenseLabel
-            // 
-            this.ExpenseLabel.AutoSize = true;
-            this.ExpenseLabel.Location = new System.Drawing.Point(1255, 95);
-            this.ExpenseLabel.Name = "ExpenseLabel";
-            this.ExpenseLabel.Size = new System.Drawing.Size(115, 17);
-            this.ExpenseLabel.TabIndex = 23;
-            this.ExpenseLabel.Text = "Expense Tracker";
-            // 
-            // expenseListView
-            // 
-            this.expenseListView.HideSelection = false;
-            this.expenseListView.Location = new System.Drawing.Point(1258, 118);
-            this.expenseListView.Name = "expenseListView";
-            this.expenseListView.Size = new System.Drawing.Size(596, 186);
-            this.expenseListView.TabIndex = 24;
-            this.expenseListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // deleteExpenseButton
-            // 
-            this.deleteExpenseButton.Location = new System.Drawing.Point(1463, 580);
-            this.deleteExpenseButton.Name = "deleteExpenseButton";
-            this.deleteExpenseButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteExpenseButton.TabIndex = 25;
-            this.deleteExpenseButton.Text = "Delete";
-            this.deleteExpenseButton.UseVisualStyleBackColor = true;
+            this.downloadReportButton.Location = new System.Drawing.Point(256, 752);
+            this.downloadReportButton.Name = "downloadReportButton";
+            this.downloadReportButton.Size = new System.Drawing.Size(195, 32);
+            this.downloadReportButton.TabIndex = 38;
+            this.downloadReportButton.Text = "DOWNLOAD REPORT";
+            this.downloadReportButton.ThemeName = "Windows11Dark";
             // 
             // addExpenseButton
             // 
-            this.addExpenseButton.Location = new System.Drawing.Point(1572, 580);
+            this.addExpenseButton.Location = new System.Drawing.Point(1319, 752);
             this.addExpenseButton.Name = "addExpenseButton";
-            this.addExpenseButton.Size = new System.Drawing.Size(73, 23);
-            this.addExpenseButton.TabIndex = 26;
-            this.addExpenseButton.Text = "Add";
-            this.addExpenseButton.UseVisualStyleBackColor = true;
+            this.addExpenseButton.Size = new System.Drawing.Size(79, 32);
+            this.addExpenseButton.TabIndex = 39;
+            this.addExpenseButton.Text = "ADD";
+            this.addExpenseButton.ThemeName = "Windows11Dark";
             // 
-            // expenseNameTextBox
+            // deleteExpenseButton
             // 
-            this.expenseNameTextBox.Location = new System.Drawing.Point(1477, 410);
-            this.expenseNameTextBox.Name = "expenseNameTextBox";
-            this.expenseNameTextBox.Size = new System.Drawing.Size(194, 22);
-            this.expenseNameTextBox.TabIndex = 27;
-            // 
-            // ExpenseAmountTextBox
-            // 
-            this.ExpenseAmountTextBox.Location = new System.Drawing.Point(1477, 482);
-            this.ExpenseAmountTextBox.Name = "ExpenseAmountTextBox";
-            this.ExpenseAmountTextBox.Size = new System.Drawing.Size(194, 22);
-            this.ExpenseAmountTextBox.TabIndex = 28;
-            // 
-            // ExpenseNameLabel
-            // 
-            this.ExpenseNameLabel.AutoSize = true;
-            this.ExpenseNameLabel.Location = new System.Drawing.Point(1333, 415);
-            this.ExpenseNameLabel.Name = "ExpenseNameLabel";
-            this.ExpenseNameLabel.Size = new System.Drawing.Size(107, 17);
-            this.ExpenseNameLabel.TabIndex = 29;
-            this.ExpenseNameLabel.Text = "Expense Name:";
-            // 
-            // ExpenseAmountLabel
-            // 
-            this.ExpenseAmountLabel.AutoSize = true;
-            this.ExpenseAmountLabel.Location = new System.Drawing.Point(1333, 487);
-            this.ExpenseAmountLabel.Name = "ExpenseAmountLabel";
-            this.ExpenseAmountLabel.Size = new System.Drawing.Size(64, 17);
-            this.ExpenseAmountLabel.TabIndex = 30;
-            this.ExpenseAmountLabel.Text = "Amount: ";
-            // 
-            // DateOfExpneseLabel
-            // 
-            this.DateOfExpneseLabel.AutoSize = true;
-            this.DateOfExpneseLabel.Location = new System.Drawing.Point(1344, 538);
-            this.DateOfExpneseLabel.Name = "DateOfExpneseLabel";
-            this.DateOfExpneseLabel.Size = new System.Drawing.Size(38, 17);
-            this.DateOfExpneseLabel.TabIndex = 31;
-            this.DateOfExpneseLabel.Text = "Date";
-            // 
-            // dateOfExpenseTextBox
-            // 
-            this.dateOfExpenseTextBox.Location = new System.Drawing.Point(1477, 538);
-            this.dateOfExpenseTextBox.Name = "dateOfExpenseTextBox";
-            this.dateOfExpenseTextBox.Size = new System.Drawing.Size(194, 22);
-            this.dateOfExpenseTextBox.TabIndex = 32;
-            this.dateOfExpenseTextBox.Text = "MM/dd/yyyy";
+            this.deleteExpenseButton.Location = new System.Drawing.Point(1174, 752);
+            this.deleteExpenseButton.Name = "deleteExpenseButton";
+            this.deleteExpenseButton.Size = new System.Drawing.Size(79, 32);
+            this.deleteExpenseButton.TabIndex = 40;
+            this.deleteExpenseButton.Text = "DELETE";
+            this.deleteExpenseButton.ThemeName = "Windows11Dark";
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(1697, 39);
+            this.searchButton.Location = new System.Drawing.Point(1407, 90);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 33;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Size = new System.Drawing.Size(89, 32);
+            this.searchButton.TabIndex = 41;
+            this.searchButton.Text = "SEARCH";
+            this.searchButton.ThemeName = "Windows11Dark";
+            // 
+            // expenseNameTextBox
+            // 
+            this.expenseNameTextBox.Location = new System.Drawing.Point(1174, 480);
+            this.expenseNameTextBox.Name = "expenseNameTextBox";
+            this.expenseNameTextBox.Size = new System.Drawing.Size(224, 32);
+            this.expenseNameTextBox.TabIndex = 42;
+            this.expenseNameTextBox.ThemeName = "Windows11Dark";
+            // 
+            // ExpenseAmountTextBox
+            // 
+            this.ExpenseAmountTextBox.Location = new System.Drawing.Point(1174, 564);
+            this.ExpenseAmountTextBox.Name = "ExpenseAmountTextBox";
+            this.ExpenseAmountTextBox.Size = new System.Drawing.Size(224, 32);
+            this.ExpenseAmountTextBox.TabIndex = 43;
+            this.ExpenseAmountTextBox.ThemeName = "Windows11Dark";
+            // 
+            // dateOfExpenseTextBox
+            // 
+            this.dateOfExpenseTextBox.Location = new System.Drawing.Point(1174, 641);
+            this.dateOfExpenseTextBox.Name = "dateOfExpenseTextBox";
+            this.dateOfExpenseTextBox.Size = new System.Drawing.Size(224, 32);
+            this.dateOfExpenseTextBox.TabIndex = 43;
+            this.dateOfExpenseTextBox.ThemeName = "Windows11Dark";
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(1495, 39);
+            this.searchBox.Location = new System.Drawing.Point(1074, 90);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(176, 22);
-            this.searchBox.TabIndex = 34;
+            this.searchBox.Size = new System.Drawing.Size(315, 32);
+            this.searchBox.TabIndex = 44;
+            this.searchBox.ThemeName = "Windows11Dark";
             // 
-            // NetProfitLabel
+            // radLabel1
             // 
-            this.NetProfitLabel.AutoSize = true;
-            this.NetProfitLabel.Location = new System.Drawing.Point(356, 222);
-            this.NetProfitLabel.Name = "NetProfitLabel";
-            this.NetProfitLabel.Size = new System.Drawing.Size(67, 17);
-            this.NetProfitLabel.TabIndex = 35;
-            this.NetProfitLabel.Text = "Net Profit";
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel1.Location = new System.Drawing.Point(1074, 27);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(82, 25);
+            this.radLabel1.TabIndex = 45;
+            this.radLabel1.Text = "EXPENSES";
+            this.radLabel1.ThemeName = "Windows11Dark";
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Location = new System.Drawing.Point(1074, 490);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(47, 22);
+            this.radLabel2.TabIndex = 46;
+            this.radLabel2.Text = "NAME";
+            this.radLabel2.ThemeName = "Windows11Dark";
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Location = new System.Drawing.Point(1074, 574);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(69, 22);
+            this.radLabel3.TabIndex = 47;
+            this.radLabel3.Text = "AMOUNT";
+            this.radLabel3.ThemeName = "Windows11Dark";
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Location = new System.Drawing.Point(1074, 651);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(41, 22);
+            this.radLabel4.TabIndex = 48;
+            this.radLabel4.Text = "DATE";
+            this.radLabel4.ThemeName = "Windows11Dark";
+            // 
+            // expenseListView
+            // 
+            listViewDetailColumn6.HeaderText = "NAME";
+            listViewDetailColumn6.Width = 150F;
+            listViewDetailColumn7.HeaderText = "AMOUNT";
+            listViewDetailColumn7.Width = 150F;
+            listViewDetailColumn8.HeaderText = "DATE";
+            listViewDetailColumn8.Width = 150F;
+            this.expenseListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
+            listViewDetailColumn6,
+            listViewDetailColumn7,
+            listViewDetailColumn8});
+            this.expenseListView.GroupItemSize = new System.Drawing.Size(200, 40);
+            this.expenseListView.ItemSize = new System.Drawing.Size(200, 36);
+            this.expenseListView.ItemSpacing = -1;
+            this.expenseListView.Location = new System.Drawing.Point(1074, 169);
+            this.expenseListView.Name = "expenseListView";
+            this.expenseListView.Size = new System.Drawing.Size(422, 263);
+            this.expenseListView.TabIndex = 49;
+            this.expenseListView.ThemeName = "Windows11Dark";
+            this.expenseListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            // 
+            // radLabel5
+            // 
+            this.radLabel5.Location = new System.Drawing.Point(22, 14);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(46, 22);
+            this.radLabel5.TabIndex = 50;
+            this.radLabel5.Text = "SALES";
+            this.radLabel5.ThemeName = "Windows11Dark";
+            // 
+            // SalesListView
+            // 
+            listViewDetailColumn1.HeaderText = "DATE";
+            listViewDetailColumn2.HeaderText = "PRICE";
+            this.SalesListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
+            listViewDetailColumn1,
+            listViewDetailColumn2});
+            this.SalesListView.GroupItemSize = new System.Drawing.Size(200, 40);
+            this.SalesListView.ItemSize = new System.Drawing.Size(200, 36);
+            this.SalesListView.ItemSpacing = -1;
+            this.SalesListView.Location = new System.Drawing.Point(19, 42);
+            this.SalesListView.Name = "SalesListView";
+            this.SalesListView.Size = new System.Drawing.Size(403, 145);
+            this.SalesListView.TabIndex = 51;
+            this.SalesListView.ThemeName = "Windows11Dark";
+            this.SalesListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            // 
+            // SalesRevenueHolder
+            // 
+            this.SalesRevenueHolder.Location = new System.Drawing.Point(584, 14);
+            this.SalesRevenueHolder.Name = "SalesRevenueHolder";
+            this.SalesRevenueHolder.Size = new System.Drawing.Size(100, 32);
+            this.SalesRevenueHolder.TabIndex = 53;
+            this.SalesRevenueHolder.ThemeName = "Windows11Dark";
+            // 
+            // grossProfitHolder
+            // 
+            this.grossProfitHolder.Location = new System.Drawing.Point(584, 155);
+            this.grossProfitHolder.Name = "grossProfitHolder";
+            this.grossProfitHolder.Size = new System.Drawing.Size(100, 32);
+            this.grossProfitHolder.TabIndex = 54;
+            this.grossProfitHolder.ThemeName = "Windows11Dark";
+            // 
+            // netProfitMarginHolder
+            // 
+            this.netProfitMarginHolder.Location = new System.Drawing.Point(904, 90);
+            this.netProfitMarginHolder.Name = "netProfitMarginHolder";
+            this.netProfitMarginHolder.Size = new System.Drawing.Size(100, 32);
+            this.netProfitMarginHolder.TabIndex = 55;
+            this.netProfitMarginHolder.ThemeName = "Windows11Dark";
             // 
             // NetProfitHolder
             // 
-            this.NetProfitHolder.AutoSize = true;
-            this.NetProfitHolder.Location = new System.Drawing.Point(489, 222);
+            this.NetProfitHolder.Location = new System.Drawing.Point(904, 155);
             this.NetProfitHolder.Name = "NetProfitHolder";
-            this.NetProfitHolder.Size = new System.Drawing.Size(28, 17);
-            this.NetProfitHolder.TabIndex = 36;
-            this.NetProfitHolder.Text = "0.0";
+            this.NetProfitHolder.Size = new System.Drawing.Size(100, 32);
+            this.NetProfitHolder.TabIndex = 55;
+            this.NetProfitHolder.ThemeName = "Windows11Dark";
+            // 
+            // grossMarginHolder
+            // 
+            this.grossMarginHolder.Location = new System.Drawing.Point(904, 14);
+            this.grossMarginHolder.Name = "grossMarginHolder";
+            this.grossMarginHolder.Size = new System.Drawing.Size(100, 32);
+            this.grossMarginHolder.TabIndex = 56;
+            this.grossMarginHolder.ThemeName = "Windows11Dark";
+            // 
+            // radLabel6
+            // 
+            this.radLabel6.Location = new System.Drawing.Point(447, 24);
+            this.radLabel6.Name = "radLabel6";
+            this.radLabel6.Size = new System.Drawing.Size(110, 22);
+            this.radLabel6.TabIndex = 57;
+            this.radLabel6.Text = "SALES REVENUE";
+            this.radLabel6.ThemeName = "Windows11Dark";
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Location = new System.Drawing.Point(725, 24);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(161, 22);
+            this.radLabel7.TabIndex = 58;
+            this.radLabel7.Text = "GROSS PROFIT MARGIN";
+            this.radLabel7.ThemeName = "Windows11Dark";
+            // 
+            // radLabel8
+            // 
+            this.radLabel8.Location = new System.Drawing.Point(447, 165);
+            this.radLabel8.Name = "radLabel8";
+            this.radLabel8.Size = new System.Drawing.Size(102, 22);
+            this.radLabel8.TabIndex = 58;
+            this.radLabel8.Text = "GROSS PROFIT";
+            this.radLabel8.ThemeName = "Windows11Dark";
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Location = new System.Drawing.Point(725, 165);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(83, 22);
+            this.radLabel9.TabIndex = 58;
+            this.radLabel9.Text = "NET PROFIT";
+            this.radLabel9.ThemeName = "Windows11Dark";
+            // 
+            // radLabel10
+            // 
+            this.radLabel10.Location = new System.Drawing.Point(725, 91);
+            this.radLabel10.Name = "radLabel10";
+            this.radLabel10.Size = new System.Drawing.Size(145, 22);
+            this.radLabel10.TabIndex = 58;
+            this.radLabel10.Text = "NET PROGIT MARGIN";
+            this.radLabel10.ThemeName = "Windows11Dark";
             // 
             // ReportsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.NetProfitHolder);
-            this.Controls.Add(this.NetProfitLabel);
-            this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.dateOfExpenseTextBox);
-            this.Controls.Add(this.DateOfExpneseLabel);
-            this.Controls.Add(this.ExpenseAmountLabel);
-            this.Controls.Add(this.ExpenseNameLabel);
-            this.Controls.Add(this.ExpenseAmountTextBox);
-            this.Controls.Add(this.expenseNameTextBox);
-            this.Controls.Add(this.addExpenseButton);
-            this.Controls.Add(this.deleteExpenseButton);
-            this.Controls.Add(this.expenseListView);
-            this.Controls.Add(this.ExpenseLabel);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.radLabel9);
+            this.Controls.Add(this.radLabel10);
+            this.Controls.Add(this.radLabel8);
+            this.Controls.Add(this.radLabel7);
+            this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.grossMarginHolder);
-            this.Controls.Add(this.GrossMarginLabel);
+            this.Controls.Add(this.NetProfitHolder);
+            this.Controls.Add(this.netProfitMarginHolder);
+            this.Controls.Add(this.grossProfitHolder);
+            this.Controls.Add(this.SalesRevenueHolder);
             this.Controls.Add(this.SalesListView);
-            this.Controls.Add(this.SalesLabel);
+            this.Controls.Add(this.radLabel5);
+            this.Controls.Add(this.expenseListView);
+            this.Controls.Add(this.radLabel4);
+            this.Controls.Add(this.radLabel3);
+            this.Controls.Add(this.radLabel2);
+            this.Controls.Add(this.radLabel1);
+            this.Controls.Add(this.searchBox);
+            this.Controls.Add(this.ExpenseAmountTextBox);
+            this.Controls.Add(this.dateOfExpenseTextBox);
+            this.Controls.Add(this.expenseNameTextBox);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.deleteExpenseButton);
+            this.Controls.Add(this.addExpenseButton);
+            this.Controls.Add(this.downloadReportButton);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.SalesbyWeekYear);
             this.Controls.Add(this.mostProfiableProducts);
             this.Controls.Add(this.bestSellersYear);
-            this.Controls.Add(this.YearLabel);
-            this.Controls.Add(this.SalesRevenueHolder);
-            this.Controls.Add(this.grossProfitHolder);
-            this.Controls.Add(this.netProfitMarginHolder);
-            this.Controls.Add(this.netProfitMarginLabel);
-            this.Controls.Add(this.GrossRevenueLabel);
-            this.Controls.Add(this.salesRevenueLabel);
             this.Controls.Add(this.worstSellersYear);
-            this.Controls.Add(this.downloadReportButton);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.monthlySalesChart);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReportsView";
-            this.Size = new System.Drawing.Size(1879, 698);
+            this.Size = new System.Drawing.Size(1540, 845);
             this.Load += new System.EventHandler(this.ReportsView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.monthlySalesChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.worstSellersYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestSellersYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mostProfiableProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesbyWeekYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadReportButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addExpenseButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteExpenseButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpenseAmountTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateOfExpenseTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesRevenueHolder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grossProfitHolder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.netProfitMarginHolder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NetProfitHolder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grossMarginHolder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,36 +528,36 @@ namespace Inventory_Managment_System.Reports_Management
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart monthlySalesChart;
-        private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button downloadReportButton;
         private System.Windows.Forms.DataVisualization.Charting.Chart worstSellersYear;
-        private System.Windows.Forms.Label salesRevenueLabel;
-        private System.Windows.Forms.Label GrossRevenueLabel;
-        private System.Windows.Forms.Label netProfitMarginLabel;
-        private System.Windows.Forms.Label netProfitMarginHolder;
-        private System.Windows.Forms.Label grossProfitHolder;
-        private System.Windows.Forms.Label SalesRevenueHolder;
-        private System.Windows.Forms.Label YearLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart bestSellersYear;
         private System.Windows.Forms.DataVisualization.Charting.Chart mostProfiableProducts;
         private System.Windows.Forms.DataVisualization.Charting.Chart SalesbyWeekYear;
-        private System.Windows.Forms.Label SalesLabel;
-        private System.Windows.Forms.ListView SalesListView;
-        private System.Windows.Forms.Label GrossMarginLabel;
-        private System.Windows.Forms.Label grossMarginHolder;
-        private System.Windows.Forms.Label ExpenseLabel;
-        private System.Windows.Forms.ListView expenseListView;
-        private System.Windows.Forms.Button deleteExpenseButton;
-        private System.Windows.Forms.Button addExpenseButton;
-        private System.Windows.Forms.TextBox expenseNameTextBox;
-        private System.Windows.Forms.TextBox ExpenseAmountTextBox;
-        private System.Windows.Forms.Label ExpenseNameLabel;
-        private System.Windows.Forms.Label ExpenseAmountLabel;
-        private System.Windows.Forms.Label DateOfExpneseLabel;
-        private System.Windows.Forms.TextBox dateOfExpenseTextBox;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.Label NetProfitLabel;
-        private System.Windows.Forms.Label NetProfitHolder;
+        private Telerik.WinControls.Themes.Windows11DarkTheme windows11DarkTheme;
+        private Telerik.WinControls.UI.RadButton exitButton;
+        private Telerik.WinControls.UI.RadButton downloadReportButton;
+        private Telerik.WinControls.UI.RadButton addExpenseButton;
+        private Telerik.WinControls.UI.RadButton deleteExpenseButton;
+        private Telerik.WinControls.UI.RadButton searchButton;
+        private Telerik.WinControls.UI.RadTextBox expenseNameTextBox;
+        private Telerik.WinControls.UI.RadTextBox ExpenseAmountTextBox;
+        private Telerik.WinControls.UI.RadTextBox dateOfExpenseTextBox;
+        private Telerik.WinControls.UI.RadTextBox searchBox;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadListView expenseListView;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
+        private Telerik.WinControls.UI.RadListView SalesListView;
+        private Telerik.WinControls.UI.RadTextBox SalesRevenueHolder;
+        private Telerik.WinControls.UI.RadTextBox grossProfitHolder;
+        private Telerik.WinControls.UI.RadTextBox netProfitMarginHolder;
+        private Telerik.WinControls.UI.RadTextBox NetProfitHolder;
+        private Telerik.WinControls.UI.RadTextBox grossMarginHolder;
+        private Telerik.WinControls.UI.RadLabel radLabel6;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadLabel radLabel8;
+        private Telerik.WinControls.UI.RadLabel radLabel9;
+        private Telerik.WinControls.UI.RadLabel radLabel10;
     }
 }

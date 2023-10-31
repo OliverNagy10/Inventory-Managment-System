@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Inventory_Managment_System.Reports_Management
 {
@@ -52,17 +53,7 @@ namespace Inventory_Managment_System.Reports_Management
 
         private void ReportsView_Load(object sender, EventArgs e)
         {
-            // Set the View property of the basketListView to Details
-            expenseListView.View = View.Details;
-            expenseListView.Columns.Add("Name", 50);     // Column 1: Name
-            expenseListView.Columns.Add("Amount", 50); // Column 2:
-            expenseListView.Columns.Add("Date", 50);
-
-
-
-            SalesListView.View = View.Details;
-            SalesListView.Columns.Add("Date", 50);     // Column 1: Name
-            SalesListView.Columns.Add("Total", 50); // Column 2:
+         
             
         }
 
@@ -102,6 +93,7 @@ namespace Inventory_Managment_System.Reports_Management
             return expenseNameTextBox.Text;
 
         }
+
         public void SetExpenseName(string name)
         {
 
@@ -140,20 +132,21 @@ namespace Inventory_Managment_System.Reports_Management
 
         public void SetExpenseDate(DateTime date)
         {
-            dateOfExpenseTextBox.Text = date.ToString();
-
-
+            dateOfExpenseTextBox.Text = date.ToString("MM/dd/yyyy");
         }
+
 
         public void PopulateExpenseListView(List<Expense> expenses)
         {
-            // Clear any existing items in the list view
             expenseListView.Items.Clear();
 
             foreach (var expense in expenses)
             {
-                // Create a ListViewItem to represent each expense and add it to the list view
-                var item = new ListViewItem(new[] { expense.Name, expense.Amount.ToString("0.00"), expense.Date.ToString("MM/dd/yyyy") });
+                var item = new ListViewDataItem(expense.Name);
+                item.SubItems.Add(expense.Name);
+                item.SubItems.Add(expense.Amount.ToString("0.00"));
+                item.SubItems.Add(expense.Date.ToString("MM/dd/yyyy"));
+
                 expenseListView.Items.Add(item);
             }
         }
@@ -196,43 +189,40 @@ namespace Inventory_Managment_System.Reports_Management
             DeleteExpenseClicked?.Invoke(expenseName, date);
         }
 
-
         private void OnDownloadClicked()
         {
          
             DownloadReportClicked?.Invoke();
         }
 
-       private void OnExitClicked()
+        private void OnExitClicked()
         {
 
             ExitClicked?.Invoke();
         }
 
-
-        private void OnExpenseListViewMouseClick(object sender, MouseEventArgs e)
+        private void OnExpenseListViewMouseClick(object sender, EventArgs e)
         {
-            // Get the selected item
-            ListViewItem selectedExpense = expenseListView.GetItemAt(e.X, e.Y);
-          
-            if (selectedExpense != null)
+            RadListView listView = (RadListView)sender;
+
+            if (listView.SelectedItem != null)
             {
-                string expenseName = selectedExpense.SubItems[0].Text; // Assuming the name is in the first sub-item
+                string expenseName = listView.SelectedItem[0].ToString(); 
                 searchBox.Text = expenseName;
                 SearchButtonClicked?.Invoke(expenseName);
             }
         }
 
-
         public void PopulateSalesListView(List<SaleRecord> salesRecords)
         {
-            // Clear any existing items in the list view
             SalesListView.Items.Clear();
 
             foreach (var sale in salesRecords)
             {
-                // Create a ListViewItem to represent each sale record and add it to the list view
-                var item = new ListViewItem(new[] { sale.Date.ToString("MM/dd/yyyy"), sale.TotalSalePrice.ToString("0.00") });
+                var item = new ListViewDataItem(sale.Date.ToString("MM/dd/yyyy"));
+                item.SubItems.Add(sale.Date.ToString("MM/dd/yyyy"));
+                item.SubItems.Add(sale.TotalSalePrice.ToString("0.00"));
+
                 SalesListView.Items.Add(item);
             }
         }
@@ -302,8 +292,15 @@ namespace Inventory_Managment_System.Reports_Management
             }
         }
 
+        private void SalesRevenueHolder_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void salesRevenueLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

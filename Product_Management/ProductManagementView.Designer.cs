@@ -29,314 +29,371 @@ namespace Inventory_Managment_System.ProductManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProductsLabel = new System.Windows.Forms.Label();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.SearchBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.supplierLabel = new System.Windows.Forms.Label();
-            this.priceLabel = new System.Windows.Forms.Label();
-            this.quantityLabel = new System.Windows.Forms.Label();
-            this.nameBox = new System.Windows.Forms.TextBox();
-            this.descriptionBox = new System.Windows.Forms.TextBox();
-            this.supplierBox = new System.Windows.Forms.TextBox();
-            this.priceBox = new System.Windows.Forms.TextBox();
-            this.quantityBox = new System.Windows.Forms.TextBox();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.barcodeLabel = new System.Windows.Forms.Label();
-            this.barcodeBox = new System.Windows.Forms.TextBox();
-            this.productListView = new System.Windows.Forms.ListView();
-            this.ProductCostLabel = new System.Windows.Forms.Label();
-            this.procutCostTextBox = new System.Windows.Forms.TextBox();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "NAME");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn9 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "DESCRIPTION");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn10 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "SUPPLIER ");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn11 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "QUANTITY");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn12 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 4", "COST");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn13 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 5", "PRICE");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn14 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 6", "BARCODE");
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.windows11DarkTheme1 = new Telerik.WinControls.Themes.Windows11DarkTheme();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
+            this.nameBox = new Telerik.WinControls.UI.RadTextBox();
+            this.descriptionBox = new Telerik.WinControls.UI.RadTextBox();
+            this.priceBox = new Telerik.WinControls.UI.RadTextBox();
+            this.procutCostTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.barcodeBox = new Telerik.WinControls.UI.RadTextBox();
+            this.supplierBox = new Telerik.WinControls.UI.RadTextBox();
+            this.quantityBox = new Telerik.WinControls.UI.RadTextBox();
+            this.addButton = new Telerik.WinControls.UI.RadButton();
+            this.backButton = new Telerik.WinControls.UI.RadButton();
+            this.saveButton = new Telerik.WinControls.UI.RadButton();
+            this.deleteButton = new Telerik.WinControls.UI.RadButton();
+            this.searchButton = new Telerik.WinControls.UI.RadButton();
+            this.SearchBox = new Telerik.WinControls.UI.RadTextBox();
+            this.productListView = new Telerik.WinControls.UI.RadListView();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descriptionBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.procutCostTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             this.SuspendLayout();
             // 
-            // ProductsLabel
+            // radLabel1
             // 
-            this.ProductsLabel.AutoSize = true;
-            this.ProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductsLabel.Location = new System.Drawing.Point(34, 81);
-            this.ProductsLabel.Name = "ProductsLabel";
-            this.ProductsLabel.Size = new System.Drawing.Size(97, 25);
-            this.ProductsLabel.TabIndex = 0;
-            this.ProductsLabel.Text = "Products";
+            this.radLabel1.Location = new System.Drawing.Point(208, 101);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(79, 22);
+            this.radLabel1.TabIndex = 27;
+            this.radLabel1.Text = "PRODUCTS";
+            this.radLabel1.ThemeName = "Windows11Dark";
             // 
-            // searchLabel
+            // radLabel2
             // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(335, 28);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(54, 19);
-            this.searchLabel.TabIndex = 3;
-            this.searchLabel.Text = "search";
+            this.radLabel2.Location = new System.Drawing.Point(208, 467);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(47, 22);
+            this.radLabel2.TabIndex = 28;
+            this.radLabel2.Text = "NAME";
+            this.radLabel2.ThemeName = "Windows11Dark";
             // 
-            // SearchBox
+            // radLabel3
             // 
-            this.SearchBox.BackColor = System.Drawing.Color.Gray;
-            this.SearchBox.Location = new System.Drawing.Point(409, 25);
-            this.SearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(180, 25);
-            this.SearchBox.TabIndex = 4;
+            this.radLabel3.Location = new System.Drawing.Point(208, 518);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(95, 22);
+            this.radLabel3.TabIndex = 29;
+            this.radLabel3.Text = "DESCRIPTION";
+            this.radLabel3.ThemeName = "Windows11Dark";
             // 
-            // searchButton
+            // radLabel4
             // 
-            this.searchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.searchButton.ForeColor = System.Drawing.Color.White;
-            this.searchButton.Location = new System.Drawing.Point(607, 23);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 27);
-            this.searchButton.TabIndex = 5;
-            this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.radLabel4.Location = new System.Drawing.Point(208, 567);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(67, 22);
+            this.radLabel4.TabIndex = 30;
+            this.radLabel4.Text = "SUPPLIER";
+            this.radLabel4.ThemeName = "Windows11Dark";
+            this.radLabel4.Click += new System.EventHandler(this.radLabel4_Click);
             // 
-            // backButton
+            // radLabel5
             // 
-            this.backButton.BackColor = System.Drawing.Color.Gray;
-            this.backButton.Location = new System.Drawing.Point(763, 733);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 27);
-            this.backButton.TabIndex = 6;
-            this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = false;
+            this.radLabel5.Location = new System.Drawing.Point(633, 465);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(71, 22);
+            this.radLabel5.TabIndex = 31;
+            this.radLabel5.Text = "BARCODE";
+            this.radLabel5.ThemeName = "Windows11Dark";
             // 
-            // nameLabel
+            // radLabel6
             // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(163, 344);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(51, 19);
-            this.nameLabel.TabIndex = 7;
-            this.nameLabel.Text = "Name";
+            this.radLabel6.Location = new System.Drawing.Point(633, 518);
+            this.radLabel6.Name = "radLabel6";
+            this.radLabel6.Size = new System.Drawing.Size(110, 22);
+            this.radLabel6.TabIndex = 32;
+            this.radLabel6.Text = "PRODUCT COST";
+            this.radLabel6.ThemeName = "Windows11Dark";
             // 
-            // descriptionLabel
+            // radLabel7
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(150, 392);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(89, 19);
-            this.descriptionLabel.TabIndex = 8;
-            this.descriptionLabel.Text = "Description";
+            this.radLabel7.Location = new System.Drawing.Point(633, 567);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(44, 22);
+            this.radLabel7.TabIndex = 33;
+            this.radLabel7.Text = "PRICE";
+            this.radLabel7.ThemeName = "Windows11Dark";
             // 
-            // supplierLabel
+            // radLabel8
             // 
-            this.supplierLabel.AutoSize = true;
-            this.supplierLabel.Location = new System.Drawing.Point(150, 443);
-            this.supplierLabel.Name = "supplierLabel";
-            this.supplierLabel.Size = new System.Drawing.Size(66, 19);
-            this.supplierLabel.TabIndex = 9;
-            this.supplierLabel.Text = "Supplier";
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(93, 575);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(146, 19);
-            this.priceLabel.TabIndex = 10;
-            this.priceLabel.Text = "Product Retail Price";
-            // 
-            // quantityLabel
-            // 
-            this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(150, 611);
-            this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(70, 19);
-            this.quantityLabel.TabIndex = 11;
-            this.quantityLabel.Text = "Quantity";
+            this.radLabel8.Location = new System.Drawing.Point(1067, 465);
+            this.radLabel8.Name = "radLabel8";
+            this.radLabel8.Size = new System.Drawing.Size(75, 22);
+            this.radLabel8.TabIndex = 34;
+            this.radLabel8.Text = "QUANTITY";
+            this.radLabel8.ThemeName = "Windows11Dark";
             // 
             // nameBox
             // 
-            this.nameBox.BackColor = System.Drawing.Color.Gray;
-            this.nameBox.Location = new System.Drawing.Point(252, 344);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.nameBox.Location = new System.Drawing.Point(341, 457);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(200, 25);
-            this.nameBox.TabIndex = 12;
+            this.nameBox.Size = new System.Drawing.Size(200, 32);
+            this.nameBox.TabIndex = 35;
+            this.nameBox.ThemeName = "Windows11Dark";
             // 
             // descriptionBox
             // 
-            this.descriptionBox.BackColor = System.Drawing.Color.Gray;
-            this.descriptionBox.Location = new System.Drawing.Point(252, 386);
-            this.descriptionBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.descriptionBox.Location = new System.Drawing.Point(341, 508);
             this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(200, 25);
-            this.descriptionBox.TabIndex = 13;
-            // 
-            // supplierBox
-            // 
-            this.supplierBox.BackColor = System.Drawing.Color.Gray;
-            this.supplierBox.Location = new System.Drawing.Point(252, 437);
-            this.supplierBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.supplierBox.Name = "supplierBox";
-            this.supplierBox.Size = new System.Drawing.Size(200, 25);
-            this.supplierBox.TabIndex = 14;
+            this.descriptionBox.Size = new System.Drawing.Size(200, 32);
+            this.descriptionBox.TabIndex = 36;
+            this.descriptionBox.ThemeName = "Windows11Dark";
             // 
             // priceBox
             // 
-            this.priceBox.BackColor = System.Drawing.Color.Gray;
-            this.priceBox.Location = new System.Drawing.Point(252, 565);
-            this.priceBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.priceBox.Location = new System.Drawing.Point(766, 557);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(163, 25);
-            this.priceBox.TabIndex = 15;
-            // 
-            // quantityBox
-            // 
-            this.quantityBox.BackColor = System.Drawing.Color.Gray;
-            this.quantityBox.Location = new System.Drawing.Point(252, 605);
-            this.quantityBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(100, 25);
-            this.quantityBox.TabIndex = 16;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.deleteButton.Location = new System.Drawing.Point(353, 649);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 27);
-            this.deleteButton.TabIndex = 17;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.saveButton.Location = new System.Drawing.Point(472, 649);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 27);
-            this.saveButton.TabIndex = 18;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(590, 649);
-            this.addButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 27);
-            this.addButton.TabIndex = 19;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // barcodeLabel
-            // 
-            this.barcodeLabel.AutoSize = true;
-            this.barcodeLabel.Location = new System.Drawing.Point(148, 484);
-            this.barcodeLabel.Name = "barcodeLabel";
-            this.barcodeLabel.Size = new System.Drawing.Size(66, 19);
-            this.barcodeLabel.TabIndex = 22;
-            this.barcodeLabel.Text = "Barcode";
-            // 
-            // barcodeBox
-            // 
-            this.barcodeBox.Location = new System.Drawing.Point(252, 481);
-            this.barcodeBox.Name = "barcodeBox";
-            this.barcodeBox.Size = new System.Drawing.Size(200, 25);
-            this.barcodeBox.TabIndex = 23;
-            // 
-            // productListView
-            // 
-            this.productListView.HideSelection = false;
-            this.productListView.Location = new System.Drawing.Point(39, 109);
-            this.productListView.Name = "productListView";
-            this.productListView.Size = new System.Drawing.Size(825, 185);
-            this.productListView.TabIndex = 24;
-            this.productListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // ProductCostLabel
-            // 
-            this.ProductCostLabel.AutoSize = true;
-            this.ProductCostLabel.Location = new System.Drawing.Point(131, 539);
-            this.ProductCostLabel.Name = "ProductCostLabel";
-            this.ProductCostLabel.Size = new System.Drawing.Size(99, 19);
-            this.ProductCostLabel.TabIndex = 25;
-            this.ProductCostLabel.Text = "Product Cost";
+            this.priceBox.Size = new System.Drawing.Size(200, 32);
+            this.priceBox.TabIndex = 37;
+            this.priceBox.ThemeName = "Windows11Dark";
             // 
             // procutCostTextBox
             // 
-            this.procutCostTextBox.Location = new System.Drawing.Point(252, 533);
+            this.procutCostTextBox.Location = new System.Drawing.Point(766, 508);
             this.procutCostTextBox.Name = "procutCostTextBox";
-            this.procutCostTextBox.Size = new System.Drawing.Size(200, 25);
-            this.procutCostTextBox.TabIndex = 26;
+            this.procutCostTextBox.Size = new System.Drawing.Size(200, 32);
+            this.procutCostTextBox.TabIndex = 36;
+            this.procutCostTextBox.ThemeName = "Windows11Dark";
+            // 
+            // barcodeBox
+            // 
+            this.barcodeBox.Location = new System.Drawing.Point(766, 457);
+            this.barcodeBox.Name = "barcodeBox";
+            this.barcodeBox.Size = new System.Drawing.Size(200, 32);
+            this.barcodeBox.TabIndex = 36;
+            this.barcodeBox.ThemeName = "Windows11Dark";
+            // 
+            // supplierBox
+            // 
+            this.supplierBox.Location = new System.Drawing.Point(341, 557);
+            this.supplierBox.Name = "supplierBox";
+            this.supplierBox.Size = new System.Drawing.Size(200, 32);
+            this.supplierBox.TabIndex = 36;
+            this.supplierBox.ThemeName = "Windows11Dark";
+            // 
+            // quantityBox
+            // 
+            this.quantityBox.Location = new System.Drawing.Point(1162, 455);
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.Size = new System.Drawing.Size(200, 32);
+            this.quantityBox.TabIndex = 38;
+            this.quantityBox.ThemeName = "Windows11Dark";
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(1258, 702);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(118, 32);
+            this.addButton.TabIndex = 39;
+            this.addButton.Text = "ADD";
+            this.addButton.ThemeName = "Windows11Dark";
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(75, 25);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(118, 32);
+            this.backButton.TabIndex = 40;
+            this.backButton.Text = "BACK";
+            this.backButton.ThemeName = "Windows11Dark";
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(916, 702);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(118, 32);
+            this.saveButton.TabIndex = 40;
+            this.saveButton.Text = "SAVE";
+            this.saveButton.ThemeName = "Windows11Dark";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(1053, 702);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(118, 32);
+            this.deleteButton.TabIndex = 40;
+            this.deleteButton.Text = "DELETE";
+            this.deleteButton.ThemeName = "Windows11Dark";
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(1144, 25);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(118, 32);
+            this.searchButton.TabIndex = 41;
+            this.searchButton.Text = "SEARCH";
+            this.searchButton.ThemeName = "Windows11Dark";
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Location = new System.Drawing.Point(811, 25);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(290, 32);
+            this.SearchBox.TabIndex = 42;
+            this.SearchBox.ThemeName = "Windows11Dark";
+            // 
+            // productListView
+            // 
+            listViewDetailColumn8.HeaderText = "NAME";
+            listViewDetailColumn9.HeaderText = "DESCRIPTION";
+            listViewDetailColumn10.HeaderText = "SUPPLIER ";
+            listViewDetailColumn11.HeaderText = "QUANTITY";
+            listViewDetailColumn11.Width = 100F;
+            listViewDetailColumn12.HeaderText = "COST";
+            listViewDetailColumn12.Width = 100F;
+            listViewDetailColumn13.HeaderText = "PRICE";
+            listViewDetailColumn13.Width = 100F;
+            listViewDetailColumn14.HeaderText = "BARCODE";
+            listViewDetailColumn14.Width = 265F;
+            this.productListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
+            listViewDetailColumn8,
+            listViewDetailColumn9,
+            listViewDetailColumn10,
+            listViewDetailColumn11,
+            listViewDetailColumn12,
+            listViewDetailColumn13,
+            listViewDetailColumn14});
+            this.productListView.GroupItemSize = new System.Drawing.Size(200, 40);
+            this.productListView.ItemSize = new System.Drawing.Size(200, 36);
+            this.productListView.ItemSpacing = -1;
+            this.productListView.Location = new System.Drawing.Point(208, 129);
+            this.productListView.Name = "productListView";
+            this.productListView.Size = new System.Drawing.Size(1154, 300);
+            this.productListView.TabIndex = 43;
+            this.productListView.ThemeName = "Windows11Dark";
+            this.productListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            this.productListView.SelectedItemChanged += new System.EventHandler(this.productListView_SelectedItemChanged);
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Location = new System.Drawing.Point(685, 35);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(47, 22);
+            this.radLabel9.TabIndex = 44;
+            this.radLabel9.Text = "NAME";
+            this.radLabel9.ThemeName = "Windows11Dark";
             // 
             // ProductManagementView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.procutCostTextBox);
-            this.Controls.Add(this.ProductCostLabel);
+            this.Controls.Add(this.radLabel9);
             this.Controls.Add(this.productListView);
-            this.Controls.Add(this.barcodeBox);
-            this.Controls.Add(this.barcodeLabel);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.SearchBox);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.quantityBox);
-            this.Controls.Add(this.priceBox);
+            this.Controls.Add(this.procutCostTextBox);
+            this.Controls.Add(this.barcodeBox);
             this.Controls.Add(this.supplierBox);
+            this.Controls.Add(this.priceBox);
             this.Controls.Add(this.descriptionBox);
             this.Controls.Add(this.nameBox);
-            this.Controls.Add(this.quantityLabel);
-            this.Controls.Add(this.priceLabel);
-            this.Controls.Add(this.supplierLabel);
-            this.Controls.Add(this.descriptionLabel);
-            this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.backButton);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.SearchBox);
-            this.Controls.Add(this.searchLabel);
-            this.Controls.Add(this.ProductsLabel);
+            this.Controls.Add(this.radLabel8);
+            this.Controls.Add(this.radLabel7);
+            this.Controls.Add(this.radLabel6);
+            this.Controls.Add(this.radLabel5);
+            this.Controls.Add(this.radLabel4);
+            this.Controls.Add(this.radLabel3);
+            this.Controls.Add(this.radLabel2);
+            this.Controls.Add(this.radLabel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductManagementView";
-            this.Size = new System.Drawing.Size(897, 794);
+            this.Size = new System.Drawing.Size(1540, 845);
             this.Load += new System.EventHandler(this.ProductManagementView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descriptionBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.procutCostTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label ProductsLabel;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox SearchBox;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label supplierLabel;
-        private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.Label quantityLabel;
-        private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.TextBox descriptionBox;
-        private System.Windows.Forms.TextBox supplierBox;
-        private System.Windows.Forms.TextBox priceBox;
-        private System.Windows.Forms.TextBox quantityBox;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Label barcodeLabel;
-        private System.Windows.Forms.TextBox barcodeBox;
-        private System.Windows.Forms.ListView productListView;
-        private System.Windows.Forms.Label ProductCostLabel;
-        private System.Windows.Forms.TextBox procutCostTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.Themes.Windows11DarkTheme windows11DarkTheme1;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
+        private Telerik.WinControls.UI.RadLabel radLabel6;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadLabel radLabel8;
+        private Telerik.WinControls.UI.RadTextBox nameBox;
+        private Telerik.WinControls.UI.RadTextBox descriptionBox;
+        private Telerik.WinControls.UI.RadTextBox priceBox;
+        private Telerik.WinControls.UI.RadTextBox procutCostTextBox;
+        private Telerik.WinControls.UI.RadTextBox barcodeBox;
+        private Telerik.WinControls.UI.RadTextBox supplierBox;
+        private Telerik.WinControls.UI.RadTextBox quantityBox;
+        private Telerik.WinControls.UI.RadButton addButton;
+        private Telerik.WinControls.UI.RadButton backButton;
+        private Telerik.WinControls.UI.RadButton saveButton;
+        private Telerik.WinControls.UI.RadButton deleteButton;
+        private Telerik.WinControls.UI.RadButton searchButton;
+        private Telerik.WinControls.UI.RadTextBox SearchBox;
+        private Telerik.WinControls.UI.RadListView productListView;
+        private Telerik.WinControls.UI.RadLabel radLabel9;
     }
 }

@@ -36,7 +36,7 @@ namespace Inventory_Managment_System.Dashboard
             System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardView));
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "PRODUCTS WITH LESS THAN 10 IN-STOCK ");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "LOW PRODUCTS");
             System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation2 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
@@ -110,7 +110,7 @@ namespace Inventory_Managment_System.Dashboard
             legend4.Name = "Legend1";
             legend4.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BarChart.Legends.Add(legend4);
-            this.BarChart.Location = new System.Drawing.Point(994, 38);
+            this.BarChart.Location = new System.Drawing.Point(242, 454);
             this.BarChart.Margin = new System.Windows.Forms.Padding(2);
             this.BarChart.Name = "BarChart";
             this.BarChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
@@ -120,7 +120,7 @@ namespace Inventory_Managment_System.Dashboard
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.BarChart.Series.Add(series4);
-            this.BarChart.Size = new System.Drawing.Size(544, 224);
+            this.BarChart.Size = new System.Drawing.Size(664, 340);
             this.BarChart.TabIndex = 8;
             this.BarChart.Text = "chart1";
             this.BarChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
@@ -144,7 +144,7 @@ namespace Inventory_Managment_System.Dashboard
             legend5.IsTextAutoFit = false;
             legend5.Name = "Legend1";
             this.PieChart.Legends.Add(legend5);
-            this.PieChart.Location = new System.Drawing.Point(984, 571);
+            this.PieChart.Location = new System.Drawing.Point(928, 454);
             this.PieChart.Margin = new System.Windows.Forms.Padding(2);
             this.PieChart.Name = "PieChart";
             this.PieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
@@ -167,7 +167,7 @@ namespace Inventory_Managment_System.Dashboard
             series5.Name = "Series1";
             series5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.PieChart.Series.Add(series5);
-            this.PieChart.Size = new System.Drawing.Size(544, 224);
+            this.PieChart.Size = new System.Drawing.Size(600, 340);
             this.PieChart.TabIndex = 17;
             this.PieChart.Text = "chart1";
             // 
@@ -176,10 +176,10 @@ namespace Inventory_Managment_System.Dashboard
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(366, 124);
+            this.pictureBox1.Location = new System.Drawing.Point(506, 182);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(680, 509);
+            this.pictureBox1.Size = new System.Drawing.Size(369, 191);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -197,11 +197,11 @@ namespace Inventory_Managment_System.Dashboard
             this.MenuReports,
             this.radMenuSeparatorItem3,
             this.MenuLogout});
-            this.radApplicationMenu1.Location = new System.Drawing.Point(566, 38);
-            this.radApplicationMenu1.Margin = new System.Windows.Forms.Padding(8);
+            this.radApplicationMenu1.Location = new System.Drawing.Point(49, 19);
+            this.radApplicationMenu1.Margin = new System.Windows.Forms.Padding(10);
             this.radApplicationMenu1.Name = "radApplicationMenu1";
             this.radApplicationMenu1.ShowTwoColumnDropDownMenu = false;
-            this.radApplicationMenu1.Size = new System.Drawing.Size(266, 55);
+            this.radApplicationMenu1.Size = new System.Drawing.Size(61, 72);
             this.radApplicationMenu1.TabIndex = 20;
             this.radApplicationMenu1.Text = "radApplicationMenu1";
             this.radApplicationMenu1.ThemeName = "Windows11Dark";
@@ -209,8 +209,9 @@ namespace Inventory_Managment_System.Dashboard
             // radLabel2
             // 
             this.radLabel2.Location = new System.Drawing.Point(0, 0);
+            this.radLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(100, 18);
+            this.radLabel2.Size = new System.Drawing.Size(2, 2);
             this.radLabel2.TabIndex = 0;
             // 
             // MenuCheckout
@@ -253,20 +254,21 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // LowProductsListView
             // 
-            listViewDetailColumn2.HeaderText = "PRODUCTS WITH LESS THAN 10 IN-STOCK ";
-            listViewDetailColumn2.MinWidth = 125F;
-            listViewDetailColumn2.Width = 240F;
+            listViewDetailColumn2.HeaderText = "LOW PRODUCTS";
+            listViewDetailColumn2.MinWidth = 156.25F;
+            listViewDetailColumn2.Width = 156.25F;
             this.LowProductsListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
             listViewDetailColumn2});
             this.LowProductsListView.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LowProductsListView.GroupItemSize = new System.Drawing.Size(611, 31);
-            this.LowProductsListView.HeaderHeight = 68.35938F;
-            this.LowProductsListView.ItemSize = new System.Drawing.Size(250, 45);
+            this.LowProductsListView.GroupIndent = 31;
+            this.LowProductsListView.GroupItemSize = new System.Drawing.Size(764, 39);
+            this.LowProductsListView.HeaderHeight = 85.44923F;
+            this.LowProductsListView.ItemSize = new System.Drawing.Size(313, 56);
             this.LowProductsListView.ItemSpacing = -1;
-            this.LowProductsListView.Location = new System.Drawing.Point(54, 417);
-            this.LowProductsListView.Margin = new System.Windows.Forms.Padding(6);
+            this.LowProductsListView.Location = new System.Drawing.Point(49, 296);
+            this.LowProductsListView.Margin = new System.Windows.Forms.Padding(8);
             this.LowProductsListView.Name = "LowProductsListView";
-            this.LowProductsListView.Size = new System.Drawing.Size(240, 347);
+            this.LowProductsListView.Size = new System.Drawing.Size(155, 511);
             this.LowProductsListView.TabIndex = 32;
             this.LowProductsListView.ThemeName = "Windows11Dark";
             this.LowProductsListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
@@ -292,7 +294,7 @@ namespace Inventory_Managment_System.Dashboard
             legend6.Name = "Legend1";
             legend6.TitleForeColor = System.Drawing.Color.White;
             this.LineChart.Legends.Add(legend6);
-            this.LineChart.Location = new System.Drawing.Point(996, 303);
+            this.LineChart.Location = new System.Drawing.Point(928, 52);
             this.LineChart.Margin = new System.Windows.Forms.Padding(2);
             this.LineChart.Name = "LineChart";
             this.LineChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
@@ -306,7 +308,7 @@ namespace Inventory_Managment_System.Dashboard
             series6.MarkerBorderColor = System.Drawing.Color.Black;
             series6.Name = "Series1";
             this.LineChart.Series.Add(series6);
-            this.LineChart.Size = new System.Drawing.Size(544, 224);
+            this.LineChart.Size = new System.Drawing.Size(600, 340);
             this.LineChart.TabIndex = 33;
             this.LineChart.Text = "chart1";
             title2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -320,19 +322,19 @@ namespace Inventory_Managment_System.Dashboard
             this.inventoryValueHolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inventoryValueHolder.Location = new System.Drawing.Point(54, 304);
-            this.inventoryValueHolder.Margin = new System.Windows.Forms.Padding(4);
+            this.inventoryValueHolder.Location = new System.Drawing.Point(691, 105);
+            this.inventoryValueHolder.Margin = new System.Windows.Forms.Padding(5);
             this.inventoryValueHolder.Name = "inventoryValueHolder";
             this.inventoryValueHolder.ReadOnly = true;
-            this.inventoryValueHolder.Size = new System.Drawing.Size(240, 32);
+            this.inventoryValueHolder.Size = new System.Drawing.Size(135, 32);
             this.inventoryValueHolder.TabIndex = 37;
             this.inventoryValueHolder.ThemeName = "Windows11Dark";
             // 
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel3.Location = new System.Drawing.Point(1263, 272);
-            this.radLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.radLabel3.Location = new System.Drawing.Point(1132, 66);
+            this.radLabel3.Margin = new System.Windows.Forms.Padding(5);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(136, 25);
             this.radLabel3.TabIndex = 38;
@@ -342,8 +344,8 @@ namespace Inventory_Managment_System.Dashboard
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel4.Location = new System.Drawing.Point(1161, 539);
-            this.radLabel4.Margin = new System.Windows.Forms.Padding(5);
+            this.radLabel4.Location = new System.Drawing.Point(1040, 421);
+            this.radLabel4.Margin = new System.Windows.Forms.Padding(6);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(313, 25);
             this.radLabel4.TabIndex = 39;
@@ -353,8 +355,8 @@ namespace Inventory_Managment_System.Dashboard
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel5.Location = new System.Drawing.Point(1123, 15);
-            this.radLabel5.Margin = new System.Windows.Forms.Padding(6);
+            this.radLabel5.Location = new System.Drawing.Point(369, 442);
+            this.radLabel5.Margin = new System.Windows.Forms.Padding(8);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(337, 25);
             this.radLabel5.TabIndex = 40;
@@ -366,17 +368,18 @@ namespace Inventory_Managment_System.Dashboard
             this.salesValueHolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.salesValueHolder.Location = new System.Drawing.Point(54, 67);
-            this.salesValueHolder.Margin = new System.Windows.Forms.Padding(4);
+            this.salesValueHolder.Location = new System.Drawing.Point(428, 105);
+            this.salesValueHolder.Margin = new System.Windows.Forms.Padding(5);
             this.salesValueHolder.Name = "salesValueHolder";
             this.salesValueHolder.ReadOnly = true;
-            this.salesValueHolder.Size = new System.Drawing.Size(240, 32);
+            this.salesValueHolder.Size = new System.Drawing.Size(135, 32);
             this.salesValueHolder.TabIndex = 0;
             this.salesValueHolder.ThemeName = "Windows11Dark";
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(111, 38);
+            this.radLabel6.Location = new System.Drawing.Point(428, 69);
+            this.radLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(135, 22);
             this.radLabel6.TabIndex = 41;
@@ -385,7 +388,8 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(39, 444);
+            this.radLabel7.Location = new System.Drawing.Point(49, 555);
+            this.radLabel7.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(2, 2);
             this.radLabel7.TabIndex = 42;
@@ -393,7 +397,8 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(111, 275);
+            this.radLabel8.Location = new System.Drawing.Point(691, 69);
+            this.radLabel8.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(130, 22);
             this.radLabel8.TabIndex = 43;
@@ -406,15 +411,15 @@ namespace Inventory_Managment_System.Dashboard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.radLabel3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LineChart);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.radLabel6);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.salesValueHolder);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.radLabel4);
-            this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.inventoryValueHolder);
             this.Controls.Add(this.LowProductsListView);
             this.Controls.Add(this.radApplicationMenu1);

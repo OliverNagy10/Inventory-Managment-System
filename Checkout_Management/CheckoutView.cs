@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Inventory_Managment_System.Checkout_Management
 {
@@ -52,14 +53,7 @@ namespace Inventory_Managment_System.Checkout_Management
         private void CheckoutView_Load(object sender, EventArgs e)
         {
             // Set the View property of the basketListView to Details
-            basketListView.View = View.Details;
-            // Set up the columns for the basketListView
-            basketListView.Columns.Add("Name", 200); // Column 1: Name
-            basketListView.Columns.Add("Description", 200); // Column 2: Description
-            basketListView.Columns.Add("Quantity", 100); // Column 3: Quantity
-            basketListView.Columns.Add("Price", 100); // Column 4: Price
-            basketListView.Columns.Add("Barcode", 100); // Column 5: Barcode
-
+         
         }
 
         public void SetAmountHolder(string number)
@@ -89,7 +83,8 @@ namespace Inventory_Managment_System.Checkout_Management
             // Add items from the sales manager's basket
             foreach (var product in model.basket)
             {
-                ListViewItem listViewItem = new ListViewItem(product.Name); // Column 1: Name
+                ListViewDataItem listViewItem = new ListViewDataItem(product.Name); // Column 1: Name
+                listViewItem.SubItems.Add(product.Name); // Column 2: Description
                 listViewItem.SubItems.Add(product.Description); // Column 2: Description
                 listViewItem.SubItems.Add(product.Quantity.ToString()); // Column 3: Quantity
                 listViewItem.SubItems.Add(product.Price.ToString()); // Column 4: Price

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Inventory_Managment_System.ProductManagement
 {
@@ -152,16 +153,7 @@ namespace Inventory_Managment_System.ProductManagement
 
         private void ProductManagementView_Load(object sender, EventArgs e)
         {
-            // Set the View property of the productListView to Details
-            productListView.View = View.Details;
-            // Set up the columns for the productListView
-            productListView.Columns.Add("Name", 200); // Column 1: Name
-            productListView.Columns.Add("Description", 200); // Column 2: Description
-            productListView.Columns.Add("Supplier", 200); // Column 1: Name
-            productListView.Columns.Add("Quantity", 100); // Column 3: Quantity
-            productListView.Columns.Add("Cost", 100); // Column 3: Quantity
-            productListView.Columns.Add("Price", 100); // Column 4: Price
-            productListView.Columns.Add("Barcode", 100); // Column 5: Barcode
+           
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -205,7 +197,7 @@ namespace Inventory_Managment_System.ProductManagement
 
             foreach (var productName in productNames)
             {
-                ListViewItem item = new ListViewItem(productName);
+                ListViewDataItem item = new ListViewDataItem(productName);
                 productListView.Items.Add(item);
             }
 
@@ -220,10 +212,7 @@ namespace Inventory_Managment_System.ProductManagement
                 }
             };
         }
-        /// <summary>
-        /// //////////////
-        /// </summary>
-        /// <param name="products"></param>
+       
         public void UpdateProductListView(List<object> products)
         {
             productListView.Items.Clear();
@@ -231,7 +220,8 @@ namespace Inventory_Managment_System.ProductManagement
             foreach (var product in products)
             {
                 var productDetails = (dynamic)product;
-                ListViewItem item = new ListViewItem(productDetails.Name);
+                ListViewDataItem item = new ListViewDataItem(productDetails.Name);
+                item.SubItems.Add(productDetails.Name); // Description
                 item.SubItems.Add(productDetails.Description); // Description
                 item.SubItems.Add(productDetails.Supplier); // Supplier
                 item.SubItems.Add(productDetails.Quantity.ToString()); // Quantity
@@ -260,6 +250,16 @@ namespace Inventory_Managment_System.ProductManagement
 
 
         private void ProductManagementView_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productListView_SelectedItemChanged(object sender, EventArgs e)
         {
 
         }
