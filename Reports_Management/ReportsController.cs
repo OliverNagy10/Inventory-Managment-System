@@ -70,11 +70,14 @@ namespace Inventory_Managment_System.Reports_Management
 
         private async void Initialize()
         {
+            try
+            {
+                // Show the loading message
+                view.ShowLoadingMessage(true);
 
-           
 
-            // Calculate and display the total sales revenue, gross profit, etc.
-            double totalSalesRevenue = await model.CalculateTotalSalesThisYear();
+                // Calculate and display the total sales revenue, gross profit, etc.
+                double totalSalesRevenue = await model.CalculateTotalSalesThisYear();
             double totalGrossProfit = await model.CalculateTotalGrossProfitYear();
             double totalGrossMargin = await model.CalculateTotalGrossProfitMarginYear();
             double totalNetProfit = await model.CalculateNetProfit();
@@ -93,7 +96,21 @@ namespace Inventory_Managment_System.Reports_Management
             view.DisplayTotalSalesRevenue(totalSalesRevenue);
             view.DisplayTotalGrossProfit(totalGrossProfit);
             view.DisplayTotalGrossMargin(totalGrossMargin);
+
+
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions and errors
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                // Hide the loading message when all tasks are done
+                view.ShowLoadingMessage(false);
+            }
         }
+    
 
         private async Task<string> AddExpense(string expenseName, double amount, DateTime date)
         {

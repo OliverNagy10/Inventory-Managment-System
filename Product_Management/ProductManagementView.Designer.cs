@@ -216,6 +216,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // addButton
             // 
+            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.addButton.Location = new System.Drawing.Point(1258, 702);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(118, 32);
@@ -225,7 +226,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(75, 25);
+            this.backButton.Location = new System.Drawing.Point(208, 702);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(118, 32);
             this.backButton.TabIndex = 40;
@@ -234,6 +235,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // saveButton
             // 
+            this.saveButton.ForeColor = System.Drawing.Color.Yellow;
             this.saveButton.Location = new System.Drawing.Point(916, 702);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(118, 32);
@@ -243,6 +245,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // deleteButton
             // 
+            this.deleteButton.ForeColor = System.Drawing.Color.Red;
             this.deleteButton.Location = new System.Drawing.Point(1053, 702);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(118, 32);
@@ -252,7 +255,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(1144, 25);
+            this.searchButton.Location = new System.Drawing.Point(1244, 25);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(118, 32);
             this.searchButton.TabIndex = 41;
@@ -261,9 +264,9 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // SearchBox
             // 
-            this.SearchBox.Location = new System.Drawing.Point(811, 25);
+            this.SearchBox.Location = new System.Drawing.Point(738, 25);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(290, 32);
+            this.SearchBox.Size = new System.Drawing.Size(480, 32);
             this.SearchBox.TabIndex = 42;
             this.SearchBox.ThemeName = "Windows11Dark";
             // 
@@ -301,7 +304,7 @@ namespace Inventory_Managment_System.ProductManagement
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(685, 35);
+            this.radLabel9.Location = new System.Drawing.Point(657, 35);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(47, 22);
             this.radLabel9.TabIndex = 44;

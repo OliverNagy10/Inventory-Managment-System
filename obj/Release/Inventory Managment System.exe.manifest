@@ -366,14 +366,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventory Managment System.exe" size="973784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventory Managment System.exe" size="1308120">
       <assemblyIdentity name="Inventory Managment System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ryl8h1gXlM/ITu3RQusHFtCKc9ghCyxJo32hMkQILqQ=</dsig:DigestValue>
+        <dsig:DigestValue>t7wX60Ur5kKIUJ9LvJbL2WB5e3dRGXNXOpdQ6LyJg5M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -780,15 +780,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>d23Bnt0mSYAKk701t0th0Lga6EDtxlnP/vUE7ii11YE=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\Logo-removebg-preview.png" size="33359">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>L9Ri4y8B4rXCcy+Q0JPtoK5kjNSn8sLaF++FUEbw+A8=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

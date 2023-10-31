@@ -29,7 +29,7 @@ namespace Inventory_Managment_System.SignUp_Management
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.ThemeSource themeSource3 = new Telerik.WinControls.ThemeSource();
+            Telerik.WinControls.ThemeSource themeSource2 = new Telerik.WinControls.ThemeSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpView));
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.windows11DarkTheme1 = new Telerik.WinControls.Themes.Windows11DarkTheme();
@@ -40,7 +40,6 @@ namespace Inventory_Managment_System.SignUp_Management
             this.emailTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.passwordTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.SignUp = new Telerik.WinControls.UI.RadLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.image = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LoginButton)).BeginInit();
@@ -50,7 +49,6 @@ namespace Inventory_Managment_System.SignUp_Management
             ((System.ComponentModel.ISupportInitialize)(this.emailTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignUp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +56,14 @@ namespace Inventory_Managment_System.SignUp_Management
             // radThemeManager1
             // 
             this.radThemeManager1.LoadedThemes.AddRange(new Telerik.WinControls.ThemeSource[] {
-            themeSource3});
+            themeSource2});
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(383, 695);
+            this.LoginButton.Location = new System.Drawing.Point(237, 594);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(8);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(120, 50);
+            this.LoginButton.Size = new System.Drawing.Size(78, 32);
             this.LoginButton.TabIndex = 9;
             this.LoginButton.Text = "LOG IN";
             this.LoginButton.ThemeName = "Windows11Dark";
@@ -73,7 +71,7 @@ namespace Inventory_Managment_System.SignUp_Management
             // 
             // loginLabel
             // 
-            this.loginLabel.Location = new System.Drawing.Point(137, 705);
+            this.loginLabel.Location = new System.Drawing.Point(58, 595);
             this.loginLabel.Margin = new System.Windows.Forms.Padding(8);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(175, 22);
@@ -84,10 +82,10 @@ namespace Inventory_Managment_System.SignUp_Management
             // Logo
             // 
             this.Logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logo.BackgroundImage")));
-            this.Logo.Location = new System.Drawing.Point(208, 519);
+            this.Logo.Location = new System.Drawing.Point(210, 479);
             this.Logo.Margin = new System.Windows.Forms.Padding(6);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(120, 30);
+            this.Logo.Size = new System.Drawing.Size(120, 43);
             this.Logo.TabIndex = 11;
             this.Logo.Text = "SIGN UP";
             this.Logo.ThemeName = "Windows11Dark";
@@ -125,31 +123,20 @@ namespace Inventory_Managment_System.SignUp_Management
             // 
             // SignUp
             // 
-            this.SignUp.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.SignUp.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.SignUp.Location = new System.Drawing.Point(137, 100);
             this.SignUp.Margin = new System.Windows.Forms.Padding(6);
             this.SignUp.Name = "SignUp";
-            this.SignUp.Size = new System.Drawing.Size(127, 41);
+            this.SignUp.Size = new System.Drawing.Size(96, 31);
             this.SignUp.TabIndex = 15;
             this.SignUp.Text = "REGISTER";
             this.SignUp.ThemeName = "Windows11Dark";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(817, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
             // 
             // image
             // 
             this.image.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("image.BackgroundImage")));
             this.image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.image.Location = new System.Drawing.Point(817, 220);
+            this.image.Location = new System.Drawing.Point(631, 223);
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(670, 538);
             this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -158,10 +145,13 @@ namespace Inventory_Managment_System.SignUp_Management
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox2.Location = new System.Drawing.Point(679, -159);
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(631, 9);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 1457);
+            this.pictureBox2.Size = new System.Drawing.Size(621, 209);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
@@ -180,7 +170,6 @@ namespace Inventory_Managment_System.SignUp_Management
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.loginLabel);
-            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(73)))), ((int)(((byte)(0)))));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -194,7 +183,6 @@ namespace Inventory_Managment_System.SignUp_Management
             ((System.ComponentModel.ISupportInitialize)(this.emailTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -212,7 +200,6 @@ namespace Inventory_Managment_System.SignUp_Management
         private Telerik.WinControls.UI.RadTextBox emailTextBox;
         private Telerik.WinControls.UI.RadTextBox passwordTextBox;
         private Telerik.WinControls.UI.RadLabel SignUp;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox image;
         private System.Windows.Forms.PictureBox pictureBox2;
     }

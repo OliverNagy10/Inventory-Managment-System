@@ -51,10 +51,11 @@ namespace Inventory_Managment_System.Reports_Management
         }
 
 
-        private void ReportsView_Load(object sender, EventArgs e)
+        public void ShowLoadingMessage(bool show)
         {
-         
-            
+            // Assuming you have a StatusLabel to display the loading message
+            pictureBox1.Visible = show;
+
         }
 
         public void DisplayTotalSalesRevenue(double totalSalesRevenue)
@@ -73,7 +74,7 @@ namespace Inventory_Managment_System.Reports_Management
         public void DisplayTotalNetProfitMargin(double totalNetProfitMargin)
         {
 
-            netProfitMarginHolder.Text = totalNetProfitMargin.ToString("0.0");
+            netProfitMarginHolder.Text = totalNetProfitMargin.ToString("0.0" + "%");
         }
 
         public void DisplayTotalGrossProfit(double totalGrossProfit)
@@ -270,14 +271,6 @@ namespace Inventory_Managment_System.Reports_Management
 
         public void PopulateSalesbyWeekYearChart(double[] weeklySales)
         {
-            // Clear any existing data points in the chart
-            SalesbyWeekYear.Series[0].Points.Clear();
-
-            // Populate the chart with weekly sales data
-            for (int week = 0; week < weeklySales.Length; week++)
-            {
-                SalesbyWeekYear.Series[0].Points.AddY(weeklySales[week]);
-            }
         }
 
         public void PopulateMostProfitableProductsChart(List<(string ProductName, double ProfitMargin)> products)
@@ -292,12 +285,7 @@ namespace Inventory_Managment_System.Reports_Management
             }
         }
 
-        private void SalesRevenueHolder_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void salesRevenueLabel_Click(object sender, EventArgs e)
+        private void ReportsView_Load(object sender, EventArgs e)
         {
 
         }

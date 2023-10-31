@@ -113,5 +113,10 @@ namespace Inventory_Managment_System.Dashboard
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

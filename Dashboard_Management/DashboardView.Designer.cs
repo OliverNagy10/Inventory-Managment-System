@@ -29,19 +29,19 @@ namespace Inventory_Managment_System.Dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardView));
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "LOW PRODUCTS");
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation2 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "LOW PRODUCTS");
+            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.BarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -99,28 +99,28 @@ namespace Inventory_Managment_System.Dashboard
             this.BarChart.BackColor = System.Drawing.Color.Transparent;
             this.BarChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BarChart.BorderlineColor = System.Drawing.Color.DimGray;
-            chartArea4.Area3DStyle.Enable3D = true;
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea4.Name = "ChartArea1";
-            this.BarChart.ChartAreas.Add(chartArea4);
-            legend4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            legend4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            legend4.ForeColor = System.Drawing.Color.White;
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            legend4.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BarChart.Legends.Add(legend4);
-            this.BarChart.Location = new System.Drawing.Point(242, 454);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea1.Name = "ChartArea1";
+            this.BarChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            legend1.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            legend1.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BarChart.Legends.Add(legend1);
+            this.BarChart.Location = new System.Drawing.Point(537, 454);
             this.BarChart.Margin = new System.Windows.Forms.Padding(2);
             this.BarChart.Name = "BarChart";
             this.BarChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            series4.LabelForeColor = System.Drawing.Color.White;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.BarChart.Series.Add(series4);
-            this.BarChart.Size = new System.Drawing.Size(664, 340);
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.BarChart.Series.Add(series1);
+            this.BarChart.Size = new System.Drawing.Size(552, 340);
             this.BarChart.TabIndex = 8;
             this.BarChart.Text = "chart1";
             this.BarChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
@@ -133,56 +133,59 @@ namespace Inventory_Managment_System.Dashboard
             this.PieChart.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
             this.PieChart.BorderSkin.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DarkDownwardDiagonal;
             this.PieChart.BorderSkin.PageColor = System.Drawing.Color.Black;
-            chartArea5.Area3DStyle.Enable3D = true;
-            chartArea5.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea5.Name = "ChartArea1";
-            this.PieChart.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            legend5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            legend5.ForeColor = System.Drawing.Color.White;
-            legend5.IsTextAutoFit = false;
-            legend5.Name = "Legend1";
-            this.PieChart.Legends.Add(legend5);
-            this.PieChart.Location = new System.Drawing.Point(928, 454);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea2.Name = "ChartArea1";
+            this.PieChart.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            legend2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.PieChart.Legends.Add(legend2);
+            this.PieChart.Location = new System.Drawing.Point(1093, 454);
             this.PieChart.Margin = new System.Windows.Forms.Padding(2);
             this.PieChart.Name = "PieChart";
             this.PieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series5.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            series5.IsValueShownAsLabel = true;
-            series5.LabelBackColor = System.Drawing.Color.Transparent;
-            series5.LabelBorderColor = System.Drawing.Color.Transparent;
-            series5.LabelForeColor = System.Drawing.Color.White;
-            series5.Legend = "Legend1";
-            series5.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series5.Name = "Series1";
-            series5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            this.PieChart.Series.Add(series5);
-            this.PieChart.Size = new System.Drawing.Size(600, 340);
+            series2.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelBackColor = System.Drawing.Color.Transparent;
+            series2.LabelBorderColor = System.Drawing.Color.Transparent;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series2.Name = "Series1";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            this.PieChart.Series.Add(series2);
+            this.PieChart.Size = new System.Drawing.Size(435, 340);
             this.PieChart.TabIndex = 17;
             this.PieChart.Text = "chart1";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(506, 182);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(369, 191);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(1540, 845);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // radApplicationMenu1
             // 
@@ -197,11 +200,11 @@ namespace Inventory_Managment_System.Dashboard
             this.MenuReports,
             this.radMenuSeparatorItem3,
             this.MenuLogout});
-            this.radApplicationMenu1.Location = new System.Drawing.Point(49, 19);
+            this.radApplicationMenu1.Location = new System.Drawing.Point(20, 10);
             this.radApplicationMenu1.Margin = new System.Windows.Forms.Padding(10);
             this.radApplicationMenu1.Name = "radApplicationMenu1";
             this.radApplicationMenu1.ShowTwoColumnDropDownMenu = false;
-            this.radApplicationMenu1.Size = new System.Drawing.Size(61, 72);
+            this.radApplicationMenu1.Size = new System.Drawing.Size(312, 66);
             this.radApplicationMenu1.TabIndex = 20;
             this.radApplicationMenu1.Text = "radApplicationMenu1";
             this.radApplicationMenu1.ThemeName = "Windows11Dark";
@@ -217,7 +220,7 @@ namespace Inventory_Managment_System.Dashboard
             // MenuCheckout
             // 
             this.MenuCheckout.Name = "MenuCheckout";
-            this.MenuCheckout.Text = "Checkout";
+            this.MenuCheckout.Text = "CHECKOUT";
             // 
             // radMenuSeparatorItem1
             // 
@@ -228,7 +231,7 @@ namespace Inventory_Managment_System.Dashboard
             // MenuProduct
             // 
             this.MenuProduct.Name = "MenuProduct";
-            this.MenuProduct.Text = "Product and Stock Management";
+            this.MenuProduct.Text = "PRODUCT AND STOCK MANAGEMENT";
             // 
             // radMenuSeparatorItem2
             // 
@@ -239,7 +242,7 @@ namespace Inventory_Managment_System.Dashboard
             // MenuReports
             // 
             this.MenuReports.Name = "MenuReports";
-            this.MenuReports.Text = "Analytics and Reports";
+            this.MenuReports.Text = "YEARLY ANALYTICS AND REPORTS";
             // 
             // radMenuSeparatorItem3
             // 
@@ -250,25 +253,25 @@ namespace Inventory_Managment_System.Dashboard
             // MenuLogout
             // 
             this.MenuLogout.Name = "MenuLogout";
-            this.MenuLogout.Text = "Log out";
+            this.MenuLogout.Text = "LOG OUT";
             // 
             // LowProductsListView
             // 
-            listViewDetailColumn2.HeaderText = "LOW PRODUCTS";
-            listViewDetailColumn2.MinWidth = 156.25F;
-            listViewDetailColumn2.Width = 156.25F;
+            listViewDetailColumn1.HeaderText = "LOW PRODUCTS";
+            listViewDetailColumn1.MinWidth = 156.25F;
+            listViewDetailColumn1.Width = 400F;
             this.LowProductsListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
-            listViewDetailColumn2});
+            listViewDetailColumn1});
             this.LowProductsListView.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LowProductsListView.GroupIndent = 31;
             this.LowProductsListView.GroupItemSize = new System.Drawing.Size(764, 39);
-            this.LowProductsListView.HeaderHeight = 85.44923F;
-            this.LowProductsListView.ItemSize = new System.Drawing.Size(313, 56);
+            this.LowProductsListView.HeaderHeight = 30F;
+            this.LowProductsListView.ItemSize = new System.Drawing.Size(313, 30);
             this.LowProductsListView.ItemSpacing = -1;
-            this.LowProductsListView.Location = new System.Drawing.Point(49, 296);
+            this.LowProductsListView.Location = new System.Drawing.Point(1103, 20);
             this.LowProductsListView.Margin = new System.Windows.Forms.Padding(8);
             this.LowProductsListView.Name = "LowProductsListView";
-            this.LowProductsListView.Size = new System.Drawing.Size(155, 511);
+            this.LowProductsListView.Size = new System.Drawing.Size(398, 132);
             this.LowProductsListView.TabIndex = 32;
             this.LowProductsListView.ThemeName = "Windows11Dark";
             this.LowProductsListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
@@ -276,45 +279,45 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // LineChart
             // 
-            lineAnnotation2.LineColor = System.Drawing.Color.White;
-            lineAnnotation2.Name = "LineAnnotation1";
-            this.LineChart.Annotations.Add(lineAnnotation2);
+            lineAnnotation1.LineColor = System.Drawing.Color.White;
+            lineAnnotation1.Name = "LineAnnotation1";
+            this.LineChart.Annotations.Add(lineAnnotation1);
             this.LineChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Area3DStyle.Enable3D = true;
-            chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea6.BorderColor = System.Drawing.Color.White;
-            chartArea6.Name = "ChartArea1";
-            this.LineChart.ChartAreas.Add(chartArea6);
-            legend6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            legend6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            legend6.ForeColor = System.Drawing.Color.White;
-            legend6.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend6.IsTextAutoFit = false;
-            legend6.ItemColumnSeparatorColor = System.Drawing.Color.White;
-            legend6.Name = "Legend1";
-            legend6.TitleForeColor = System.Drawing.Color.White;
-            this.LineChart.Legends.Add(legend6);
-            this.LineChart.Location = new System.Drawing.Point(928, 52);
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea3.BorderColor = System.Drawing.Color.White;
+            chartArea3.Name = "ChartArea1";
+            this.LineChart.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            legend3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend3.IsTextAutoFit = false;
+            legend3.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend3.Name = "Legend1";
+            legend3.TitleForeColor = System.Drawing.Color.White;
+            this.LineChart.Legends.Add(legend3);
+            this.LineChart.Location = new System.Drawing.Point(20, 435);
             this.LineChart.Margin = new System.Windows.Forms.Padding(2);
             this.LineChart.Name = "LineChart";
             this.LineChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            series6.LabelBackColor = System.Drawing.Color.Gray;
-            series6.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series6.LabelForeColor = System.Drawing.Color.White;
-            series6.Legend = "Legend1";
-            series6.MarkerBorderColor = System.Drawing.Color.Black;
-            series6.Name = "Series1";
-            this.LineChart.Series.Add(series6);
-            this.LineChart.Size = new System.Drawing.Size(600, 340);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            series3.LabelBackColor = System.Drawing.Color.Gray;
+            series3.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series3.LabelForeColor = System.Drawing.Color.White;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.Black;
+            series3.Name = "Series1";
+            this.LineChart.Series.Add(series3);
+            this.LineChart.Size = new System.Drawing.Size(543, 359);
             this.LineChart.TabIndex = 33;
             this.LineChart.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            title2.ForeColor = System.Drawing.Color.White;
-            title2.Name = "Title1";
-            this.LineChart.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            title1.ForeColor = System.Drawing.Color.White;
+            title1.Name = "Title1";
+            this.LineChart.Titles.Add(title1);
             this.LineChart.Click += new System.EventHandler(this.LineChart_Click);
             // 
             // inventoryValueHolder
@@ -322,7 +325,7 @@ namespace Inventory_Managment_System.Dashboard
             this.inventoryValueHolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inventoryValueHolder.Location = new System.Drawing.Point(691, 105);
+            this.inventoryValueHolder.Location = new System.Drawing.Point(561, 44);
             this.inventoryValueHolder.Margin = new System.Windows.Forms.Padding(5);
             this.inventoryValueHolder.Name = "inventoryValueHolder";
             this.inventoryValueHolder.ReadOnly = true;
@@ -332,33 +335,33 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // radLabel3
             // 
-            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel3.Location = new System.Drawing.Point(1132, 66);
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.radLabel3.Location = new System.Drawing.Point(193, 397);
             this.radLabel3.Margin = new System.Windows.Forms.Padding(5);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(136, 25);
+            this.radLabel3.Size = new System.Drawing.Size(170, 31);
             this.radLabel3.TabIndex = 38;
             this.radLabel3.Text = "SALES THIS WEEK";
             this.radLabel3.ThemeName = "Windows11Dark";
             // 
             // radLabel4
             // 
-            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel4.Location = new System.Drawing.Point(1040, 421);
+            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.radLabel4.Location = new System.Drawing.Point(1103, 397);
             this.radLabel4.Margin = new System.Windows.Forms.Padding(6);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(313, 25);
+            this.radLabel4.Size = new System.Drawing.Size(391, 31);
             this.radLabel4.TabIndex = 39;
             this.radLabel4.Text = "TOP 3 PRODUCTS THIS MONTH BY UNITS";
             this.radLabel4.ThemeName = "Windows11Dark";
             // 
             // radLabel5
             // 
-            this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel5.Location = new System.Drawing.Point(369, 442);
+            this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.radLabel5.Location = new System.Drawing.Point(591, 397);
             this.radLabel5.Margin = new System.Windows.Forms.Padding(8);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(337, 25);
+            this.radLabel5.Size = new System.Drawing.Size(420, 31);
             this.radLabel5.TabIndex = 40;
             this.radLabel5.Text = "TOP 3 PRODUCTS THIS MONTH BY REVENUE";
             this.radLabel5.ThemeName = "Windows11Dark";
@@ -368,7 +371,7 @@ namespace Inventory_Managment_System.Dashboard
             this.salesValueHolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.salesValueHolder.Location = new System.Drawing.Point(428, 105);
+            this.salesValueHolder.Location = new System.Drawing.Point(907, 44);
             this.salesValueHolder.Margin = new System.Windows.Forms.Padding(5);
             this.salesValueHolder.Name = "salesValueHolder";
             this.salesValueHolder.ReadOnly = true;
@@ -378,7 +381,7 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(428, 69);
+            this.radLabel6.Location = new System.Drawing.Point(772, 54);
             this.radLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(135, 22);
@@ -397,7 +400,7 @@ namespace Inventory_Managment_System.Dashboard
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(691, 69);
+            this.radLabel8.Location = new System.Drawing.Point(433, 54);
             this.radLabel8.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(130, 22);
@@ -411,8 +414,8 @@ namespace Inventory_Managment_System.Dashboard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.LineChart);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.radLabel7);
