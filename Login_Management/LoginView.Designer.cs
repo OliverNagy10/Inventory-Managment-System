@@ -96,10 +96,13 @@ namespace Inventory_Managment_System.LogIn_Management
             this.passwordTextBox.Location = new System.Drawing.Point(137, 294);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(12);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(276, 32);
             this.passwordTextBox.TabIndex = 7;
             this.passwordTextBox.Text = "123456";
             this.passwordTextBox.ThemeName = "Windows11Dark";
+            this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -167,7 +170,7 @@ namespace Inventory_Managment_System.LogIn_Management
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginView";
             this.Size = new System.Drawing.Size(1540, 845);
-            this.Load += new System.EventHandler(this.LoginView_Load_1);
+       
             ((System.ComponentModel.ISupportInitialize)(pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogInLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextBox)).EndInit();

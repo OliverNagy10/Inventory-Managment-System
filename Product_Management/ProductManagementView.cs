@@ -191,6 +191,7 @@ namespace Inventory_Managment_System.ProductManagement
             quantityBox.Clear();
             procutCostTextBox.Clear();
         }
+
         public void PopulateProductListView(List<string> productNames)
         {
             productListView.Items.Clear();

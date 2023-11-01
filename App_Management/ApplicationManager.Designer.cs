@@ -29,6 +29,7 @@ namespace Inventory_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationManager));
             this.windows11DarkTheme1 = new Telerik.WinControls.Themes.Windows11DarkTheme();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -46,11 +47,13 @@ namespace Inventory_Managment_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ApplicationManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Inventory Management System";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ApplicationManager_Load);
             this.ResumeLayout(false);

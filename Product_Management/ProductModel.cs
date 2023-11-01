@@ -311,7 +311,7 @@ namespace Inventory_Managment_System
                         productDocument.GetValue<string>("Description"),
                         productDocument.GetValue<string>("Supplier"),
                         productDocument.GetValue<int>("Barcode"),
-                        productDocument.GetValue<int>("Cost"),
+                        productDocument.GetValue<double>("Cost"),
                         productDocument.GetValue<double>("Price"),
                         productDocument.GetValue<int>("Quantity")
                     );
