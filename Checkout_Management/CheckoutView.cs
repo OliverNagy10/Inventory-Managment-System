@@ -58,7 +58,7 @@ namespace Inventory_Managment_System.Checkout_Management
 
         public void SetAmountHolder(string number)
         {
-            AmountHolderLabel.Text = number;
+            AmountHolderLabel.Text ="$"+number;
 
         }
         public string getRemovefromBasket()
