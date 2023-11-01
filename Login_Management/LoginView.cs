@@ -64,14 +64,11 @@ namespace Inventory_Managment_System.LogIn_Management
 
         }
 
-<<<<<<< HEAD
         private void LoginView_Load_1(object sender, EventArgs e)
         {
             passwordTextBox.UseSystemPasswordChar = true;
         }
-=======
-       
->>>>>>> 808e1d331fdf75a7f3de3f49de2a8f3fb6528972
+
 
         private void loginButton_Click(object sender, EventArgs e)
         {

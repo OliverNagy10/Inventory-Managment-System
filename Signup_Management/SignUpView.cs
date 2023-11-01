@@ -70,12 +70,7 @@ namespace Inventory_Managment_System.SignUp_Management
 
         private void SignUpView_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            passwordTextBox.UseSystemPasswordChar = true;
-=======
-            passwordTextBox.PasswordChar = '*'; // Use '*' to mask characters
-            passwordTextBox.UseSystemPasswordChar = true; // Use the system default masking character
->>>>>>> 808e1d331fdf75a7f3de3f49de2a8f3fb6528972
+
         }
     }
 }
