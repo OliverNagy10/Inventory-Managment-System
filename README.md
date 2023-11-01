@@ -31,7 +31,7 @@ The Inventory Management System follows the principles of object-oriented progra
 
 ## Installation
 
- To Install download the .zip file from here https://drive.google.com/file/d/1ay391lHQztUNMSYKlOgtnQnwRIL_HGbY/view?usp=drive_link , then un-zip the folder and run setup.exe
+ To Install download the .zip file from here https://drive.google.com/file/d/1FJpntO-hORFQy5nlxyLah8OtdbcqzoDp/view?usp=sharing , then un-zip the folder and run setup.exe
 
  ## Usage
 
