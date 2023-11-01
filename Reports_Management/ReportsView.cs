@@ -61,12 +61,12 @@ namespace Inventory_Managment_System.Reports_Management
         public void DisplayTotalSalesRevenue(double totalSalesRevenue)
         {
             // Update the SalesRevenueHolder label with the calculated total sales revenue
-            SalesRevenueHolder.Text = totalSalesRevenue.ToString("0.00");
+            SalesRevenueHolder.Text = totalSalesRevenue.ToString("$" + "0.00");
         }
 
         public void DisplayTotalNetProfit(double totalNetProfit)
         {
-            NetProfitHolder.Text = totalNetProfit.ToString("0.0");
+            NetProfitHolder.Text = totalNetProfit.ToString("$" + "0.00");
 
 
         }
@@ -80,7 +80,7 @@ namespace Inventory_Managment_System.Reports_Management
         public void DisplayTotalGrossProfit(double totalGrossProfit)
         {
             // Update the SalesRevenueHolder label with the calculated total sales revenue
-            grossProfitHolder.Text = totalGrossProfit.ToString("0.00");
+            grossProfitHolder.Text = totalGrossProfit.ToString("$"+"0.00");
         }
 
         public void DisplayTotalGrossMargin(double totalGrossMargin)

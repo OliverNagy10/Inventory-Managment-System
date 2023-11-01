@@ -65,7 +65,7 @@ namespace Inventory_Managment_System.LogIn_Management
 
         private void LoginView_Load_1(object sender, EventArgs e)
         {
-
+            passwordTextBox.UseSystemPasswordChar = true;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
