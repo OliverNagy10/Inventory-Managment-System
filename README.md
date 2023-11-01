@@ -1,3 +1,73 @@
 # Inventory Management System
 
-The Inventory Management System is a software application that helps you manage your inventory efficiently. It allows you to keep track of product details, stock levels, and sales data, providing key insights for your business.
+The Inventory Management System is a .NET-based desktop application designed to help businesses efficiently manage their inventory, track sales, and generate reports for better decision-making. This README provides an overview of the application's features, installation instructions, and usage guide.
+
+![Application Screenshot](screenshot.png)
+
+## Features
+
+- **Expense Management**: Easily add, view, and delete expenses, helping you keep track of your business's financial transactions.
+
+- **Sales Record Tracking**: Record and organize sales data, allowing you to monitor sales performance and trends.
+
+- **Product Management**: Efficiently manage your product catalog, including adding, updating, and deleting products.
+
+- **Checkout Functionality**: Perform item checkouts with automatic inventory updates and sales recording.
+
+- **Financial Reports**: Generate financial reports, including total sales revenue, gross profit, gross margin, net profit, and net profit margin.
+
+- **Interactive Charts**: Visualize data with interactive charts for monthly sales, best sellers, worst sellers, weekly sales, and most profitable products.
+
+- **Search Functionality**: Search for specific expenses and products, displaying details for more insights.
+
+## Framework and Application Type
+
+- **Framework**: .NET (C#)
+- **Application Type**: Desktop Application
+
+## Software Design and Database
+
+The Inventory Management System follows the principles of object-oriented programming (OOP) for a clean and maintainable codebase. It's designed with the Model-View-Controller (MVC) architectural pattern to separate the application's concerns. Additionally, it uses Entity Framework for local data management and Firestore, an online database, for enabling remote access and data synchronization from anywhere the application is installed.
+
+## Installation
+
+ To Install download the .zip file from here https://drive.google.com/file/d/1ay391lHQztUNMSYKlOgtnQnwRIL_HGbY/view?usp=drive_link , then un-zip the folder and run setup.exe
+
+ ## Usage
+
+
+
+1. Launch the application.
+
+2. If you're a new user, click "Sign Up" to create a new account. Provide your name, email address, and a secure password.
+
+3. If you're an existing user, click "Log In" and enter your email and password to access your account.
+
+Once you're signed in, you can start using the application:
+
+4. Use the "Product Management" section to manage your product catalog:
+
+   - Click "Add Product" to add a new product, providing product details.
+   - Select a product to edit or delete it.
+
+5. Utilize the "Checkout" section to perform item checkouts:
+
+   - Select products and specify quantities for checkout. The inventory will be automatically updated, and the sale will be recorded.
+
+6. Use the "Expense" section to manage expenses:
+
+   - Click "Add Expense" to add a new expense, providing a name, amount, and date.
+   - Select an expense in the list to view or delete it.
+
+7. Use the "Sales" section to track sales records:
+
+
+8. View financial reports in the "Reports" section:
+
+   - Observe the total sales revenue, gross profit, gross margin, net profit, and net profit margin.
+
+9. Explore the interactive charts in the "Reports" section:
+
+   - Visualize monthly sales, best sellers, worst sellers, weekly sales, and most profitable products.
+
+10. Utilize the search feature to find specific expenses, products, and sales records and view their details.
