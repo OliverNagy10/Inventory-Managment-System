@@ -18,11 +18,16 @@ namespace Inventory_Managment_System
 
         public ProductController(FirestoreDb firestoreDb, string idToken, ProductManagementView view, ApplicationManager mainForm)
         {
+
+            
             db = firestoreDb;
             IDToken = idToken;
             productModel = new ProductModel(db, IDToken);
             productView = view;
             this.mainForm = mainForm;
+
+            // Start loading product names as soon as the controller is created
+            GetProductDetailsAsync();
 
             productView.SearchButtonClicked += async (sender, args) => await SearchProductAsync();
             // Attach event handler for the Add button click event in the view
@@ -32,8 +37,7 @@ namespace Inventory_Managment_System
             productView.BackButtonClicked += async (sender, args) => Back_Click();
             view.ListViewItemSelectionChanged += async (sender, productName) => await HandleListViewItemSelection(productName);
 
-            // Start loading product names as soon as the controller is created
-            GetProductDetailsAsync();
+          
 
         }
 

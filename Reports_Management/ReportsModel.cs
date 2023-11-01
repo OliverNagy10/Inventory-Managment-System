@@ -34,7 +34,11 @@ namespace Inventory_Managment_System.Reports_Management
                 double totalSales = await CalculateTotalSalesThisYear();
 
                 // Calculate the net profit margin
+<<<<<<< HEAD
                 double netProfitMargin = (netProfit / totalSales) ;
+=======
+                double netProfitMargin = (netProfit / totalSales);
+>>>>>>> 808e1d331fdf75a7f3de3f49de2a8f3fb6528972
 
                 return netProfitMargin;
             }

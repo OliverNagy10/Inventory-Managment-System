@@ -58,15 +58,20 @@ namespace Inventory_Managment_System.LogIn_Management
 
         private void LoginView_Load(object sender, EventArgs e)
         {
-            // Calculate the center position based on the form's size
-           
+            passwordTextBox.PasswordChar = '*'; // Use '*' to mask characters
+            passwordTextBox.UseSystemPasswordChar = true; // Use the system default masking character
+
 
         }
 
+<<<<<<< HEAD
         private void LoginView_Load_1(object sender, EventArgs e)
         {
             passwordTextBox.UseSystemPasswordChar = true;
         }
+=======
+       
+>>>>>>> 808e1d331fdf75a7f3de3f49de2a8f3fb6528972
 
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -74,6 +79,11 @@ namespace Inventory_Managment_System.LogIn_Management
         }
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
