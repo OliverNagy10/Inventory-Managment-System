@@ -2,7 +2,7 @@
 
 The Inventory Management System is a .NET-based desktop application designed to help businesses efficiently manage their inventory, track sales, and generate reports for better decision-making. This README provides an overview of the application's features, installation instructions, and usage guide.
 
-![Signup Page Screenshot](https://raw.githubusercontent.com/OliverNagy10/Inventory-Managment-System/main/Demo/Images/SignupPage.png)
+![Signup Page Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/SignupPage.png)
 ![Login Page Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/raw/main/Demo/Images/LoginPage.png)
 
 
