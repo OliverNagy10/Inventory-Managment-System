@@ -15,9 +15,9 @@ Table of Contents
 <a name="screenshots"></a>
 ## Application Screenshots
 
-** Register and Log In**
+**Register and Log In**
 ![Signup Page Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Register%26Login.png)
-** Main Dashboard**
+**Main Dashboard**
 ![Dashboard Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Dashboard.png)
 **Reports and Analytics**
 ![Reports Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Reports.png)
