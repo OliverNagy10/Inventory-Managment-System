@@ -2,10 +2,31 @@
 
 The Inventory Management System is a .NET-based desktop application designed to help businesses efficiently manage their inventory, track sales, and generate reports for better decision-making. This README provides an overview of the application's features, installation instructions, and usage guide.
 
-![Signup Page Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/SignupPage.png)
-![Login Page Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/raw/main/Demo/Images/LoginPage.png)
+
+Table of Contents
+- [Application Screenshots](#screenshots)
+- [Features](#features)
+- [Framework](#framework)
+- [Design](#design)
+- [Installation](#installation)
+- [Usage](#usage)
 
 
+<a name="screenshots"></a>
+## Application Screenshots
+
+** Register and Log In**
+![Signup Page Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Register%26Login.png)
+** Main Dashboard**
+![Dashboard Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Dashboard.png)
+**Reports and Analytics**
+![Reports Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Reports.png)
+**Product and Stock Management**
+![Product Management Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/ProductManagament.png)
+**Checkout**
+![Checkout Screenshot](https://github.com/OliverNagy10/Inventory-Managment-System/blob/main/Demo/Images/Checkout.png)
+
+<a name="features"></a>
 ## Features
 
 - **Expense Management**: Easily add, view, and delete expenses, helping you keep track of your business's financial transactions.
@@ -22,19 +43,24 @@ The Inventory Management System is a .NET-based desktop application designed to 
 
 - **Search Functionality**: Search for specific expenses and products, displaying details for more insights.
 
+<a name="framework"></a>
 ## Framework and Application Type
 
 - **Framework**: .NET (C#)
 - **Application Type**: Desktop Application
 
+<a name="design"></a>
 ## Software Design and Database
 
 The Inventory Management System follows the principles of object-oriented programming (OOP) for a clean and maintainable codebase. It's designed with the Model-View-Controller (MVC) architectural pattern to separate the application's concerns. Additionally, it uses Entity Framework for local data management and Firestore, an online database, for enabling remote access and data synchronization from anywhere the application is installed.
 
+
+<a name="installation"></a>
 ## Installation
 
  To Install download the .zip file from here https://drive.google.com/file/d/1FJpntO-hORFQy5nlxyLah8OtdbcqzoDp/view?usp=sharing , then un-zip the folder and run setup.exe
 
+<a name="usage"></a>
  ## Usage
 
 
