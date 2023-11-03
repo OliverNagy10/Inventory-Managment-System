@@ -47,7 +47,7 @@ Table of Contents
 ## Framework and Application Type
 
 - **Framework**: .NET (C#)
-- **Application Type**: Desktop Application
+- **Application Type**: Windows Forms Desktop Application
 
 <a name="design"></a>
 ## Software Design and Database
